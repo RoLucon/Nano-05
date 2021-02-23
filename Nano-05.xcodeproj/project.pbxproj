@@ -23,6 +23,8 @@
 		89282A8525E07AA500FE2029 /* Posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 89282A8425E07AA500FE2029 /* Posts.json */; };
 		89282A8825E0803D00FE2029 /* Tabs.json in Resources */ = {isa = PBXBuildFile; fileRef = 89282A8725E0803D00FE2029 /* Tabs.json */; };
 		89282A8C25E0807300FE2029 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89282A8B25E0807300FE2029 /* Tab.swift */; };
+		89908C8625E5869E00B8BEFD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8525E5869E00B8BEFD /* PostViewController.swift */; };
+		89908C8A25E587A700B8BEFD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8925E587A700B8BEFD /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		89282A8425E07AA500FE2029 /* Posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Posts.json; sourceTree = "<group>"; };
 		89282A8725E0803D00FE2029 /* Tabs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tabs.json; sourceTree = "<group>"; };
 		89282A8B25E0807300FE2029 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		89908C8525E5869E00B8BEFD /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		89908C8925E587A700B8BEFD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		89256B4625DEE0FC00E567F0 /* Nano-05 */ = {
 			isa = PBXGroup;
 			children = (
+				89908C8825E5879000B8BEFD /* Extensions */,
 				89282A8325E07A7B00FE2029 /* Resorces */,
 				89282A7E25E079C400FE2029 /* ViewControllers */,
 				89282A7525E05A3600FE2029 /* Model */,
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				89282A7F25E07A1C00FE2029 /* TabViewController.swift */,
+				89908C8525E5869E00B8BEFD /* PostViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +133,14 @@
 				89282A8725E0803D00FE2029 /* Tabs.json */,
 			);
 			path = Resorces;
+			sourceTree = "<group>";
+		};
+		89908C8825E5879000B8BEFD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89908C8925E587A700B8BEFD /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,7 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89908C8625E5869E00B8BEFD /* PostViewController.swift in Sources */,
 				89282A8C25E0807300FE2029 /* Tab.swift in Sources */,
+				89908C8A25E587A700B8BEFD /* UIViewController.swift in Sources */,
 				89282A8025E07A1C00FE2029 /* TabViewController.swift in Sources */,
 				89256B4C25DEE0FC00E567F0 /* ViewController.swift in Sources */,
 				89282A7B25E05B2700FE2029 /* Data.swift in Sources */,

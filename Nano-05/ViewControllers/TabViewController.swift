@@ -40,8 +40,6 @@ class TabViewController: UIViewController, UITableViewDelegate {
         
         title = currentTab.title
         
-        let safeGuide = self.view.safeAreaLayoutGuide
-        
         //MARK: ScrollView
         scrollView.backgroundColor = .gray
         scrollView.delegate = self
@@ -127,6 +125,22 @@ extension TabViewController: UITableViewDataSource {
         cell.accessoryType =  UITableViewCell.AccessoryType.disclosureIndicator
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Tab: \(tabId), Row: \(indexPath.row)")
+        
+        let loadVC = PostViewController()
+        loadVC.modalPresentationStyle = .fullScreen
+        
+        guard let post = postById(11) else {
+            fatalError("Impossivel redirecionar. Post não encontrado.")
+        }
+        
+        loadVC.update(post)
+        
+        self.navigationController?.pushViewController(loadVC, animated: true)
+        
     }
 }
 

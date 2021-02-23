@@ -31,3 +31,9 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
+
+func postById(_ id: Int) -> Post? {
+    let filter = post.filter { $0.id == id }
+    
+    return filter.first
+}

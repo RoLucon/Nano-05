@@ -12,6 +12,9 @@ struct Post: Identifiable, Decodable {
     var title: String
     
     var info: [Info]
+    
+    var link: String?
+    var linkHint: String?
 }
 
 struct Info: Decodable {
@@ -19,6 +22,5 @@ struct Info: Decodable {
     var title: String
     var text: String
     
-    var link: String?
-    var linkHint: String?
+    
 }

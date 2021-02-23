@@ -1,20 +1,18 @@
 [
     {
-        "id": 1,
+        "id": 11,
         "title": "Titulo 01",
         "info":[
             {
                 "title": "Info title1",
                 "text": "Info text1",
-                "link": "Link1",
-                "linkHint": "LinkHint1"
             },
             {
                 "title": "Info title2",
                 "text": "Info text2",
-                "link": "Link2",
-                "linkHint": "LinkHint2"
             }
-            ]
+            ],
+        "link": "Link1",
+        "linkHint": "LinkHint1"
     }
 ]
