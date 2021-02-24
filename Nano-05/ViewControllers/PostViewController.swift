@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class PostViewController: UIViewController, UIScrollViewDelegate {
     
@@ -13,7 +14,11 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     private let scrollView = UIScrollView()
     
-    private let textView = UITextView()
+    private var stackView = UIStackView()
+    
+    private var textView = UITextView()
+    
+    private let button = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,43 +35,68 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 8),
-            scrollView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -8),
+            scrollView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 0),
+            scrollView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: 0),
             scrollView.topAnchor.constraint(equalTo: safeGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor)
         ])
         
-        //MARK: - Text View
+        //MARK: - StackView
+        stackView.axis = .vertical
+        stackView.clipsToBounds = true;
+        stackView.layer.cornerRadius = 10;
+        
+        stackView.backgroundColor = .white
+        
+        stackView.alignment = .fill
+        //        stackView.spacing = 16
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 8, bottom: 32, right: 8)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        scrollView.addSubview(stackView)
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            //            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 8),
+            //            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 8),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32)
+        ])
+        
+        //MARK: - TextView
         textView.backgroundColor = .white
-        textView.clipsToBounds = true;
-        textView.layer.cornerRadius = 10;
+        //        textView.clipsToBounds = true;
+        //        textView.layer.cornerRadius = 10;
         textView.isScrollEnabled = false
         textView.isEditable = false
         
-        scrollView.addSubview(textView)
+        stackView.addArrangedSubview(textView)
+        //        stackView.addArrangedSubview(button)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            textView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-            textView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
-            textView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
-            textView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32),
-            textView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32)
+            textView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 32),
+            textView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -32),
+            //            textView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 16),
+            //          textView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -32),
+            //          textView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32)
         ])
-            
-//        let aux = "PLEASE NOTE:\n\n\n A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição."
-        
-        
-//        textView.attributedText = addBoldText(fullString: aux, boldPartOfString: ["PLEASE NOTE", "contra"], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .title1))
-        
-
+        //        button.isHidden = true
+        update()
     }
-
-    func update(_ post: Post) {
+    
+    //MARK: - UPDATE
+    private func update() {
+        guard let post = self.post else { return }
+        
+        update(post)
+    }
+    
+    private func update(_ post: Post) {
         title = post.title
         
-         var text = ""
+        var text = ""
         
         var title: [String] = []
         
@@ -83,21 +113,76 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         }
         
         textView.attributedText = addBoldText(fullString: text, boldPartOfString: title, baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
+        
+        guard let link = post.link else { return }
+        
+        if button.isSelected {
+            button.backgroundColor = UIColor(named: "AccentColor")?.withAlphaComponent(0.5)
+        } else {
+            button.backgroundColor = UIColor(named: "AccentColor")
+        }
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
+        
+        button.titleLabel?.textColor = .white
+        
+        button.setTitle("Mais informações", for: .normal)
+        button.addTarget(self, action: #selector(moreInfos), for: .touchUpInside)
+        
+        
+        stackView.addArrangedSubview(button)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+//            button.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 40),
+//            button.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -40),
+            button.heightAnchor.constraint(equalToConstant: 55)
+        ])
+        
+        
+    }
+    //MARK: - Btt Click
+    @objc fileprivate func moreInfos(sender: UIButton){
+        guard let link = post?.link else { return }
+        
+        animatedView(sender) {
+            let vc = SFSafariViewController(url: URL(string: link)!)
+            
+            self.present(vc, animated: true)
+        }
+    }
+    
+    //Animaçao do Click
+    fileprivate func animatedView(_ viewToAnimate: UIView, complition: (() -> Void)?) {
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .allowUserInteraction, animations: {
+            viewToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }) {_ in
+            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .allowUserInteraction, animations: {
+                viewToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }) {_ in
+                if let closer = complition {
+                    closer()
+                }
+            }
+        }
+    }
+    
+    //MARK: - Other Functions
+    func setPost(_ post: Post) {
+        self.post = post
     }
     
     func addBoldText(fullString: String, boldPartOfString: [String], baseFont: UIFont, boldFont: UIFont) -> NSAttributedString {
-
+        
         let baseFontAttribute = [NSAttributedString.Key.font : baseFont]
         let boldFontAttribute = [NSAttributedString.Key.font : boldFont]
-
+        
         let attributedString = NSMutableAttributedString(string: fullString, attributes: baseFontAttribute)
         
         for string in boldPartOfString {
             attributedString.addAttributes(boldFontAttribute, range: NSRange(fullString.range(of: string) ?? fullString.startIndex..<fullString.endIndex, in: fullString))
         }
-        
-        
-
         return attributedString
     }
 }
@@ -106,7 +191,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
 extension PostViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        textView.font = .preferredFont(forTextStyle: .body)
+        update()
     }
     
 }

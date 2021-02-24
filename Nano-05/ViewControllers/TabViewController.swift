@@ -137,7 +137,7 @@ extension TabViewController: UITableViewDataSource {
             fatalError("Impossivel redirecionar. Post não encontrado.")
         }
         
-        loadVC.update(post)
+        loadVC.setPost(post)
         
         self.navigationController?.pushViewController(loadVC, animated: true)
         
