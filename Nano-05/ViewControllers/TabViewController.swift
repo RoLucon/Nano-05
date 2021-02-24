@@ -144,18 +144,27 @@ extension TabViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tab: \(tabId), Row: \(indexPath.row)")
-        
+        print("Tab: \(tabId), Row: \(indexPath.row - 1)")
+        let value = tabId + "\(indexPath.row)"
         let loadVC = PostViewController()
-        loadVC.modalPresentationStyle = .fullScreen
         
-        guard let post = postById(11) else {
+        guard let post = postById(Int(value)!) else {
             fatalError("Impossivel redirecionar. Post não encontrado.")
         }
         
         loadVC.setPost(post)
         
-        self.navigationController?.pushViewController(loadVC, animated: true)
+        if post.modal == "sheet" {
+            loadVC.modalPresentationStyle = .formSheet
+            present(loadVC, animated: true)
+            
+        } else {
+            loadVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(loadVC, animated: true)
+        }
+        
+        
+        
         
     }
 }

@@ -17,15 +17,49 @@
         "listItens": [
             {
                 "title": "Formas de Contágio",
-                "idRef": 22
+                "idRef": 20
             },
             {
                 "title": "PrEP",
-                "idRef": 23
+                "idRef": 21
             },
             {
                 "title": "PEP",
-                "idRef": 24
+                "idRef": 22
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Testes",
+        "text": "Conhecer o quanto antes a sorologia positiva para o HIV aumenta muito a expectativa de vida de uma pessoa que vive com o vírus. Quem se testa com regularidade, busca tratamento no tempo certo e segue as recomendações da equipe de saúde ganha muito em qualidade de vida.\n\nAlém disso, as mães que vivem com HIV têm 99% de chance de terem filhos sem o HIV se seguirem o tratamento recomendado durante o pré-natal, parto e pós-parto.",
+        "listItens": [
+            {
+                "title": "Como Funciona?",
+                "idRef": 30
+            },
+            {
+                "title": "Por que fazer?",
+                "idRef": 31
+            },
+            {
+                "title": "Quando fazer?",
+                "idRef": 32
+            },
+            {
+                "title": "Onde fazer?",
+                "idRef": 33
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Cuidados",
+        "text": "A qualquer indício ou suspeita de infecção pelo vírus HIV, é necessário buscar aconselhamento médico. Quanto antes ocorrer o diagnóstico e começar o tratamento antirretroviral, maiores as chances de conseguir levar uma vida saudável, com maior expectativa de vida, sem desenvolver a AIDS, e com menores chances até de transmitir o vírus sexualmente.",
+        "listItens": [
+            {
+                "title": "HIV e Tuberculosen",
+                "idRef": 40
             }
         ]
     }

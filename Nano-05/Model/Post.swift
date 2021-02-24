@@ -13,6 +13,8 @@ struct Post: Identifiable, Decodable {
     
     var info: [Info]
     
+    var modal: String
+    
     var link: String?
     var linkHint: String?
 }

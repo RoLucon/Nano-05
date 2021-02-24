@@ -1,28 +1,96 @@
-[
-    {
-        "id": 10,
-        "title": "Titulo 01",
-        "info":[
-            {
-                "title": "Info title1",
-                "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
-            },
-            {
-                "title": "Info title2",
-                "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
-            }
-            ],
-        "link": "http://www.apple.com",
-        "linkHint": "LinkHint1"
-    },
-    {
-        "id": 11,
-        "title": "Titulo 01",
-        "info":[
-            {
-                "title": "",
-                "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
-            }
-            ]
-    }
+[{
+    "id": 20,
+    "title": "Formas de Contágio",
+    "info":[
+        {
+            "title": "",
+            "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
+        }
+    ],
+    "modal": "fullscreen"
+},
+{
+    "id": 21,
+    "title": "Profilaxia Pré Exposição (PrEP)",
+    "info":[
+        {
+            "title": "",
+            "text": "A Profilaxia Pré-Exposição ao HIV é um método de prevenção à infecção pelo HIV. A PrEP e feita tomando diariamente um comprimido que impede que o virus causador da aids infecte o organismo. Esse comprimido e a combinação de duas substancias (Tenofovir + Entricitabina).\n\nA PreP só tem efeito com a tomada regular (diária) do medicamento, isso pois e necessário que tenha uma quantidade adequada das substancias no organismo. Por esse motivo também seu efeito so tem inicio após 7 dias de uso para relações anal e 20 dias para relações vaginal.\n\nNão são todos que podem tomar a PrEP. Ela é indicada apenas para pessoas que tem maiores chances de contato com o HIV. Abaixo estão os grupos e situações a qual e recomendado o seu uso:\n•    Gays e outros homens que fazem sexo com homens (HSH);\n•    Pessoas trans;\n•    Trabalhadores(as) do sexo.\n•    Frequentemente deixa de usar camisinha em suas relações sexuais (anais ou vaginais);\n•    Tem relações sexuais, sem camisinha, com alguém que seja HIV positivo e que não esteja em tratamento;\n•    Faz uso repetido de PEP (Profilaxia Pós-Exposição ao HIV);\n•    Apresenta episódios frequentes de Infecções Sexualmente Transmissíveis.",
+        },
+        {
+            "title": "Como posso começar a usar a PrEP?",
+            "text": "Procure um profissional de saúde e informe-se para saber se você tem indicação para PrEP. Na PrEP, você deve tomar o medicamento todos os dias, fazer exames regulares e buscar sua medicação gratuitamente a cada três meses.",
+        }
+    ],
+    "modal": "sheet",
+    "link": "http://www.aids.gov.br/pt-br/acesso_a_informacao/servicos-de-saude/prep",
+    "linkHint": "Link para site do ministerio da saude"
+},
+{
+    "id": 22,
+    "title": "Profilaxia Pós Exposição (PEP)",
+    "info":[
+        {
+            "title": "",
+            "text": "A PEP é uma medida de prevenção de urgência à infecção pelo HIV, hepatites virais e outras infecções sexualmente transmissíveis (IST), essa prevenção é feita através do uso de medicamentos para reduzir o risco de adquirir essas infecções. Deve ser utilizada após qualquer situação em que exista risco de contágio, tais como:\nViolência sexual;\nRelação sexual desprotegida (sem o uso de camisinha ou com rompimento da camisinha);\nAcidente ocupacional (com instrumentos perfurocortantes ou contato direto com material biológico).\n\nTrata-se de uma urgência médica, que deve ser iniciada o mais rápido possível - preferencialmente nas primeiras duas horas após a exposição e no máximo em até 72 horas. A duração da PEP é de 28 dias e a pessoa deve ser acompanhada pela equipe de saúde.\n\nComo profilaxia para o risco de infecção para o HIV, a PEP consiste no uso de medicamentos antirretrovirais para reduzir o risco de infecção em situações de exposição ao vírus.",
+        }
+    ],
+    "modal": "sheet"
+},
+
+{
+    "id": 30,
+    "title": "Como funciona?",
+    "info":[
+        {
+            "title": "",
+            "text": "No caso do teste rápido de HIV, o profissional de saúde habilitado insere um pequeno coletor em formato de haste na boca e o fricciona levemente acima dos dentes, no espaço que fica entre o final da gengiva e o começo da bochecha, para coletar amostras de anticorpos no fluido oral. Vale destacar que não existe vírus no fluido oral, apenas anticorpos. Por isso o beijo não transmite o HIV. O resultado fica pronto em meia hora.",
+        }
+    ],
+    "modal": "fullscreen"
+},
+{
+    "id": 31,
+    "title": "Por que fazer?",
+    "info":[
+        {
+            "title": "",
+            "text": "Conhecer o quanto antes a sorologia positiva para o HIV aumenta muito a expectativa de vida de uma pessoa que vive com o vírus. Quem se testa com regularidade, busca tratamento no tempo certo e segue as recomendações da equipe de saúde ganha muito em qualidade de vida.\n\nAlém disso, as mães que vivem com HIV têm 99% de chance de terem filhos sem o HIV se seguirem o tratamento recomendado durante o pré-natal, parto e pós-parto.",
+        }
+    ],
+    "modal": "fullscreen"
+},
+{
+    "id": 32,
+    "title": "Quando fazer?",
+    "info":[
+        {
+            "title": "",
+            "text": "Se você tem uma vida sexualmente ativa é importante se testar regularmente, para o seu bem e das pessoas com quem você se relaciona.\n\nTambém é importante se testar caso tenha passado por alguma situação de risco específica, como compartilhamento de seringa ou qualquer relação sexual sem camisinha.",
+        }
+    ],
+    "modal": "fullscreen"
+},
+{
+    "id": 33,
+    "title": "Onde fazer?",
+    "info":[
+        {
+            "title": "",
+            "text": "O SUS disponibiliza gratuitamente o teste de HIV, sífilis e hepatites B e C. Procure uma unidade básica de saúde da rede pública ou os Centros de Testagem e Aconselhamento (CTA).\n\nVeja a lista de serviços aqui.\n\nOs exames podem ser feitos de forma anônima.\n\nNos CTA, além da coleta e da execução dos testes, há um processo de aconselhamento, para facilitar a correta interpretação do resultado pelo(a) usuário(a). Também é possível saber onde fazer o teste pelo Disque Saúde (136).\n\nAlém da rede de serviços de saúde, você também pode fazer o teste de HIV por meio de uma Organização da Sociedade Civil, pelo Programa Viva Melhor Sabendo.\n\nProcure um profissional de saúde e informe-se sobre os testes.",
+        }
+    ],
+    "modal": "fullscreen"
+},
+{
+    "id": 40,
+    "title": "HIV x Tuberculose",
+    "info":[
+        {
+            "title": "",
+            "text": "Como o vírus ataca o sistema imunológico e o sistema imunológico é quem protege nosso corpo, quem carrega o vírus tem maiores chances de contrair outras infecções, como a Tuberculose.\n\nNesse caso específico, as chances de contrair a tuberculose aumenta em 28 vezes para quem tem HIV, e a combinação HIV-TB é uma das principais causas de morte para quem tem AIDS, o estágio final da infecção do HIV. Por isso é importante que quem carrega o vírus faça o tratamento antirretroviral.",
+        }
+    ],
+    "modal": "fullscreen"
+}
 ]
