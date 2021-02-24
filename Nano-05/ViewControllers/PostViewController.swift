@@ -34,8 +34,6 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         //MARK: - Header if style == Sheet
         if modalPresentationStyle == .pageSheet {
             
-            print("Page Sheet")
-            
             let headerView = UIView()
             headerView.backgroundColor = .secBackgroundColor
             

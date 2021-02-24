@@ -17,4 +17,5 @@ struct Tab: Identifiable, Decodable {
 struct ListItens: Decodable {
     var title: String
     var idRef: Int
+    var titleHint: String?
 }

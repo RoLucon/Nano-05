@@ -138,6 +138,14 @@ extension TabViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
         cell.textLabel?.text = currentTab.listItens[indexPath.row].title
+        cell.isAccessibilityElement = true
+        
+        if let hint = currentTab.listItens[indexPath.row].titleHint {
+            cell.accessibilityHint = hint
+        } else {
+            cell.accessibilityHint = "Clique para ver mais sobre \(currentTab.listItens[indexPath.row].title) "
+        }
+        cell.accessibilityValue = "\(indexPath.row) de \(currentTab.listItens.count)"
         cell.accessoryType =  UITableViewCell.AccessoryType.disclosureIndicator
 
         return cell

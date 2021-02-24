@@ -20,11 +20,11 @@
                 "idRef": 20
             },
             {
-                "title": "PrEP",
+                "title": "Profilaxia pré exposição (PrEP)",
                 "idRef": 21
             },
             {
-                "title": "PEP",
+                "title": "Profilaxia pós exposição (PEP)",
                 "idRef": 22
             }
         ]
@@ -36,19 +36,23 @@
         "listItens": [
             {
                 "title": "Como Funciona?",
-                "idRef": 30
+                "idRef": 30,
+                "titleHint": "Clique para saber como funcionam os Testes."
             },
             {
                 "title": "Por que fazer?",
-                "idRef": 31
+                "idRef": 31,
+                "titleHint": "Clique para saber por que fazer os Testes."
             },
             {
                 "title": "Quando fazer?",
-                "idRef": 32
+                "idRef": 32,
+                "titleHint": "Clique para saber quando fazer os Testes."
             },
             {
                 "title": "Onde fazer?",
-                "idRef": 33
+                "idRef": 33,
+                "titleHint": "Clique para saber onde fazer os Testes."
             }
         ]
     },
@@ -58,8 +62,9 @@
         "text": "A qualquer indício ou suspeita de infecção pelo vírus HIV, é necessário buscar aconselhamento médico. Quanto antes ocorrer o diagnóstico e começar o tratamento antirretroviral, maiores as chances de conseguir levar uma vida saudável, com maior expectativa de vida, sem desenvolver a AIDS, e com menores chances até de transmitir o vírus sexualmente.",
         "listItens": [
             {
-                "title": "HIV e Tuberculosen",
-                "idRef": 40
+                "title": "HIV e Tuberculose",
+                "idRef": 40,
+                "titleHint": "Clique para saber mais sobre a relação do HIV e a Tuberculose."
             }
         ]
     }
