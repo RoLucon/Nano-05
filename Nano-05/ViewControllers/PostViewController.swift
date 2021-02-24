@@ -25,7 +25,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .accentColor
-        
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryColor]
         view.backgroundColor = .backgroundColor
         
         //MARK: ScrollView

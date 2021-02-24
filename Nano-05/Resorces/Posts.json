@@ -1,6 +1,6 @@
 [
     {
-        "id": 11,
+        "id": 10,
         "title": "Titulo 01",
         "info":[
             {
@@ -14,5 +14,15 @@
             ],
         "link": "http://www.apple.com",
         "linkHint": "LinkHint1"
+    },
+    {
+        "id": 11,
+        "title": "Titulo 01",
+        "info":[
+            {
+                "title": "",
+                "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
+            }
+            ]
     }
 ]

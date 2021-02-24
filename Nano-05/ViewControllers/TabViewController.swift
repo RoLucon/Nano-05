@@ -27,6 +27,10 @@ class TabViewController: UIViewController, UITableViewDelegate {
         traitCollectionDidChange(UITraitCollection())
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .accentColor
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryColor]
+        
+        view.backgroundColor = .backgroundColor
         
         guard let stringId = tabId else { return }
         
@@ -41,25 +45,25 @@ class TabViewController: UIViewController, UITableViewDelegate {
         title = currentTab.title
         
         //MARK: ScrollView
-        scrollView.backgroundColor = .gray
+        scrollView.backgroundColor = .backgroundColor
         scrollView.delegate = self
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 8),
-            scrollView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -8),
+            scrollView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 0),
+            scrollView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: 0),
             scrollView.topAnchor.constraint(equalTo: safeGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor)
         ])
         
         //MARK: - Text View
-        textView.backgroundColor = .white
+        textView.backgroundColor = .secBackgroundColor
         textView.clipsToBounds = true;
         textView.layer.cornerRadius = 10;
         textView.isScrollEnabled = false
         textView.isEditable = false
-        
+
         scrollView.addSubview(textView)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,10 +77,15 @@ class TabViewController: UIViewController, UITableViewDelegate {
         
         textView.text = currentTab.text
         
-        //MARK: - List TableView
+        //MARK: - List / TableView
 
-        tableView.layer.cornerRadius = 10;
-
+//        tableView.layer.cornerRadius = 10;
+        let px = 1 / UIScreen.main.scale
+        let frame = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: px)
+        let line = UIView(frame: frame)
+        self.tableView.tableHeaderView = line
+        line.backgroundColor = self.tableView.separatorColor
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
@@ -89,8 +98,8 @@ class TabViewController: UIViewController, UITableViewDelegate {
         tableView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-            tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+            tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
             tableView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 32),
             tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32),
         ])

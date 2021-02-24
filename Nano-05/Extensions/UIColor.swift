@@ -11,4 +11,5 @@ extension UIColor {
     static let backgroundColor = UIColor(named: "BackgroundColor")
     static let secBackgroundColor = UIColor(named: "SecBackgroundColor")
     static let accentColor = UIColor(named: "AccentColor")
+    static let primaryColor = UIColor(named: "PrimaryColor")
 }
