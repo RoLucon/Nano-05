@@ -144,7 +144,6 @@ extension TabViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tab: \(tabId), Row: \(indexPath.row - 1)")
         let value = tabId + "\(indexPath.row)"
         let loadVC = PostViewController()
         
@@ -162,10 +161,6 @@ extension TabViewController: UITableViewDataSource {
             loadVC.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(loadVC, animated: true)
         }
-        
-        
-        
-        
     }
 }
 
