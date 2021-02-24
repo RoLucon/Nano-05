@@ -154,7 +154,7 @@ extension TabViewController: UITableViewDataSource {
         loadVC.setPost(post)
         
         if post.modal == "sheet" {
-            loadVC.modalPresentationStyle = .formSheet
+            loadVC.modalPresentationStyle = .pageSheet
             present(loadVC, animated: true)
             
         } else {

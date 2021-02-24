@@ -12,6 +12,8 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     private var post: Post?
     
+    private let titleLabel = UILabel()
+    
     private let scrollView = UIScrollView()
     
     private var stackView = UIStackView()
@@ -28,6 +30,62 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryColor]
         view.backgroundColor = .backgroundColor
         
+        let topAncor: NSLayoutYAxisAnchor
+        //MARK: - Header if style == Sheet
+        if modalPresentationStyle == .pageSheet {
+            
+            print("Page Sheet")
+            
+            let headerView = UIView()
+            headerView.backgroundColor = .secBackgroundColor
+            
+            view.addSubview(headerView)
+            
+            headerView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                headerView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 0),
+                headerView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: 0),
+                headerView.topAnchor.constraint(equalTo: safeGuide.topAnchor),
+                headerView.heightAnchor.constraint(equalToConstant: 55)
+            ])
+            
+            titleLabel.textAlignment = .center
+            titleLabel.font = .preferredFont(forTextStyle: .headline)
+            headerView.addSubview(titleLabel)
+            
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
+                titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
+                titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor),
+                titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
+            ])
+            
+            let cancelBtt = UIButton()
+            
+            cancelBtt.setTitle("OK", for: .normal)
+            cancelBtt.setTitleColor(.accentColor, for: .normal)
+            
+            cancelBtt.addTarget(self, action: #selector(dismissC), for: .touchUpInside)
+            
+            headerView.addSubview(cancelBtt)
+            
+            cancelBtt.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                cancelBtt.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+                cancelBtt.topAnchor.constraint(equalTo: headerView.topAnchor),
+                cancelBtt.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
+                cancelBtt.widthAnchor.constraint(equalToConstant: 44),
+            ])
+            
+            topAncor = headerView.bottomAnchor
+        } else {
+            topAncor = safeGuide.topAnchor
+        }
+        
         //MARK: ScrollView
         scrollView.backgroundColor = .backgroundColor
         scrollView.delegate = self
@@ -40,7 +98,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 0),
             scrollView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: 0),
-            scrollView.topAnchor.constraint(equalTo: safeGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: topAncor),
             scrollView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor)
         ])
         
@@ -49,7 +107,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         stackView.clipsToBounds = true;
         stackView.layer.cornerRadius = 10;
         
-        stackView.backgroundColor = .secBackgroundColor
+        stackView.backgroundColor = modalPresentationStyle == .pageSheet ? .backgroundColor : .secBackgroundColor
         
         stackView.alignment = .fill
         
@@ -77,6 +135,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         textView.translatesAutoresizingMaskIntoConstraints = false
         
         update()
+        titleLabel.text = title
     }
     
     //MARK: - UPDATE
@@ -133,7 +192,6 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             button.heightAnchor.constraint(equalToConstant: size)
         ])
         
-        
     }
     //MARK: - Btt Click
     @objc fileprivate func moreInfos(sender: UIButton){
@@ -177,6 +235,10 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             attributedString.addAttributes(boldFontAttribute, range: NSRange(fullString.range(of: string) ?? fullString.startIndex..<fullString.endIndex, in: fullString))
         }
         return attributedString
+    }
+    
+    @objc private func dismissC(){
+        self.dismiss(animated: true)
     }
 }
 
