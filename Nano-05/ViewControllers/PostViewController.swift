@@ -24,9 +24,12 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .accentColor
+        
+        view.backgroundColor = .backgroundColor
+        
         //MARK: ScrollView
-        scrollView.backgroundColor = .gray
+        scrollView.backgroundColor = .backgroundColor
         scrollView.delegate = self
         scrollView.layer.cornerRadius = 10;
         
@@ -46,43 +49,33 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         stackView.clipsToBounds = true;
         stackView.layer.cornerRadius = 10;
         
-        stackView.backgroundColor = .white
+        stackView.backgroundColor = .secBackgroundColor
         
         stackView.alignment = .fill
-        //        stackView.spacing = 16
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 8, bottom: 32, right: 8)
+        
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 40, right: 16)
         stackView.isLayoutMarginsRelativeArrangement = true
         scrollView.addSubview(stackView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            //            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 8),
-            //            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 8),
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32)
+                        stackView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 16),
+                        stackView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -16),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -40)
         ])
         
         //MARK: - TextView
-        textView.backgroundColor = .white
-        //        textView.clipsToBounds = true;
-        //        textView.layer.cornerRadius = 10;
+        textView.backgroundColor = .clear
         textView.isScrollEnabled = false
         textView.isEditable = false
-        
+        textView.textContainer.lineFragmentPadding = 0
+        textView.textContainerInset = .zero
         stackView.addArrangedSubview(textView)
-        //        stackView.addArrangedSubview(button)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            textView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 32),
-            textView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -32),
-            //            textView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 16),
-            //          textView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -32),
-            //          textView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32)
-        ])
-        //        button.isHidden = true
         update()
     }
     
@@ -116,28 +109,28 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         guard let link = post.link else { return }
         
-        if button.isSelected {
-            button.backgroundColor = UIColor(named: "AccentColor")?.withAlphaComponent(0.5)
-        } else {
-            button.backgroundColor = UIColor(named: "AccentColor")
-        }
+        button.backgroundColor = .accentColor
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
         
         button.titleLabel?.textColor = .white
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.font = .preferredFont(forTextStyle: .body)
         
         button.setTitle("Mais informações", for: .normal)
         button.addTarget(self, action: #selector(moreInfos), for: .touchUpInside)
-        
         
         stackView.addArrangedSubview(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
+        let aux = button.intrinsicContentSize.height > 68 ? 40 : 16
+        let size: CGFloat = max(55, button.intrinsicContentSize.height +  CGFloat(aux))
+        
+        button.removeConstraints(button.constraints)
+        
         NSLayoutConstraint.activate([
-//            button.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 40),
-//            button.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -40),
-            button.heightAnchor.constraint(equalToConstant: 55)
+            button.heightAnchor.constraint(equalToConstant: size)
         ])
         
         
