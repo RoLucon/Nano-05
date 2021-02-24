@@ -89,6 +89,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
+        
         tableView.rowHeight = UITableView.automaticDimension
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
@@ -115,6 +116,12 @@ class TabViewController: UIViewController, UITableViewDelegate {
         } else {
             tableViewHeight = tableView.heightAnchor.constraint(equalToConstant: tableView.contentSize.height)
             tableViewHeight?.isActive = true
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let row = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: row, animated: true)
         }
     }
 }
