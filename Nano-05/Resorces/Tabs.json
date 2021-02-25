@@ -1,0 +1,71 @@
+[
+    {
+        "id": 1,
+        "title": "Tab Title",
+        "text": "Texto da Tab",
+        "listItens": [
+            {
+                "title": "List Item Title",
+                "idRef": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Prevenção",
+        "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
+        "listItens": [
+            {
+                "title": "Formas de Contágio",
+                "idRef": 20
+            },
+            {
+                "title": "Profilaxia pré exposição (PrEP)",
+                "idRef": 21
+            },
+            {
+                "title": "Profilaxia pós exposição (PEP)",
+                "idRef": 22
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Testes",
+        "text": "Conhecer o quanto antes a sorologia positiva para o HIV aumenta muito a expectativa de vida de uma pessoa que vive com o vírus. Quem se testa com regularidade, busca tratamento no tempo certo e segue as recomendações da equipe de saúde ganha muito em qualidade de vida.\n\nAlém disso, as mães que vivem com HIV têm 99% de chance de terem filhos sem o HIV se seguirem o tratamento recomendado durante o pré-natal, parto e pós-parto.",
+        "listItens": [
+            {
+                "title": "Como Funciona?",
+                "idRef": 30,
+                "titleHint": "Clique para saber como funcionam os Testes."
+            },
+            {
+                "title": "Por que fazer?",
+                "idRef": 31,
+                "titleHint": "Clique para saber por que fazer os Testes."
+            },
+            {
+                "title": "Quando fazer?",
+                "idRef": 32,
+                "titleHint": "Clique para saber quando fazer os Testes."
+            },
+            {
+                "title": "Onde fazer?",
+                "idRef": 33,
+                "titleHint": "Clique para saber onde fazer os Testes."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Cuidados",
+        "text": "A qualquer indício ou suspeita de infecção pelo vírus HIV, é necessário buscar aconselhamento médico. Quanto antes ocorrer o diagnóstico e começar o tratamento antirretroviral, maiores as chances de conseguir levar uma vida saudável, com maior expectativa de vida, sem desenvolver a AIDS, e com menores chances até de transmitir o vírus sexualmente.",
+        "listItens": [
+            {
+                "title": "HIV e Tuberculose",
+                "idRef": 40,
+                "titleHint": "Clique para saber mais sobre a relação do HIV e a Tuberculose."
+            }
+        ]
+    }
+]
