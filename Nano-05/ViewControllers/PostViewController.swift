@@ -32,7 +32,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         let topAncor: NSLayoutYAxisAnchor
         //MARK: - Header if style == Sheet
-        if modalPresentationStyle == .pageSheet {
+        if modalPresentationStyle == .popover {
             
             let headerView = UIView()
             headerView.backgroundColor = .secBackgroundColor
@@ -128,6 +128,9 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         textView.isEditable = false
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = .zero
+        
+        textView.accessibilityTraits = .staticText
+        
         stackView.addArrangedSubview(textView)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -176,6 +179,9 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         button.setTitle("Mais informações", for: .normal)
         button.addTarget(self, action: #selector(moreInfos), for: .touchUpInside)
+        
+        button.accessibilityLabel = "Mais informações"
+        button.accessibilityHint = post.linkHint
         
         stackView.addArrangedSubview(button)
         

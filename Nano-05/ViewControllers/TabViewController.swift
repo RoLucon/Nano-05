@@ -145,7 +145,7 @@ extension TabViewController: UITableViewDataSource {
         } else {
             cell.accessibilityHint = "Clique para ver mais sobre \(currentTab.listItens[indexPath.row].title) "
         }
-        cell.accessibilityValue = "\(indexPath.row) de \(currentTab.listItens.count)"
+        cell.accessibilityValue = "Botão \(indexPath.row) de \(currentTab.listItens.count)"
         cell.accessoryType =  UITableViewCell.AccessoryType.disclosureIndicator
 
         return cell
@@ -162,7 +162,7 @@ extension TabViewController: UITableViewDataSource {
         loadVC.setPost(post)
         
         if post.modal == "sheet" {
-            loadVC.modalPresentationStyle = .pageSheet
+            loadVC.modalPresentationStyle = .popover
             present(loadVC, animated: true)
             
         } else {

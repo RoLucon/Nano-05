@@ -22,9 +22,7 @@
             "text": "Procure um profissional de saúde e informe-se para saber se você tem indicação para PrEP. Na PrEP, você deve tomar o medicamento todos os dias, fazer exames regulares e buscar sua medicação gratuitamente a cada três meses.",
         }
     ],
-    "modal": "sheet",
-    "link": "http://www.aids.gov.br/pt-br/acesso_a_informacao/servicos-de-saude/prep",
-    "linkHint": "Link para site do ministerio da saude"
+    "modal": "sheet"
 },
 {
     "id": 22,
@@ -80,7 +78,9 @@
             "text": "O SUS disponibiliza gratuitamente o teste de HIV, sífilis e hepatites B e C. Procure uma unidade básica de saúde da rede pública ou os Centros de Testagem e Aconselhamento (CTA).\n\nVeja a lista de serviços aqui.\n\nOs exames podem ser feitos de forma anônima.\n\nNos CTA, além da coleta e da execução dos testes, há um processo de aconselhamento, para facilitar a correta interpretação do resultado pelo(a) usuário(a). Também é possível saber onde fazer o teste pelo Disque Saúde (136).\n\nAlém da rede de serviços de saúde, você também pode fazer o teste de HIV por meio de uma Organização da Sociedade Civil, pelo Programa Viva Melhor Sabendo.\n\nProcure um profissional de saúde e informe-se sobre os testes.",
         }
     ],
-    "modal": "fullscreen"
+    "modal": "fullscreen",
+    "link": "http://www.aids.gov.br/pt-br/acesso_a_informacao/servicos-de-saude/prep",
+    "linkHint": "Link para site do ministerio da saude"
 },
 {
     "id": 40,
