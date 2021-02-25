@@ -28,6 +28,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.tintColor = .accentColor
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryColor]
+        
         view.backgroundColor = .backgroundColor
         
         let topAncor: NSLayoutYAxisAnchor
@@ -47,24 +48,31 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                 headerView.topAnchor.constraint(equalTo: safeGuide.topAnchor),
                 headerView.heightAnchor.constraint(equalToConstant: 55)
             ])
-            
+    
             titleLabel.textAlignment = .center
-            titleLabel.font = .preferredFont(forTextStyle: .headline)
+            titleLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: .preferredFont(forTextStyle: .headline), maximumPointSize: 21)
+            
+            titleLabel.adjustsFontForContentSizeCategory = true
             headerView.addSubview(titleLabel)
             
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
-                titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
+                titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 50),
+                titleLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -66),
                 titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor),
                 titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
             ])
-            
+        
             let cancelBtt = UIButton()
             
             cancelBtt.setTitle("OK", for: .normal)
+            cancelBtt.isAccessibilityElement = true
+            cancelBtt.accessibilityLabel = "Voltar"
+            cancelBtt.accessibilityHint = "Fecha a janela e volta para tela anterior"
             cancelBtt.setTitleColor(.accentColor, for: .normal)
+            cancelBtt.titleLabel?.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: .preferredFont(forTextStyle: .headline), maximumPointSize: 21)
+            cancelBtt.titleLabel?.adjustsFontForContentSizeCategory = true
             
             cancelBtt.addTarget(self, action: #selector(dismissC), for: .touchUpInside)
             
