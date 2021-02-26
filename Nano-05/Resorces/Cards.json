@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "imageName": "seila",
+        "text": "Primeira pergunta",
+        "answer": "Primeira resposta"
+    },
+    {
+        "id": 2,
+        "imageName": "seila",
+        "text": "Segunda pergunta",
+        "answer": "Segunda resposta"
+    },
+    {
+        "id": 3,
+        "imageName": "seila",
+        "text": "Terceira pergunta",
+        "answer": "Terceira resposta"
+    },
+    {
+        "id": 4,
+        "imageName": "seila",
+        "text": "Quarta pergunta",
+        "answer": "Quarta resposta"
+    }
+]
