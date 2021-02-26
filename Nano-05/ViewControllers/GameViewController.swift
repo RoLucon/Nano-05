@@ -43,10 +43,13 @@ class GameViewController: UIViewController {
         
         textView.backgroundColor = .secBackgroundColor
         
+        textView.adjustsFontForContentSizeCategory = true
+        textView.font = .preferredFont(forTextStyle: .body)
+        
         gesture.addTarget(self, action: #selector(swipeCard))
         
         rightButton.addTarget(self, action: #selector(rightButtonClick), for: .touchUpInside)
-        
+ 
         leftButton.addTarget(self, action: #selector(leftButtonClick), for: .touchUpInside)
         
         showAnswersBtt.addTarget(self, action: #selector(nextQuestion), for: .touchUpInside)
@@ -54,6 +57,8 @@ class GameViewController: UIViewController {
         nextQuestionBtt.addTarget(self, action: #selector(nextQuestion), for: .touchUpInside)
         
         nextQuestionBtt.isHidden = true
+        
+        setupAccessibility()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,30 +66,37 @@ class GameViewController: UIViewController {
     }
     
     private func addCard() {
-        let viewCard = UIView()
-        viewCard.frame = CGRect(x: 0, y: 0, width: mainView.frame.width - 32, height: mainView.frame.height - 32)
-        viewCard.center = mainView.center
-        viewCard.backgroundColor = .blue
-        viewCard.clipsToBounds = true
-        viewCard.layer.cornerRadius = 10
+//        let viewCard = UIView()
+//        viewCard.frame = CGRect(x: 0, y: 0, width: mainView.frame.width - 32, height: mainView.frame.height - 32)
+//        viewCard.center = (mainView.superview?.convert(mainView.center, to: nil))!
+//        viewCard.backgroundColor = .blue
+//        viewCard.clipsToBounds = true
+//        viewCard.layer.cornerRadius = 10
+//        viewCard.addGestureRecognizer(gesture)
+//        view.addSubview(viewCard)
+//
+//        print(viewCard.center)
+//        print(mainView.center)
+//
+//        currentCard = viewCard
+        textView.addBoldText(fullString: cards[currentAswer].text, boldPartOfString: [cards[currentAswer].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
         
-        view.addSubview(viewCard)
-        
-        currentCard = viewCard
-        textView.text = cards[currentAswer].text
+        updateAccessibility()
     }
     
     private func showAnswer() {
+        
         if !answerOpen {
             answerOpen = !answerOpen
             buttonStackVew.isHidden = true
             showAnswersBtt.isHidden = true
             nextQuestionBtt.isHidden = false
             //Seta o texto
-            textView.text.append(cards[currentAswer].answer)
+            let fullString = cards[currentAswer].text + "\n\n" + cards[currentAswer].answer
+            textView.addBoldText(fullString: fullString, boldPartOfString: [cards[currentAswer].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
             UIView.transition(with: mainStackView, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
             UIView.transition(with: mainView, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
-            UIView.transition(with: currentCard, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
+//            UIView.transition(with: currentCard, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
             
         } else {
             answerOpen = !answerOpen
@@ -95,12 +107,26 @@ class GameViewController: UIViewController {
             //Passa o card
             UIView.transition(with: mainStackView, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
             UIView.transition(with: mainView, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
-            UIView.transition(with: currentCard, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+//            UIView.transition(with: currentCard, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
         }
+        updateAccessibility()
+        UIAccessibility.post(notification: .screenChanged, argument: "mainView")
     }
     
     private func changeCard() {
-        textView.text = card[currentAswer].text
+        textView.addBoldText(fullString: cards[currentAswer].text, boldPartOfString: [cards[currentAswer].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
+        updateAccessibility()
+    }
+    
+    private func concludeGame() {
+        let loadVC = PostViewController()
+        guard let post = postById(20) else {
+            fatalError("Impossivel redirecionar. Post não encontrado.")
+        }
+        loadVC.setPost(post)
+        loadVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(loadVC, animated: true)
+        self.dismiss(animated: false, completion: nil)
     }
     
     //MARK: - Actions
@@ -109,19 +135,19 @@ class GameViewController: UIViewController {
         if currentAswer + 1 < cards.count {
             currentAswer += 1
         } else {
-            //Finaliza
+            concludeGame()
         }
-        
         showAnswer()
     }
     
-    @objc func rightButtonClick(_ sender: UIButton) {
+    @objc func rightButtonClick(_ sender: UIButton?) {
         showAnswer()
     }
     
-    @objc func leftButtonClick(_ sender: UIButton) {
+    @objc func leftButtonClick(_ sender: UIButton?) {
         showAnswer()
     }
+    
     //Desativado
     @objc func swipeCard(_ sender: UIPanGestureRecognizer) {
         guard let card = sender.view else { return }
@@ -174,9 +200,68 @@ class GameViewController: UIViewController {
             }
             
             UIView.animate(withDuration: 0.2) {
-                card.center = self.mainView.center
+                card.center = (self.mainView.superview?.convert(self.mainView.center, to: nil))!
                 card.transform = .identity
             }
         }
     }
+    
+    //MARK: - ACCESSIBILITY
+    
+//    override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
+//        get {
+//            let actions = [UIAccessibilityCustomAction]()
+//            let myAction = UIAccessibilityCustomAction(name: "Pega", target: self, selector: #selector(leftButtonClick(_:)))
+//        }
+//        set {
+//
+//        }
+//    }
+    
+    override func accessibilityActivate() -> Bool {
+
+        return true
+    }
+    
+    private func setupAccessibility() {
+//        let pega = UIAccessibilityCustomAction(name: "Pega", target: self, selector: #selector(leftButtonClick(_:)))
+//        let naoPega = UIAccessibilityCustomAction(name: "Não Pega", target: self, selector: #selector(rightButtonClick(_:)))
+//        let showAnserCustomAction = UIAccessibilityCustomAction(name: "Ver Resposta", target: self, selector: #selector(nextQuestion))
+        
+//        accessibilityElements = [mainView]
+//        let container = UIAccessibilityElement(accessibilityContainer: [mainView, leftButton, rightButton])
+//        container.accessibilityLabel = "Accessibility container"
+        mainView.isAccessibilityElement = true
+        mainView.accessibilityIdentifier = "mainView"
+        
+        leftButton.isAccessibilityElement = false
+        rightButton.isAccessibilityElement = false
+        showAnswersBtt.isAccessibilityElement = false
+//
+        mainView.accessibilityLabel = textView.text
+        mainView.accessibilityHint = "Descriçao da imagem"
+//        mainView.accessibilityCustomActions = [pega, naoPega, showAnserCustomAction]
+        
+    }
+    
+    private func updateAccessibility() {
+        
+        let pega = UIAccessibilityCustomAction(name: "Pega", target: self, selector: #selector(leftButtonClick(_:)))
+        let naoPega = UIAccessibilityCustomAction(name: "Não Pega", target: self, selector: #selector(rightButtonClick(_:)))
+        let showAnserCustomAction = UIAccessibilityCustomAction(name: "Ver Resposta", target: self, selector: #selector(nextQuestion))
+        let nextAnserCustomAction = UIAccessibilityCustomAction(name: "Proxima pergunta", target: self, selector: #selector(nextQuestion))
+        
+        if answerOpen {
+            print("Remove actions?")
+            mainView.accessibilityCustomActions = [nextAnserCustomAction]
+        } else {
+            
+            mainView.accessibilityCustomActions = [pega, naoPega, showAnserCustomAction]
+        }
+        
+        mainView.accessibilityLabel = textView.text
+        mainView.accessibilityHint = "Descriçao da imagem"
+    }
 }
+
+

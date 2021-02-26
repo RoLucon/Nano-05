@@ -17,20 +17,44 @@ class MyButton: UIButton {
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        setup()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setup()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setup()
+        titleLabel?.preferredMaxLayoutWidth = self.titleLabel!.frame.size.width
+        
+        
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        let size = self.titleLabel!.intrinsicContentSize
+        return CGSize(width: size.width + contentEdgeInsets.left + contentEdgeInsets.right, height: size.height + contentEdgeInsets.top + contentEdgeInsets.bottom)
     }
     
     fileprivate func setup() {
+        traitCollectionDidChange(UITraitCollection())
+        
+        self.adjustsImageSizeForAccessibilityContentSizeCategory = true
+        
         self.clipsToBounds = true
         self.layer.cornerRadius = 10
+        
+        self.titleLabel?.numberOfLines = 0
+        self.titleLabel?.textAlignment = .center
+        self.setContentHuggingPriority(UILayoutPriority.defaultLow + 1, for: .vertical)
+        self.setContentHuggingPriority(UILayoutPriority.defaultLow + 1, for: .horizontal)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.layoutIfNeeded()
+        self.titleLabel?.font = .preferredFont(forTextStyle: .body)
+        self.setNeedsUpdateConstraints()
     }
 }
 
@@ -40,6 +64,7 @@ class RedButton: MyButton {
         super.setup()
         self.backgroundColor = .accentColor
         self.setTitleColor(.white, for: .normal)
+        
     }
     
 }
