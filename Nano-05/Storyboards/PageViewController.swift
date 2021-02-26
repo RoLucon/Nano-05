@@ -30,20 +30,20 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         }
         
         self.delegate = self
-        configurePageControl()
+//        configurePageControl()
 
         // Do any additional setup after loading the view.
     }
     
-    func configurePageControl() {
-        pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 100, width: UIScreen.main.bounds.width, height: 50))
-        pageControl.numberOfPages = orderedViewControllers.count
-        pageControl.currentPage = 0
-        pageControl.tintColor = UIColor.black
-        pageControl.pageIndicatorTintColor = UIColor.white
-        pageControl.currentPageIndicatorTintColor = UIColor.black
-        self.view.addSubview(pageControl)
-    }
+//    func configurePageControl() {
+//        pageControl = UIPageControl(frame: CGRect(x: 0, y: UIScreen.main.bounds.maxY - 100, width: UIScreen.main.bounds.width, height: 50))
+//        pageControl.numberOfPages = orderedViewControllers.count
+//        pageControl.currentPage = 0
+//        pageControl.tintColor = UIColor.black
+//        pageControl.pageIndicatorTintColor = UIColor.white
+//        pageControl.currentPageIndicatorTintColor = UIColor.black
+//        self.view.addSubview(pageControl)
+//    }
     
     func newVc(viewController: String) -> UIViewController {
         return UIStoryboard(name: "Intro", bundle: nil).instantiateViewController(withIdentifier: viewController)
