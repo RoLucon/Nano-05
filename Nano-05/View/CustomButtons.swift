@@ -54,6 +54,7 @@ class MyButton: UIButton {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.layoutIfNeeded()
         self.titleLabel?.font = .preferredFont(forTextStyle: .body)
+        sizeToFit()
         self.setNeedsUpdateConstraints()
     }
 }

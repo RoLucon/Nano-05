@@ -45,7 +45,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="55" id="4IE-qR-7q6"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="55" id="4IE-qR-7q6"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <userDefinedRuntimeAttributes>
@@ -56,7 +56,7 @@
                                                         <rect key="frame" x="183" y="0.0" width="167" height="55"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="55" id="mHg-dB-Wzm"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="mHg-dB-Wzm"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <userDefinedRuntimeAttributes>
@@ -69,7 +69,7 @@
                                                 <rect key="frame" x="16" y="663" width="350" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="99B-WE-EZD"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="99B-WE-EZD"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <userDefinedRuntimeAttributes>
@@ -80,7 +80,7 @@
                                                 <rect key="frame" x="16" y="734" width="350" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="e8i-bt-2Kb"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="e8i-bt-2Kb"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <userDefinedRuntimeAttributes>
