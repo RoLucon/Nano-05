@@ -16,7 +16,10 @@ struct Post: Identifiable, Decodable {
     var modal: String
     
     var link: String?
+    var linkTitle: String?
     var linkHint: String?
+    
+    var redirect:[Redirect]?
 }
 
 struct Info: Decodable {
@@ -25,4 +28,11 @@ struct Info: Decodable {
     var text: String
     
     
+}
+
+struct Redirect: Decodable {
+    let title: String
+    let hint: String
+    let storyboard: String?
+    let postId: Int?
 }

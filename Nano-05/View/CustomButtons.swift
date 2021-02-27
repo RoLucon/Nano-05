@@ -57,6 +57,7 @@ class MyButton: UIButton {
         sizeToFit()
         self.setNeedsUpdateConstraints()
     }
+    
 }
 
 class RedButton: MyButton {

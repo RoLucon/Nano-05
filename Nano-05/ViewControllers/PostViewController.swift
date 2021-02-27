@@ -22,6 +22,8 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     private let button = RedButton()
     
+    private var actions: [Action] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -112,7 +114,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         stackView.axis = .vertical
         stackView.clipsToBounds = true;
         stackView.layer.cornerRadius = 10;
-        
+        stackView.spacing = 16
         stackView.backgroundColor = modalPresentationStyle == .pageSheet ? .backgroundColor : .secBackgroundColor
         
         stackView.alignment = .fill
@@ -144,6 +146,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         textView.translatesAutoresizingMaskIntoConstraints = false
         
         update()
+        
         titleLabel.text = title
     }
     
@@ -175,36 +178,73 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         textView.attributedText = addBoldText(fullString: text, boldPartOfString: title, baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
         
-        guard let link = post.link else { return }
+        addButtonsIfNeed(post)
+    }
+    
+    //MARK: - ADD Buttons
+    
+    private func addButtonsIfNeed(_ post: Post){
+        if post.link != nil {
         
-//        button.backgroundColor = .accentColor
-//        button.clipsToBounds = true
-//        button.layer.cornerRadius = 10
-//
-//        button.titleLabel?.textColor = .white
-//        button.titleLabel?.numberOfLines = 0
-//        button.titleLabel?.font = .preferredFont(forTextStyle: .body)
-        
-        button.setTitle("Mais informações", for: .normal)
+        button.setTitle(post.linkTitle, for: .normal)
         button.addTarget(self, action: #selector(moreInfos), for: .touchUpInside)
         
-        button.accessibilityLabel = "Mais informações"
+        button.accessibilityLabel = post.linkTitle
         button.accessibilityHint = post.linkHint
         
         stackView.addArrangedSubview(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
-//        let aux = button.intrinsicContentSize.height > 68 ? 40 : 16
-//        let size: CGFloat = max(55, button.intrinsicContentSize.height +  CGFloat(aux))
-        
         button.removeConstraints(button.constraints)
         
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 55)
+            button.heightAnchor.constraint(greaterThanOrEqualToConstant: 55)
         ])
+        button.sizeToFit()
+        }
+
+        guard let redirects = post.redirect else { return }
         
+        for redirect in redirects {
+            let button = RedButton()
+            
+            let actio = Action {
+                if let storyboardName = redirect.storyboard {
+                    let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+                    let vc = storyboard.instantiateInitialViewController()
+                    self.navigationController?.pushViewController(vc!, animated: true)
+                    return
+                }
+                
+                if let postId = redirect.postId {
+                    guard let nextPost = postById(postId) else { return }
+                    let vc = PostViewController()
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.setPost(nextPost)
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    return
+                }
+            }
+            actions.append(actio)
+            button.setTitle(redirect.title, for: .normal)
+            button.addTarget(self, action: #selector(dynamicActions), for: .touchUpInside)
+            button.tag = actions.count - 1
+            button.accessibilityLabel = redirect.title
+            button.accessibilityHint = redirect.hint
+            
+            stackView.addArrangedSubview(button)
+            
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                button.heightAnchor.constraint(greaterThanOrEqualToConstant: 55)
+            ])
+
+        }
     }
+    
+    
     //MARK: - Btt Click
     @objc fileprivate func moreInfos(sender: UIButton){
         guard let link = post?.link else { return }
@@ -214,6 +254,10 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             
             self.present(vc, animated: true)
         }
+    }
+    
+    @objc func dynamicActions(_ sender: UIButton){
+        actions[sender.tag].action()
     }
     
     //Animaçao do Click
@@ -261,4 +305,17 @@ extension PostViewController {
         update()
     }
     
+}
+
+final class Action: NSObject {
+    private let _action: () -> ()
+
+        init(action: @escaping () -> ()) {
+            _action = action
+            super.init()
+        }
+
+        @objc func action() {
+            _action()
+        }
 }
