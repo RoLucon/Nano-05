@@ -5,8 +5,12 @@
         "text": "Texto da Tab",
         "listItens": [
             {
-                "title": "List Item Title",
-                "idRef": 1
+                "title": "Outras ISTs",
+                "idRef": 10
+            },
+            {
+                "title": "Fontes",
+                "idRef": 11
             }
         ]
     },

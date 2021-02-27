@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85E0CD8625E96BFC00ED6D59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0CD8525E96BFC00ED6D59 /* HomeViewController.swift */; };
 		89256B4825DEE0FC00E567F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89256B4725DEE0FC00E567F0 /* AppDelegate.swift */; };
 		89256B4A25DEE0FC00E567F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89256B4925DEE0FC00E567F0 /* SceneDelegate.swift */; };
 		89256B4C25DEE0FC00E567F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89256B4B25DEE0FC00E567F0 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85E0CD8525E96BFC00ED6D59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		89256B4425DEE0FC00E567F0 /* Nano-05.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano-05.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89256B4725DEE0FC00E567F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89256B4925DEE0FC00E567F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				89282A7F25E07A1C00FE2029 /* TabViewController.swift */,
 				89908C8525E5869E00B8BEFD /* PostViewController.swift */,
+				85E0CD8525E96BFC00ED6D59 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				89256B4C25DEE0FC00E567F0 /* ViewController.swift in Sources */,
 				89282A7B25E05B2700FE2029 /* Data.swift in Sources */,
 				89282A7725E05A8800FE2029 /* Post.swift in Sources */,
+				85E0CD8625E96BFC00ED6D59 /* HomeViewController.swift in Sources */,
 				89256B4825DEE0FC00E567F0 /* AppDelegate.swift in Sources */,
 				89256B4A25DEE0FC00E567F0 /* SceneDelegate.swift in Sources */,
 				89908C8F25E6C3FC00B8BEFD /* UIColor.swift in Sources */,
