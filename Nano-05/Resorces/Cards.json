@@ -1,26 +1,44 @@
 [
     {
         "id": 1,
-        "imageName": "seila",
-        "text": "Primeira pergunta",
-        "answer": "Primeira resposta"
+        "imageName": "frutas-s-camisinha",
+        "text": "Sexo (seja oral, vaginal ou anal) sem proteção",
+        "answer": "PEGA: O contato direto com fluídos vaginais, sêmen e feridas genitais é uma das formas de contágio. Apenas a camisinha pode proteger contra HIV e demais ISTs."
     },
     {
         "id": 2,
-        "imageName": "seila",
-        "text": "Segunda pergunta",
-        "answer": "Segunda resposta"
+        "imageName": "objetos-cortantes-perfurantes",
+        "text": "Compartilhamento de seringa e objetos cortantes/perfurantes",
+        "answer": "PEGA: O contato com o sangue contaminado pode transmitir o vírus do HIV. Certifique-se sempre de usar objetos novos e/ou esterilizados."
     },
     {
         "id": 3,
-        "imageName": "seila",
-        "text": "Terceira pergunta",
-        "answer": "Terceira resposta"
+        "imageName": "mascara",
+        "text": "Respirar o mesmo ar que uma pessoa soropositivo",
+        "answer": "NÃO PEGA: O HIV não é um vírus que se contrai através da respiração ou de gotículas, portanto não é possível pegar HIV no ar."
     },
     {
         "id": 4,
-        "imageName": "seila",
-        "text": "Quarta pergunta",
-        "answer": "Quarta resposta"
+        "imageName": "bolsa-sangue",
+        "text": "Transfusão de sangue",
+        "answer": "PEGA: A transfusão de sangue contaminado pode passar HIV, por isso é pedido o teste antes desse procedimento."
+    },
+    {
+        "id": 5,
+        "imageName": "casal-fruta",
+        "text": "Masturbação a dois",
+        "answer": "NÃO PEGA: Contanto que não haja contato com fluidos genitais, se tocar em conjunto está liberado."
+    },
+    {
+        "id": 6,
+        "imageName": "lagrima",
+        "text": "Contato com suor e lágrima",
+        "answer": "NÃO PEGA: O contágio do HIV se dá pelo contato com fluidos genitais e sangue contaminado, portanto suor e lágrimas não transmitem HIV."
+    },
+    {
+        "id": 7,
+        "imageName": "beijo",
+        "text": "Beijo no rosto ou na boca",
+        "answer": "NÃO PEGA: O vírus não fica nos fluidos orais, apenas os anticorpos. Por isso, o exame é feito usando fluidos da boca, mas beijos em geral não transmitem HIV."
     }
 ]
