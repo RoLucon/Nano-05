@@ -21,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-GZ-HOf">
-                                        <rect key="frame" x="16" y="72" width="382" height="829"/>
+                                        <rect key="frame" x="16" y="0.0" width="382" height="829"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stW-Tn-zFC">
                                                 <rect key="frame" x="16" y="10" width="350" height="350"/>
-                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="stW-Tn-zFC" secondAttribute="height" multiplier="1:1" id="nd6-IG-0ng"/>
                                                 </constraints>
@@ -93,7 +93,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="top" secondItem="iOo-pU-rLN" secondAttribute="top" constant="72" id="Orw-rM-FWf"/>
+                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="top" secondItem="dXU-YB-fAK" secondAttribute="top" id="Orw-rM-FWf"/>
                                     <constraint firstItem="UDS-GZ-HOf" firstAttribute="leading" secondItem="iOo-pU-rLN" secondAttribute="leading" constant="16" id="chO-ZT-HST"/>
                                     <constraint firstItem="UDS-GZ-HOf" firstAttribute="width" secondItem="Q4V-0M-XtR" secondAttribute="width" constant="-32" id="mLD-Gz-sVK"/>
                                     <constraint firstItem="UDS-GZ-HOf" firstAttribute="bottom" secondItem="iOo-pU-rLN" secondAttribute="bottom" id="oe7-f4-flO"/>
@@ -138,6 +138,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

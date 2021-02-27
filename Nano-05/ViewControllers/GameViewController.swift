@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         mainStackView.clipsToBounds = true
         mainStackView.layer.cornerRadius = 10
         
-        mainView.backgroundColor = .secBackgroundColor
+        mainView.backgroundColor = .green//.secBackgroundColor
         mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 10
         
