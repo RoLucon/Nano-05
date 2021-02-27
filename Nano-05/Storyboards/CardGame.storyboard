@@ -119,6 +119,7 @@
                         <outlet property="mainView" destination="stW-Tn-zFC" id="Bpp-QA-A0V"/>
                         <outlet property="nextQuestionBtt" destination="3SO-oq-ojG" id="IiE-Zs-y82"/>
                         <outlet property="rightButton" destination="Oaj-3R-iAI" id="W6V-lS-toa"/>
+                        <outlet property="scrollView" destination="dXU-YB-fAK" id="Fp8-Yt-GCv"/>
                         <outlet property="showAnswersBtt" destination="8V4-Aw-ttO" id="pvs-D8-6uz"/>
                         <outlet property="textView" destination="BZd-0e-yem" id="p9e-ko-Dbd"/>
                     </connections>

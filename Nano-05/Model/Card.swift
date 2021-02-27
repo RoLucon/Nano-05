@@ -13,4 +13,5 @@ struct Card:  Identifiable, Decodable {
     let imageName: String
     let text: String
     let answer: String
+    let answerValue: Bool
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var buttonStackVew: UIStackView!
     @IBOutlet weak var mainView: UIView!
@@ -129,6 +130,14 @@ class GameViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    private func feedback(_ flag: Bool) {
+        if card[currentAswer].answerValue == flag {
+            feedbackGenerator(.success)
+        } else {
+            feedbackGenerator(.error)
+        }
+    }
+    
     //MARK: - Actions
     
     @objc func nextQuestion() {
@@ -141,10 +150,12 @@ class GameViewController: UIViewController {
     }
     
     @objc func rightButtonClick(_ sender: UIButton?) {
+        feedback(true)
         showAnswer()
     }
     
     @objc func leftButtonClick(_ sender: UIButton?) {
+        feedback(false)
         showAnswer()
     }
     
@@ -205,18 +216,9 @@ class GameViewController: UIViewController {
             }
         }
     }
-    
+}
     //MARK: - ACCESSIBILITY
-    
-//    override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
-//        get {
-//            let actions = [UIAccessibilityCustomAction]()
-//            let myAction = UIAccessibilityCustomAction(name: "Pega", target: self, selector: #selector(leftButtonClick(_:)))
-//        }
-//        set {
-//
-//        }
-//    }
+extension GameViewController {
     
     override func accessibilityActivate() -> Bool {
 
@@ -224,24 +226,29 @@ class GameViewController: UIViewController {
     }
     
     private func setupAccessibility() {
-//        let pega = UIAccessibilityCustomAction(name: "Pega", target: self, selector: #selector(leftButtonClick(_:)))
-//        let naoPega = UIAccessibilityCustomAction(name: "Não Pega", target: self, selector: #selector(rightButtonClick(_:)))
-//        let showAnserCustomAction = UIAccessibilityCustomAction(name: "Ver Resposta", target: self, selector: #selector(nextQuestion))
-        
-//        accessibilityElements = [mainView]
-//        let container = UIAccessibilityElement(accessibilityContainer: [mainView, leftButton, rightButton])
-//        container.accessibilityLabel = "Accessibility container"
-        mainView.isAccessibilityElement = true
-        mainView.accessibilityIdentifier = "mainView"
+//        mainStackView.isAccessibilityElement = true
+//        mainStackView.shouldGroupAccessibilityChildren = truebil
+//        mainStackView.accessibilityLabel = "\(textView.text)"
         
         leftButton.isAccessibilityElement = false
         rightButton.isAccessibilityElement = false
         showAnswersBtt.isAccessibilityElement = false
-//
-        mainView.accessibilityLabel = textView.text
-        mainView.accessibilityHint = "Descriçao da imagem"
-//        mainView.accessibilityCustomActions = [pega, naoPega, showAnserCustomAction]
+        nextQuestionBtt.isAccessibilityElement = false
+//        mainView.isAccessibilityElement = false
+//        textView.isAccessibilityElement = false
         
+//
+        mainView.accessibilityIdentifier = "mainView"
+        mainView.isAccessibilityElement = true
+        mainView.accessibilityTraits = .image
+        mainView.accessibilityLabel = "Descriçao da imagem"
+        mainView.accessibilityHint = "Interaja para responder a pergunta"
+
+        textView.accessibilityIdentifier = "textView"
+        textView.isAccessibilityElement = true
+        textView.accessibilityLabel = textView.text
+        textView.accessibilityHint = "Interaja com a imagem para responder se Pega ou não Pega HIV de acordo com a afirmaçao"
+        textView.accessibilityValue = ""
     }
     
     private func updateAccessibility() {
@@ -252,15 +259,16 @@ class GameViewController: UIViewController {
         let nextAnserCustomAction = UIAccessibilityCustomAction(name: "Proxima pergunta", target: self, selector: #selector(nextQuestion))
         
         if answerOpen {
-            print("Remove actions?")
-            mainView.accessibilityCustomActions = [nextAnserCustomAction]
+            mainStackView.accessibilityCustomActions = [nextAnserCustomAction]
         } else {
             
-            mainView.accessibilityCustomActions = [pega, naoPega, showAnserCustomAction]
+            mainStackView.accessibilityCustomActions = [pega, naoPega, showAnserCustomAction]
         }
         
-        mainView.accessibilityLabel = textView.text
-        mainView.accessibilityHint = "Descriçao da imagem"
+//        mainStackView.accessibilityLabel = "\(textView.text)"
+        mainView.accessibilityLabel = "Descriçao da imagem"
+        textView.accessibilityLabel = textView.text
+        textView.accessibilityHint = answerOpen ? "Resposta" : "Interaja com a imagem para responder se Pega ou não Pega HIV de acordo com a afirmaçao"
     }
 }
 
