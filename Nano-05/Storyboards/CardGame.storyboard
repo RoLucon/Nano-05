@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tp2-uc-acm">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Formas de Contágio-->
+        <scene sceneID="EXa-Xf-lG4">
+            <objects>
+                <viewController title="Formas de Contágio" id="Tp2-uc-acm" customClass="GameViewController" customModule="Nano_05" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FvQ-VU-edk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXU-YB-fAK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-GZ-HOf">
+                                        <rect key="frame" x="16" y="72" width="382" height="829"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stW-Tn-zFC">
+                                                <rect key="frame" x="16" y="10" width="350" height="350"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="stW-Tn-zFC" secondAttribute="height" multiplier="1:1" id="nd6-IG-0ng"/>
+                                                </constraints>
+                                            </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BZd-0e-yem">
+                                                <rect key="frame" x="16" y="376" width="350" height="200"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6kA-rY-8JC">
+                                                <rect key="frame" x="16" y="592" width="350" height="55"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vy-hB-4VS" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="55"/>
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="55" id="4IE-qR-7q6"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Não Pega"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oaj-3R-iAI" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
+                                                        <rect key="frame" x="183" y="0.0" width="167" height="55"/>
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="mHg-dB-Wzm"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Pega"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V4-Aw-ttO" customClass="PurpleButton" customModule="Nano_05" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="663" width="350" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="99B-WE-EZD"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Ver Resposta"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SO-oq-ojG" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="734" width="350" height="55"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="e8i-bt-2Kb"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Próximo"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <edgeInsets key="layoutMargins" top="10" left="16" bottom="40" right="16"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="top" secondItem="iOo-pU-rLN" secondAttribute="top" constant="72" id="Orw-rM-FWf"/>
+                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="leading" secondItem="iOo-pU-rLN" secondAttribute="leading" constant="16" id="chO-ZT-HST"/>
+                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="width" secondItem="Q4V-0M-XtR" secondAttribute="width" constant="-32" id="mLD-Gz-sVK"/>
+                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="bottom" secondItem="iOo-pU-rLN" secondAttribute="bottom" id="oe7-f4-flO"/>
+                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="trailing" secondItem="iOo-pU-rLN" secondAttribute="trailing" id="sHJ-Hy-STk"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="iOo-pU-rLN"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Q4V-0M-XtR"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vxq-Xf-jTU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dXU-YB-fAK" secondAttribute="bottom" id="EN6-5K-R70"/>
+                            <constraint firstItem="dXU-YB-fAK" firstAttribute="leading" secondItem="Vxq-Xf-jTU" secondAttribute="leading" id="a3m-Ho-yco"/>
+                            <constraint firstItem="dXU-YB-fAK" firstAttribute="top" secondItem="FvQ-VU-edk" secondAttribute="top" id="imw-og-kob"/>
+                            <constraint firstItem="dXU-YB-fAK" firstAttribute="trailing" secondItem="Vxq-Xf-jTU" secondAttribute="trailing" id="pax-LW-twp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonStackVew" destination="6kA-rY-8JC" id="12h-r3-nAL"/>
+                        <outlet property="leftButton" destination="9Vy-hB-4VS" id="rVl-4r-x7A"/>
+                        <outlet property="mainStackView" destination="UDS-GZ-HOf" id="Dwt-Fc-NCc"/>
+                        <outlet property="mainView" destination="stW-Tn-zFC" id="Bpp-QA-A0V"/>
+                        <outlet property="nextQuestionBtt" destination="3SO-oq-ojG" id="IiE-Zs-y82"/>
+                        <outlet property="rightButton" destination="Oaj-3R-iAI" id="W6V-lS-toa"/>
+                        <outlet property="scrollView" destination="dXU-YB-fAK" id="Fp8-Yt-GCv"/>
+                        <outlet property="showAnswersBtt" destination="8V4-Aw-ttO" id="pvs-D8-6uz"/>
+                        <outlet property="textView" destination="BZd-0e-yem" id="p9e-ko-Dbd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ai8-HV-hqD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228.98550724637684" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

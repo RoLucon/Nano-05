@@ -9,4 +9,9 @@ import UIKit
 
 extension UIViewController {
     var safeGuide: UILayoutGuide { self.view.safeAreaLayoutGuide }
+    
+    func feedbackGenerator(_ type: UINotificationFeedbackGenerator.FeedbackType) {
+        let generator = UINotificationFeedbackGenerator()
+        generator.notificationOccurred(type)
+    }
 }
