@@ -20,7 +20,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     private var textView = UITextView()
     
-    private let button = UIButton()
+    private let button = RedButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,13 +177,13 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         guard let link = post.link else { return }
         
-        button.backgroundColor = .accentColor
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 10
-        
-        button.titleLabel?.textColor = .white
-        button.titleLabel?.numberOfLines = 0
-        button.titleLabel?.font = .preferredFont(forTextStyle: .body)
+//        button.backgroundColor = .accentColor
+//        button.clipsToBounds = true
+//        button.layer.cornerRadius = 10
+//
+//        button.titleLabel?.textColor = .white
+//        button.titleLabel?.numberOfLines = 0
+//        button.titleLabel?.font = .preferredFont(forTextStyle: .body)
         
         button.setTitle("Mais informações", for: .normal)
         button.addTarget(self, action: #selector(moreInfos), for: .touchUpInside)
@@ -195,13 +195,13 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        let aux = button.intrinsicContentSize.height > 68 ? 40 : 16
-        let size: CGFloat = max(55, button.intrinsicContentSize.height +  CGFloat(aux))
+//        let aux = button.intrinsicContentSize.height > 68 ? 40 : 16
+//        let size: CGFloat = max(55, button.intrinsicContentSize.height +  CGFloat(aux))
         
         button.removeConstraints(button.constraints)
         
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: size)
+            button.heightAnchor.constraint(equalToConstant: 55)
         ])
         
     }
