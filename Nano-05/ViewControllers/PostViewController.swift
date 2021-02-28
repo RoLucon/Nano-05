@@ -249,31 +249,16 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     @objc fileprivate func moreInfos(sender: UIButton){
         guard let link = post?.link else { return }
         
-        animatedView(sender) {
-            let vc = SFSafariViewController(url: URL(string: link)!)
-            
-            self.present(vc, animated: true)
-        }
+        let vc = SFSafariViewController(url: URL(string: link)!)
+        
+        self.present(vc, animated: true)
+        
     }
     
     @objc func dynamicActions(_ sender: UIButton){
         actions[sender.tag].action()
     }
     
-    //Animaçao do Click
-    fileprivate func animatedView(_ viewToAnimate: UIView, complition: (() -> Void)?) {
-        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .allowUserInteraction, animations: {
-            viewToAnimate.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
-        }) {_ in
-            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .allowUserInteraction, animations: {
-                viewToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }) {_ in
-                if let closer = complition {
-                    closer()
-                }
-            }
-        }
-    }
     
     //MARK: - Other Functions
     func setPost(_ post: Post) {

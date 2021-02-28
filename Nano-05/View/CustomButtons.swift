@@ -49,6 +49,7 @@ class MyButton: UIButton {
         self.titleLabel?.textAlignment = .center
         self.setContentHuggingPriority(UILayoutPriority.defaultLow + 1, for: .vertical)
         self.setContentHuggingPriority(UILayoutPriority.defaultLow + 1, for: .horizontal)
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -56,6 +57,25 @@ class MyButton: UIButton {
         self.titleLabel?.font = .preferredFont(forTextStyle: .body)
         sizeToFit()
         self.setNeedsUpdateConstraints()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .allowUserInteraction, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        }){_ in
+            
+        }
+        
+        super.touchesBegan(touches, with: event)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .allowUserInteraction, animations: {
+            self.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) {_ in
+            
+        }
+        super.touchesEnded(touches, with: event)
     }
     
 }
