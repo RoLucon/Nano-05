@@ -1,4 +1,26 @@
 [{
+    "id": 10,
+    "title": "Outras ISTs",
+    "info":[
+        {
+            "title": "",
+            "text": "Além do HIV, há muitras outras infecções que são transmitidas sexualmente, e a camisinha é a única forma de proteção eficaz contra todas elas. \n\nEntre as outras infecções possíveis estão: sífilis, gonorreia, herpes genital, HPV e cancroide.\n\nSintomas Gerais das ISTs\n\nAs principais manifestações das ISTs são: corimento, feridas e verrugas anogenitais. \n\n Esses sintomas podem ter diversas colorações, cheiro forte e causar coceira e dor ao urinar ou ao ter relações sexuais. É importante buscar atendimento de saúde para identificar qual das infecções é e informar o/a parceiro(a) sexual, independente de quando foi a última relação sexual.",
+        }
+    ],
+    "modal": "fullscreen"
+},
+{
+    "id": 11,
+    "title": "Fontes e créditos",
+    "info":[
+        {
+            "title": "",
+            "text": "Aplicativo desenvolvido por Beatriz Sato, Nadja Batista e Rogério Lucon.\n\nDados e informações extraídos da OMS (Organização Mundial da Saúde) e Ministério da Saúde.",
+        }
+    ],
+    "modal": "fullscreen"
+},
+    {
     "id": 20,
     "title": "Formas de Contágio",
     "info":[
