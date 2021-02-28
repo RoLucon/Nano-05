@@ -37,3 +37,21 @@ func postById(_ id: Int) -> Post? {
     
     return filter.first
 }
+
+// método que faz a requisição da api da OMS
+func requestData(url: String, completion: @escaping ([WhoData]) -> ()) {
+    var whoData: [WhoData] = []
+    
+    guard let url = URL(string: url) else { return }
+    
+    URLSession.shared.dataTask(with: url) { (data, _, _) in
+        let jsonWhoData = try! JSONDecoder().decode(Values.self, from: data!)
+        
+        whoData = jsonWhoData.value
+        
+        DispatchQueue.main.async {
+            completion(whoData)
+        }
+
+    }.resume()
+}

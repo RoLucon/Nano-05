@@ -87,7 +87,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p9C-Ub-3Bh">
                                                         <rect key="frame" x="0.0" y="60" width="414" height="350"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-dN-Qc6">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-dN-Qc6" customClass="LineChartView" customModule="Charts">
                                                                 <rect key="frame" x="16" y="0.0" width="382" height="240"/>
                                                                 <color key="backgroundColor" name="BackgroundColor"/>
                                                                 <constraints>
