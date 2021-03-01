@@ -21,12 +21,12 @@
         <!--introOne-->
         <scene sceneID="5kD-DP-jwX">
             <objects>
-                <viewController storyboardIdentifier="introOne" title="introOne" modalPresentationStyle="fullScreen" id="Nem-Ry-J06" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introOne" title="introOne" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Nem-Ry-J06" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="32Z-gI-x6I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tachinha" translatesAutoresizingMaskIntoConstraints="NO" id="ep2-da-Fgu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ep2-da-Fgu">
                                 <rect key="frame" x="44" y="166" width="326" height="356"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="356" id="bPf-1X-qRg"/>
@@ -161,7 +161,7 @@
         <!--introTwo-->
         <scene sceneID="wkb-66-0f4">
             <objects>
-                <viewController storyboardIdentifier="introTwo" title="introTwo" modalPresentationStyle="fullScreen" id="8uu-1U-qK6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introTwo" title="introTwo" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="8uu-1U-qK6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O28-gZ-JCB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,7 @@
         <!--introThree-->
         <scene sceneID="aBo-Qn-MlC">
             <objects>
-                <viewController storyboardIdentifier="introThree" title="introThree" modalPresentationStyle="fullScreen" id="pmR-0t-3k8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introThree" title="introThree" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="pmR-0t-3k8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Vt-jl-6LD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,10 +410,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="66j-qV-lY2"/>
         <segue reference="b7F-dc-fBd"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="logo" width="4320" height="4320"/>
         <image name="pessoas-unidas" width="1283" height="1400"/>
         <image name="tachinha" width="1283" height="1400"/>
         <namedColor name="AccentColor">
