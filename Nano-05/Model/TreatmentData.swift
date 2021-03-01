@@ -29,16 +29,6 @@ enum ResultSet: Decodable {
         throw DecodingError.typeMismatch(ResultSet.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Resultset"))
     }
     
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .integer(let x):
-            try container.encode(x)
-        case .string(let x):
-            try container.encode(x)
-        }
-    }
-    
     func toString() -> String {
         switch self {
         case .string(let x):

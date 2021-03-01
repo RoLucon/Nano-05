@@ -41,6 +41,7 @@ class WhoLineChart {
         
         // junta os dados
         data = LineChartData(dataSets: dataSets)
+        data.isAccessibilityElement = true
     }
     
     // customização da linha de morte do gráfico
@@ -53,16 +54,18 @@ class WhoLineChart {
         
         // seta o tamanho da fonte dos valores da linha
         deathDataSet.valueFont = .systemFont(ofSize: 10)
+        deathDataSet.isAccessibilityElement = true
         
         deathDataSet.lineWidth = 3
     }
     
     // customização da linha de morte do gráfico
     func setInfectedDataSet(color: NSUIColor) {
-        infectedDataSet = LineChartDataSet(entries: dataInfected, label: "Infectados")
+        infectedDataSet = LineChartDataSet(entries: dataInfected, label: "Soropositivos")
         
         infectedDataSet.drawCirclesEnabled = false
         infectedDataSet.setColor(color)
+        
         
         infectedDataSet.lineWidth = 3
     }

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     
     // view do gráfico
     @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var outsideChartView: UIView!
     
     // view dos números das apis
     @IBOutlet weak var whoTreatmentDataView: UIView!
@@ -44,7 +45,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
 
         // Do any additional setup after loading the view.
         saibaMaisButton.layer.cornerRadius = 10
-        lineChartView.layer.cornerRadius = 10
+        outsideChartView.layer.cornerRadius = 10
         whoTreatmentDataView.layer.cornerRadius = 10
         whoInfectedDataView.layer.cornerRadius = 10
         
@@ -137,6 +138,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         
         // eixo y
         lineChartView.leftAxis.labelFont = .boldSystemFont(ofSize: 10)
+        lineChartView.isAccessibilityElement = true
+        lineChartView.accessibilityLabel = "Gráfico comparativo de número de Mortes e Pessoas soropositivas nos últimos 19 anos"
     }
     
     @IBAction func openHivDetailView(_ sender: Any) {

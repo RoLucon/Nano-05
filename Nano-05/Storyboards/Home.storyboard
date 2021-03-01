@@ -103,15 +103,28 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p9C-Ub-3Bh">
                                                         <rect key="frame" x="0.0" y="56.5" width="414" height="350"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-dN-Qc6" customClass="LineChartView" customModule="Charts">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQU-BO-Ln2">
                                                                 <rect key="frame" x="16" y="0.0" width="382" height="240"/>
-                                                                <color key="backgroundColor" name="BackgroundColor"/>
-                                                                <accessibility key="accessibilityConfiguration" hint="Gráfico de linha que compara número de mortes e de pessoas soropositivas nos últimos 19 anos" label="Gráfico de linha">
-                                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-dN-Qc6" customClass="LineChartView" customModule="Charts">
+                                                                        <rect key="frame" x="10" y="10" width="362" height="220"/>
+                                                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                                                        <accessibility key="accessibilityConfiguration" hint="Gráfico de linha que compara número de mortes e de pessoas soropositivas nos últimos 19 anos" label="000">
+                                                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                            <bool key="isElement" value="YES"/>
+                                                                        </accessibility>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <accessibility key="accessibilityConfiguration" label="Gráfico de linha">
                                                                     <bool key="isElement" value="YES"/>
                                                                 </accessibility>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="240" id="kFj-ff-FxS"/>
+                                                                    <constraint firstItem="9sO-dN-Qc6" firstAttribute="top" secondItem="cQU-BO-Ln2" secondAttribute="top" constant="10" id="EgP-0a-XSe"/>
+                                                                    <constraint firstAttribute="height" constant="240" id="dcm-rd-aMl"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="9sO-dN-Qc6" secondAttribute="trailing" constant="10" id="m6H-dZ-uMM"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="9sO-dN-Qc6" secondAttribute="bottom" constant="10" id="xg5-w7-Akn"/>
+                                                                    <constraint firstItem="9sO-dN-Qc6" firstAttribute="leading" secondItem="cQU-BO-Ln2" secondAttribute="leading" constant="10" id="zWa-ar-GnY"/>
                                                                 </constraints>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="RjH-TI-B57">
@@ -212,14 +225,13 @@
                                                         </subviews>
                                                         <color key="backgroundColor" name="SecBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="9sO-dN-Qc6" secondAttribute="trailing" constant="16" id="CuG-uo-RG4"/>
+                                                            <constraint firstItem="cQU-BO-Ln2" firstAttribute="leading" secondItem="p9C-Ub-3Bh" secondAttribute="leading" constant="16" id="Qe9-aE-Z3J"/>
+                                                            <constraint firstItem="RjH-TI-B57" firstAttribute="top" secondItem="cQU-BO-Ln2" secondAttribute="bottom" constant="16" id="Rdd-fj-6R2"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cQU-BO-Ln2" secondAttribute="trailing" constant="16" id="SQa-bp-wNi"/>
                                                             <constraint firstItem="RjH-TI-B57" firstAttribute="leading" secondItem="p9C-Ub-3Bh" secondAttribute="leading" constant="16" id="UDu-kS-vfS"/>
-                                                            <constraint firstItem="9sO-dN-Qc6" firstAttribute="top" secondItem="p9C-Ub-3Bh" secondAttribute="top" id="WQa-Og-AHE"/>
                                                             <constraint firstAttribute="trailing" secondItem="RjH-TI-B57" secondAttribute="trailing" constant="16" id="cgd-d8-Qla"/>
                                                             <constraint firstAttribute="height" constant="350" id="h5c-Ve-tep"/>
                                                             <constraint firstItem="MUu-Pv-7Iy" firstAttribute="leading" secondItem="p9C-Ub-3Bh" secondAttribute="leading" constant="16" id="hOi-E6-HE8"/>
-                                                            <constraint firstItem="9sO-dN-Qc6" firstAttribute="top" secondItem="p9C-Ub-3Bh" secondAttribute="top" id="wLy-Nn-vdv"/>
-                                                            <constraint firstItem="9sO-dN-Qc6" firstAttribute="leading" secondItem="p9C-Ub-3Bh" secondAttribute="leading" constant="16" id="wUf-Ni-Y8x"/>
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08Q-AL-B76">
@@ -282,6 +294,7 @@
                     <connections>
                         <outlet property="infectedNumber" destination="f8I-4m-1vX" id="BV7-nM-GuQ"/>
                         <outlet property="lineChartView" destination="9sO-dN-Qc6" id="7VZ-dK-hjB"/>
+                        <outlet property="outsideChartView" destination="cQU-BO-Ln2" id="UG5-s6-Vyf"/>
                         <outlet property="saibaMaisButton" destination="h1U-19-3gQ" id="Qub-U0-630"/>
                         <outlet property="tableView" destination="4Vx-GS-JsZ" id="Nct-SL-gXm"/>
                         <outlet property="treatmentsNumber" destination="31Z-Ce-cUy" id="fGO-Qi-m44"/>
