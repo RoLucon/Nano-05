@@ -27,36 +27,49 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oaq-KT-kM7">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ttn-Rf-wO7">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ttn-Rf-wO7">
                                                         <rect key="frame" x="16" y="16" width="114.5" height="37"/>
                                                         <color key="backgroundColor" name="PrimaryColor123"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Logotipo do app" label="Logotipo">
+                                                            <accessibilityTraits key="traits" image="YES"/>
+                                                            <bool key="isElement" value="YES"/>
+                                                        </accessibility>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="114.5" id="pag-CM-FCf"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIV e AIDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-aB-zkb">
-                                                        <rect key="frame" x="16" y="69" width="101.5" height="24"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIV e AIDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-aB-zkb">
+                                                        <rect key="frame" x="16" y="69" width="86" height="20.5"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Page Title" label="HIV e aids"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-7X-p0A">
-                                                        <rect key="frame" x="16" y="103" width="382" height="112"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-7X-p0A">
+                                                        <rect key="frame" x="16" y="99.5" width="382" height="115.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="introduction text to HIV" label="Introduction to HIV">
+                                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                        </accessibility>
                                                         <string key="text">HIV é o vírus causador da AIDS, uma doença sexualmente transmissível sem cura, que afeta o sistema imunológico e já causou milhões de mortes</string>
                                                         <color key="textColor" systemColor="labelColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1U-19-3gQ">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1U-19-3gQ">
                                                         <rect key="frame" x="16" y="207" width="382" height="45"/>
                                                         <color key="backgroundColor" name="AccentColor"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Abre texto maior sobre HIV" label="Saiba mais"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="Gm4-Hu-xv1"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                         <state key="normal" title="Saiba mais">
                                                             <color key="titleColor" name="BackgroundColor"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="openHivDetailView:" destination="Qux-SJ-Re4" eventType="touchUpInside" id="O5u-cC-ALa"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,17 +92,24 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44E-DJ-HVW">
                                                 <rect key="frame" x="0.0" y="270" width="414" height="650"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estatísticas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbz-m9-YU0">
-                                                        <rect key="frame" x="16" y="20" width="110" height="24"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estatísticas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbz-m9-YU0">
+                                                        <rect key="frame" x="16" y="20" width="92" height="20.5"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Título da área do gráfico" label="Estatísticas">
+                                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p9C-Ub-3Bh">
-                                                        <rect key="frame" x="0.0" y="60" width="414" height="350"/>
+                                                        <rect key="frame" x="0.0" y="56.5" width="414" height="350"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-dN-Qc6" customClass="LineChartView" customModule="Charts">
                                                                 <rect key="frame" x="16" y="0.0" width="382" height="240"/>
                                                                 <color key="backgroundColor" name="BackgroundColor"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="Gráfico de linha que compara número de mortes e de pessoas soropositivas nos últimos 19 anos" label="Gráfico de linha">
+                                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                                    <bool key="isElement" value="YES"/>
+                                                                </accessibility>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="240" id="kFj-ff-FxS"/>
                                                                 </constraints>
@@ -103,19 +123,25 @@
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="jGD-5J-Zke">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="70"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pessoas em tratamento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9z-cf-dQu">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pessoas em tratamento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9z-cf-dQu">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                        <accessibility key="accessibilityConfiguration" label="Pessoas em tratamento">
+                                                                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                                                                        </accessibility>
+                                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="14.000.000" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31Z-Ce-cUy">
+                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="14.000.000" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31Z-Ce-cUy">
                                                                                         <rect key="frame" x="0.0" y="25" width="183" height="45"/>
+                                                                                        <accessibility key="accessibilityConfiguration" hint="Número de pessoas em tratamento" label="Número de pessoas em tratamento">
+                                                                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                                                        </accessibility>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="45" id="la5-sm-Epx"/>
                                                                                         </constraints>
                                                                                         <color key="textColor" name="PrimaryColor"/>
-                                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                                     </textView>
                                                                                 </subviews>
@@ -137,19 +163,25 @@
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-20" translatesAutoresizingMaskIntoConstraints="NO" id="3HF-jA-y4P">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="70"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pessoas vivendo com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8F-IH-DmB">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pessoas vivendo com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8F-IH-DmB">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
-                                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                        <accessibility key="accessibilityConfiguration" label="Pessoas soropositivas">
+                                                                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                                                                        </accessibility>
+                                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="14.000.000" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8I-4m-1vX">
+                                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="14.000.000" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8I-4m-1vX">
                                                                                         <rect key="frame" x="0.0" y="25" width="183" height="45"/>
+                                                                                        <accessibility key="accessibilityConfiguration" label="Número de pessoas soropositivas">
+                                                                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                                                        </accessibility>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="45" id="Wdg-DZ-1oJ"/>
                                                                                         </constraints>
                                                                                         <color key="textColor" name="PrimaryColor"/>
-                                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                                     </textView>
                                                                                 </subviews>
@@ -168,9 +200,12 @@
                                                                     <constraint firstAttribute="height" constant="70" id="35d-JW-HNW"/>
                                                                 </constraints>
                                                             </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados publicados pela Organização Mundial da Saúde" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUu-Pv-7Iy">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dados publicados pela Organização Mundial da Saúde" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUu-Pv-7Iy">
                                                                 <rect key="frame" x="16" y="342" width="382" height="8"/>
-                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                                                <accessibility key="accessibilityConfiguration" hint="rodapé que indica fonte" label="fonte: OMS">
+                                                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                                                </accessibility>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                 <color key="textColor" red="0.58040028809999999" green="0.58037775749999998" blue="0.58039301629999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -187,14 +222,17 @@
                                                             <constraint firstItem="9sO-dN-Qc6" firstAttribute="leading" secondItem="p9C-Ub-3Bh" secondAttribute="leading" constant="16" id="wUf-Ni-Y8x"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08Q-AL-B76">
-                                                        <rect key="frame" x="16" y="430" width="60" height="24"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08Q-AL-B76">
+                                                        <rect key="frame" x="16" y="426.5" width="50.5" height="20.5"/>
+                                                        <accessibility key="accessibilityConfiguration" label="Extras">
+                                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                                        </accessibility>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Vx-GS-JsZ">
-                                                        <rect key="frame" x="16" y="470" width="382" height="89"/>
+                                                        <rect key="frame" x="16" y="463" width="382" height="96"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </tableView>
                                                 </subviews>
@@ -242,9 +280,11 @@
                     <navigationItem key="navigationItem" id="RKA-1a-TzB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="infectedNumber" destination="f8I-4m-1vX" id="BV7-nM-GuQ"/>
                         <outlet property="lineChartView" destination="9sO-dN-Qc6" id="7VZ-dK-hjB"/>
                         <outlet property="saibaMaisButton" destination="h1U-19-3gQ" id="Qub-U0-630"/>
                         <outlet property="tableView" destination="4Vx-GS-JsZ" id="Nct-SL-gXm"/>
+                        <outlet property="treatmentsNumber" destination="31Z-Ce-cUy" id="fGO-Qi-m44"/>
                         <outlet property="whoInfectedDataView" destination="7cB-ZZ-Tmt" id="xta-KJ-EhU"/>
                         <outlet property="whoTreatmentDataView" destination="i67-N0-cPo" id="jmP-DV-5LJ"/>
                     </connections>

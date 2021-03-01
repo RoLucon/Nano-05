@@ -18,6 +18,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     // view dos números das apis
     @IBOutlet weak var whoTreatmentDataView: UIView!
     @IBOutlet weak var whoInfectedDataView: UIView!
+    @IBOutlet weak var treatmentsNumber: UITextView!
+    @IBOutlet weak var infectedNumber: UITextView!
     
     // view das fontes
     @IBOutlet weak var tableView: UITableView!
@@ -28,7 +30,6 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     private var tableViewHeight: NSLayoutConstraint?
     
     // requisição API
-//    var whoDataLoader = WhoDataLoader()
     var deaths = [Double]()
     var infected = [Double]()
     var years = [Int]()
@@ -52,7 +53,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         guard let homeTab = auxTab.first else { return }
         self.homeTab = homeTab
         
-        // MARK: Table View Config
+        // Configuração da TableView
         let px = 1 / UIScreen.main.scale
         let frame = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: px)
         let line = UIView(frame: frame)
@@ -66,6 +67,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
+        // atualiza e customiza o gráfico
         apiRequest()
         styleChart()
 
@@ -90,20 +92,23 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    // MARK: Requisição API + Gráfico
     func apiRequest() {
         // faz a requisição e pega só o número de morte e ano
         requestData(url: deathURL) { (whoDeathsData) in
-            self.getDeathsValue(whoData: whoDeathsData)
+            self.deaths = getDeathsValue(whoData: whoDeathsData)
+            self.years = getYearsValue(whoData: whoDeathsData)
         }
         
-        // faz a requisição, pega o número de infectados e passa para o gráfico
+        // faz a requisição, pega o número de infectados e passa tudo para o gráfico
         requestData(url: infectedURL) {(whoInfectedData) in
-            self.getInfectedValue(whoData: whoInfectedData)
+            self.infected = getInfectedValue(whoData: whoInfectedData)
+            self.infectedNumber.text = "\(Int(self.infected.last!))"
             
             // cria a instância do gráfico
             self.lineChart = WhoLineChart(years: self.years, deaths: self.deaths, infected: self.infected, deathColor: .red, infectedColor: .blue)
             
-            // atualiza a view do gráfico
+            // atualiza a view do gráfico com os dados
             self.lineChartView.data = self.lineChart.data
         }
     }
@@ -123,28 +128,23 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         lineChartView.leftAxis.labelFont = .boldSystemFont(ofSize: 10)
     }
     
-    // método que separa os números dos dados da api
-    func getDeathsValue(whoData: [WhoData]) {
-        // de 3 em 3 anos
-        for i in stride(from: 1, to: whoData.count, by: 3) {
-            let index = i
-            
-            deaths.append(whoData[index].NumericValue)
-            years.append(whoData[index].TimeDim)
+    @IBAction func openHivDetailView(_ sender: Any) {
+        let loadVC = PostViewController()
+        
+        guard let post = postById(Int(12)) else {
+            fatalError("Impossível redirecionar. Post não encontrado")
         }
+
+        loadVC.setPost(post)
+
+        loadVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(loadVC, animated: true)
     }
     
-    func getInfectedValue(whoData: [WhoData]) {
-        // de 3 em 3 anos
-        for i in stride(from: 1, to: whoData.count, by: 3) {
-            let index = i
-            
-            infected.append(whoData[index].NumericValue)
-        }
-    }
 
 }
 
+// MARK: TableView Data Source
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
@@ -163,7 +163,7 @@ extension HomeViewController: UITableViewDataSource {
             cell.accessibilityHint = "Clique para ler mais sobre \(homeTab.listItens[indexPath.row].title)"
         }
 
-        cell.accessibilityValue = "Botão \(indexPath.row) de \(homeTab.listItens.count)"
+        cell.accessibilityValue = "Botão \(indexPath.row+1) de \(homeTab.listItens.count)"
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 
         return cell

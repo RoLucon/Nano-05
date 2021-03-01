@@ -1,4 +1,15 @@
 [{
+    "id": 12,
+    "title": "HIV e AIDS",
+    "info":[
+        {
+            "title": "",
+            "text": "O HIV pode ser transmitido por contato direto com sangue, sêmen ou fluidos vaginais contaminados. Não é necessariamente todo mundo que carrega o vírus que tem a doença AIDS. É possível carregar o vírus por anos sem sintomas e sem desenvolver a doença, e ainda assim transmitir HIV para outras pessoas.\n\nSintomas\n\nCaso existam sintomas, eles podem aparecer após cerca de 1 ou 2 meses da infecção por HIV, e são parecidos com os de um resfriado. Duram por semanas e podem ir embora espontaneamente.\n\nJá os sintomas da AIDS envolvem perda de peso, fadiga, sudorese noturna e infecções recorrentes",
+        }
+    ],
+    "modal": "fullscreen"
+},
+    {
     "id": 10,
     "title": "Outras ISTs",
     "info":[
