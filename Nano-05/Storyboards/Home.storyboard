@@ -232,14 +232,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Vx-GS-JsZ">
-                                                        <rect key="frame" x="16" y="463" width="382" height="96"/>
+                                                        <rect key="frame" x="0.0" y="463" width="414" height="96"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="SecBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="p9C-Ub-3Bh" firstAttribute="leading" secondItem="44E-DJ-HVW" secondAttribute="leading" id="0zU-n0-td7"/>
-                                                    <constraint firstItem="4Vx-GS-JsZ" firstAttribute="leading" secondItem="44E-DJ-HVW" secondAttribute="leading" constant="16" id="2nb-8F-bZ8"/>
+                                                    <constraint firstItem="4Vx-GS-JsZ" firstAttribute="leading" secondItem="44E-DJ-HVW" secondAttribute="leading" id="2nb-8F-bZ8"/>
                                                     <constraint firstItem="p9C-Ub-3Bh" firstAttribute="top" secondItem="Cbz-m9-YU0" secondAttribute="bottom" constant="16" id="5MQ-08-ROu"/>
                                                     <constraint firstItem="08Q-AL-B76" firstAttribute="leading" secondItem="44E-DJ-HVW" secondAttribute="leading" constant="16" id="7Fe-86-X14"/>
                                                     <constraint firstItem="08Q-AL-B76" firstAttribute="top" secondItem="p9C-Ub-3Bh" secondAttribute="bottom" constant="20" id="Xfb-JH-9Vj"/>
@@ -248,7 +248,7 @@
                                                     <constraint firstItem="4Vx-GS-JsZ" firstAttribute="top" secondItem="08Q-AL-B76" secondAttribute="bottom" constant="16" id="geP-No-KSo"/>
                                                     <constraint firstItem="Cbz-m9-YU0" firstAttribute="top" secondItem="44E-DJ-HVW" secondAttribute="top" constant="20" id="jyZ-HP-nwU"/>
                                                     <constraint firstAttribute="trailing" secondItem="p9C-Ub-3Bh" secondAttribute="trailing" id="tXV-2D-PY1"/>
-                                                    <constraint firstAttribute="trailing" secondItem="4Vx-GS-JsZ" secondAttribute="trailing" constant="16" id="wPS-o4-4IN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4Vx-GS-JsZ" secondAttribute="trailing" id="wPS-o4-4IN"/>
                                                     <constraint firstAttribute="bottom" secondItem="4Vx-GS-JsZ" secondAttribute="bottom" constant="91" id="zu7-dP-LSE"/>
                                                 </constraints>
                                             </view>

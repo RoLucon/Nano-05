@@ -70,6 +70,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         // atualiza e customiza o gráfico
         apiRequest()
         styleChart()
+        msApiRequest()
 
     }
     
@@ -95,13 +96,13 @@ class HomeViewController: UIViewController, UITableViewDelegate {
     // MARK: Requisição API + Gráfico
     func apiRequest() {
         // faz a requisição e pega só o número de morte e ano
-        requestData(url: deathURL) { (whoDeathsData) in
+        requestWhoData(url: deathURL) { (whoDeathsData) in
             self.deaths = getDeathsValue(whoData: whoDeathsData)
             self.years = getYearsValue(whoData: whoDeathsData)
         }
         
         // faz a requisição, pega o número de infectados e passa tudo para o gráfico
-        requestData(url: infectedURL) {(whoInfectedData) in
+        requestWhoData(url: infectedURL) {(whoInfectedData) in
             self.infected = getInfectedValue(whoData: whoInfectedData)
             self.infectedNumber.text = "\(Int(self.infected.last!))"
             
@@ -110,6 +111,16 @@ class HomeViewController: UIViewController, UITableViewDelegate {
             
             // atualiza a view do gráfico com os dados
             self.lineChartView.data = self.lineChart.data
+        }
+    }
+    
+    func msApiRequest() {
+        requestTreatmentData { (msData) in
+            let lastValue = (msData.last!).last!
+            let lastValueString = lastValue.toString().components(separatedBy: ".")
+            let treatment = lastValueString[0]
+            
+            self.treatmentsNumber.text = treatment
         }
     }
     
@@ -171,6 +182,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let value = homeTabId + "\(indexPath.row)"
+
         let loadVC = PostViewController()
 
         guard let post = postById(Int(value)!) else {

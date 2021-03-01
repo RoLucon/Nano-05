@@ -39,7 +39,7 @@ func postById(_ id: Int) -> Post? {
 }
 
 // método que faz a requisição da api da OMS
-func requestData(url: String, completion: @escaping ([WhoData]) -> ()) {
+func requestWhoData(url: String, completion: @escaping ([WhoData]) -> ()) {
     var whoData: [WhoData] = []
     
     guard let url = URL(string: url) else { return }
@@ -53,6 +53,23 @@ func requestData(url: String, completion: @escaping ([WhoData]) -> ()) {
             completion(whoData)
         }
 
+    }.resume()
+}
+
+func requestTreatmentData(completion: @escaping ([[ResultSet]]) -> ()) {
+    var msData : [[ResultSet]] = []
+    
+    guard let url = URL(string: "https://sage.saude.gov.br/graficos/aids/aidsOperacional2.php?output=json") else { return }
+    
+    URLSession.shared.dataTask(with: url) { (data, _,_) in
+        let jsonMsData = try! JSONDecoder().decode(Treatments.self, from: data!)
+        
+        msData = jsonMsData.resultset
+        
+        DispatchQueue.main.async {
+            completion(msData)
+        }
+        
     }.resume()
 }
 
