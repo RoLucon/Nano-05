@@ -26,8 +26,7 @@ struct Info: Decodable {
     
     var title: String
     var text: String
-    
-    
+
 }
 
 struct Redirect: Decodable {

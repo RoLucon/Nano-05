@@ -226,29 +226,14 @@ extension GameViewController {
     }
     
     private func setupAccessibility() {
-//        mainStackView.isAccessibilityElement = true
-//        mainStackView.shouldGroupAccessibilityChildren = truebil
-//        mainStackView.accessibilityLabel = "\(textView.text)"
-        
-        leftButton.isAccessibilityElement = false
-        rightButton.isAccessibilityElement = false
-        showAnswersBtt.isAccessibilityElement = false
-        nextQuestionBtt.isAccessibilityElement = false
-//        mainView.isAccessibilityElement = false
-//        textView.isAccessibilityElement = false
-        
-//
-        mainView.accessibilityIdentifier = "mainView"
-        mainView.isAccessibilityElement = true
-        mainView.accessibilityTraits = .image
-        mainView.accessibilityLabel = "Descriçao da imagem"
-        mainView.accessibilityHint = "Interaja para responder a pergunta"
 
-        textView.accessibilityIdentifier = "textView"
         textView.isAccessibilityElement = true
+        
+        textView.accessibilityIdentifier = "textView"
+
         textView.accessibilityLabel = textView.text
         textView.accessibilityHint = "Interaja com a imagem para responder se Pega ou não Pega HIV de acordo com a afirmaçao"
-        textView.accessibilityValue = ""
+        textView.accessibilityValue = "Pergunta \(currentAswer) de \(cards.count)"
     }
     
     private func updateAccessibility() {
@@ -259,16 +244,15 @@ extension GameViewController {
         let nextAnserCustomAction = UIAccessibilityCustomAction(name: "Proxima pergunta", target: self, selector: #selector(nextQuestion))
         
         if answerOpen {
-            mainStackView.accessibilityCustomActions = [nextAnserCustomAction]
+            textView.accessibilityCustomActions = [nextAnserCustomAction]
         } else {
             
-            mainStackView.accessibilityCustomActions = [pega, naoPega, showAnserCustomAction]
+            textView.accessibilityCustomActions = [pega, naoPega, showAnserCustomAction]
         }
-        
-//        mainStackView.accessibilityLabel = "\(textView.text)"
-        mainView.accessibilityLabel = "Descriçao da imagem"
+
         textView.accessibilityLabel = textView.text
         textView.accessibilityHint = answerOpen ? "Resposta" : "Interaja com a imagem para responder se Pega ou não Pega HIV de acordo com a afirmaçao"
+        textView.accessibilityValue = "Pergunta \(currentAswer) de \(cards.count)"
     }
 }
 
