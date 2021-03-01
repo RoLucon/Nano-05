@@ -24,6 +24,7 @@
 		89282A8825E0803D00FE2029 /* Tabs.json in Resources */ = {isa = PBXBuildFile; fileRef = 89282A8725E0803D00FE2029 /* Tabs.json */; };
 		89282A8C25E0807300FE2029 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89282A8B25E0807300FE2029 /* Tab.swift */; };
 		89579ECC25E97EAB00A0EF31 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89579ECB25E97EAB00A0EF31 /* UITextView.swift */; };
+		89579ED625ED68FF00A0EF31 /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89579ED525ED68FF00A0EF31 /* GameResultViewController.swift */; };
 		89908C8625E5869E00B8BEFD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8525E5869E00B8BEFD /* PostViewController.swift */; };
 		89908C8A25E587A700B8BEFD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8925E587A700B8BEFD /* UIViewController.swift */; };
 		89908C8F25E6C3FC00B8BEFD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8E25E6C3FC00B8BEFD /* UIColor.swift */; };
@@ -56,6 +57,7 @@
 		89282A8725E0803D00FE2029 /* Tabs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tabs.json; sourceTree = "<group>"; };
 		89282A8B25E0807300FE2029 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		89579ECB25E97EAB00A0EF31 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		89579ED525ED68FF00A0EF31 /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		89908C8525E5869E00B8BEFD /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		89908C8925E587A700B8BEFD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		89908C8E25E6C3FC00B8BEFD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				89282A7F25E07A1C00FE2029 /* TabViewController.swift */,
 				89908C8525E5869E00B8BEFD /* PostViewController.swift */,
 				89908CB725E83E4C00B8BEFD /* GameViewController.swift */,
+				89579ED525ED68FF00A0EF31 /* GameResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89908C8625E5869E00B8BEFD /* PostViewController.swift in Sources */,
+				89579ED625ED68FF00A0EF31 /* GameResultViewController.swift in Sources */,
 				89282A8C25E0807300FE2029 /* Tab.swift in Sources */,
 				89B09E8A25E96E2100F498AF /* CustomButtons.swift in Sources */,
 				89908C8A25E587A700B8BEFD /* UIViewController.swift in Sources */,

@@ -25,7 +25,9 @@ class GameViewController: UIViewController {
     
     private var currentCard: UIView!
     
-    private var currentAswer = 0
+    private var currentQuestion = 0
+    
+    private var isAnswer: [Bool] = []
     
     private let gesture = UIPanGestureRecognizer()
     
@@ -80,7 +82,7 @@ class GameViewController: UIViewController {
 //        print(mainView.center)
 //
 //        currentCard = viewCard
-        textView.addBoldText(fullString: cards[currentAswer].text, boldPartOfString: [cards[currentAswer].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
+        textView.addBoldText(fullString: cards[currentQuestion].text, boldPartOfString: [cards[currentQuestion].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
         
         updateAccessibility()
     }
@@ -93,8 +95,8 @@ class GameViewController: UIViewController {
             showAnswersBtt.isHidden = true
             nextQuestionBtt.isHidden = false
             //Seta o texto
-            let fullString = cards[currentAswer].text + "\n\n" + cards[currentAswer].answer
-            textView.addBoldText(fullString: fullString, boldPartOfString: [cards[currentAswer].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
+            let fullString = cards[currentQuestion].text + "\n\n" + cards[currentQuestion].answer
+            textView.addBoldText(fullString: fullString, boldPartOfString: [cards[currentQuestion].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
             UIView.transition(with: mainStackView, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
             UIView.transition(with: mainView, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
 //            UIView.transition(with: currentCard, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
@@ -115,25 +117,33 @@ class GameViewController: UIViewController {
     }
     
     private func changeCard() {
-        textView.addBoldText(fullString: cards[currentAswer].text, boldPartOfString: [cards[currentAswer].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
+        textView.addBoldText(fullString: cards[currentQuestion].text, boldPartOfString: [cards[currentQuestion].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
         updateAccessibility()
     }
     
     private func concludeGame() {
-        let loadVC = PostViewController()
-        guard let post = postById(20) else {
-            fatalError("Impossivel redirecionar. Post não encontrado.")
-        }
-        loadVC.setPost(post)
+        let storyboard = UIStoryboard(name: "CardGame", bundle: nil)
+        let loadVC = storyboard.instantiateViewController(identifier: "GameResult") as! GameResultViewController
+        loadVC.answers = isAnswer
         loadVC.modalPresentationStyle = .fullScreen
+
         self.navigationController?.pushViewController(loadVC, animated: true)
-        self.dismiss(animated: false, completion: nil)
+        
+        var viewControllers = navigationController?.viewControllers
+
+        guard let index = viewControllers?.firstIndex(of: self) else { return }
+        
+        viewControllers?.remove(at: index)
+
+        navigationController?.setViewControllers(viewControllers!, animated: true)
     }
     
     private func feedback(_ flag: Bool) {
-        if card[currentAswer].answerValue == flag {
+        if card[currentQuestion].answerValue == flag {
+            isAnswer.append(true)
             feedbackGenerator(.success)
         } else {
+            isAnswer.append(false)
             feedbackGenerator(.error)
         }
     }
@@ -141,8 +151,8 @@ class GameViewController: UIViewController {
     //MARK: - Actions
     
     @objc func nextQuestion() {
-        if currentAswer + 1 < cards.count {
-            currentAswer += 1
+        if currentQuestion + 1 < cards.count {
+            currentQuestion += 1
         } else {
             concludeGame()
         }
@@ -233,7 +243,7 @@ extension GameViewController {
 
         textView.accessibilityLabel = textView.text
         textView.accessibilityHint = "Interaja com a imagem para responder se Pega ou não Pega HIV de acordo com a afirmaçao"
-        textView.accessibilityValue = "Pergunta \(currentAswer) de \(cards.count)"
+        textView.accessibilityValue = "Pergunta \(currentQuestion) de \(cards.count)"
     }
     
     private func updateAccessibility() {
@@ -252,7 +262,7 @@ extension GameViewController {
 
         textView.accessibilityLabel = textView.text
         textView.accessibilityHint = answerOpen ? "Resposta" : "Interaja com a imagem para responder se Pega ou não Pega HIV de acordo com a afirmaçao"
-        textView.accessibilityValue = "Pergunta \(currentAswer) de \(cards.count)"
+        textView.accessibilityValue = "Pergunta \(currentQuestion) de \(cards.count)"
     }
 }
 
