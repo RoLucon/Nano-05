@@ -21,7 +21,7 @@
         <!--introOne-->
         <scene sceneID="5kD-DP-jwX">
             <objects>
-                <viewController storyboardIdentifier="introOne" title="introOne" id="Nem-Ry-J06" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introOne" title="introOne" modalPresentationStyle="fullScreen" id="Nem-Ry-J06" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="32Z-gI-x6I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,9 @@
                                         <state key="normal" title="Próximo">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="8uu-1U-qK6" kind="show" id="b7F-dc-fBd"/>
+                                        </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Sma-Vf-ygR">
                                         <rect key="frame" x="126" y="190" width="123" height="28"/>
@@ -115,6 +118,7 @@
                             <constraint firstItem="zUh-1Q-WbB" firstAttribute="trailing" secondItem="M58-1U-f0e" secondAttribute="trailing" constant="20" id="sJb-Ca-WEX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FxN-L1-bpx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNk-8l-uED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,7 +127,9 @@
         <!--Home-->
         <scene sceneID="t7i-4b-GEr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="xBz-3s-ctm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Home" id="xBz-3s-ctm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vAW-jM-yhB"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYR-7E-8e9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="586" y="381"/>
@@ -155,7 +161,7 @@
         <!--introTwo-->
         <scene sceneID="wkb-66-0f4">
             <objects>
-                <viewController storyboardIdentifier="introTwo" title="introTwo" id="8uu-1U-qK6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introTwo" title="introTwo" modalPresentationStyle="fullScreen" id="8uu-1U-qK6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O28-gZ-JCB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,6 +178,9 @@
                                         <state key="normal" title="Anterior">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Nem-Ry-J06" kind="show" id="66j-qV-lY2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLN-7v-3kv">
                                         <rect key="frame" x="294" y="190" width="60" height="30"/>
@@ -183,6 +192,9 @@
                                         <state key="normal" title="Próximo">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="pmR-0t-3k8" kind="show" id="Bnd-5z-0S9"/>
+                                        </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="cpA-Mo-oJa">
                                         <rect key="frame" x="126" y="190" width="123" height="28"/>
@@ -264,6 +276,7 @@
                             <constraint firstItem="ykF-Z3-tG8" firstAttribute="top" secondItem="Flv-IE-Gnf" secondAttribute="bottom" constant="82" id="qYc-GW-k1j"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HzR-cj-Gx5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxp-I1-a6t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,7 +285,7 @@
         <!--introThree-->
         <scene sceneID="aBo-Qn-MlC">
             <objects>
-                <viewController storyboardIdentifier="introThree" title="introThree" id="pmR-0t-3k8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introThree" title="introThree" modalPresentationStyle="fullScreen" id="pmR-0t-3k8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Vt-jl-6LD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,6 +314,9 @@
                                         <state key="normal" title="Anterior">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="8uu-1U-qK6" kind="show" id="m64-qn-tfO"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkO-DD-HOD">
                                         <rect key="frame" x="308" y="190" width="46" height="30"/>
@@ -312,6 +328,9 @@
                                         <state key="normal" title="Entrar">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="xBz-3s-ctm" kind="show" id="EHA-nd-yOj"/>
+                                        </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="taw-db-ebq">
                                         <rect key="frame" x="126" y="190" width="123" height="28"/>
@@ -383,12 +402,17 @@
                             <constraint firstItem="1tz-8h-3aW" firstAttribute="leading" secondItem="6ci-Ra-dMR" secondAttribute="leading" constant="44" id="yjg-AT-zdH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LxG-qF-sCn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdJ-td-Ps6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1285.5072463768117" y="729.91071428571422"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="66j-qV-lY2"/>
+        <segue reference="b7F-dc-fBd"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="pessoas-unidas" width="1283" height="1400"/>
         <image name="tachinha" width="1283" height="1400"/>
