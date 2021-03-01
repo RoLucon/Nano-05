@@ -129,13 +129,7 @@ class GameViewController: UIViewController {
 
         self.navigationController?.pushViewController(loadVC, animated: true)
         
-        var viewControllers = navigationController?.viewControllers
-
-        guard let index = viewControllers?.firstIndex(of: self) else { return }
-        
-        viewControllers?.remove(at: index)
-
-        navigationController?.setViewControllers(viewControllers!, animated: true)
+        dismissAndRemoveFromNavigationStack()
     }
     
     private func feedback(_ flag: Bool) {

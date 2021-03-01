@@ -14,4 +14,14 @@ extension UIViewController {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(type)
     }
+    
+    func dismissAndRemoveFromNavigationStack() {
+        var viewControllers = navigationController?.viewControllers
+
+        guard let index = viewControllers?.firstIndex(of: self) else { return }
+        
+        viewControllers?.remove(at: index)
+
+        navigationController?.setViewControllers(viewControllers!, animated: true)
+    }
 }

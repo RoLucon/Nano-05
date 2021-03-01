@@ -21,17 +21,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UDS-GZ-HOf">
-                                        <rect key="frame" x="16" y="0.0" width="382" height="829"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="835"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stW-Tn-zFC">
-                                                <rect key="frame" x="16" y="10" width="350" height="350"/>
+                                                <rect key="frame" x="16" y="16" width="350" height="350"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="stW-Tn-zFC" secondAttribute="height" multiplier="1:1" id="nd6-IG-0ng"/>
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BZd-0e-yem">
-                                                <rect key="frame" x="16" y="376" width="350" height="200"/>
+                                                <rect key="frame" x="16" y="382" width="350" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -39,7 +39,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6kA-rY-8JC">
-                                                <rect key="frame" x="16" y="592" width="350" height="55"/>
+                                                <rect key="frame" x="16" y="598" width="350" height="55"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vy-hB-4VS" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="55"/>
@@ -66,7 +66,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V4-Aw-ttO" customClass="PurpleButton" customModule="Nano_05" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="663" width="350" height="55"/>
+                                                <rect key="frame" x="16" y="669" width="350" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="99B-WE-EZD"/>
@@ -77,7 +77,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SO-oq-ojG" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="734" width="350" height="55"/>
+                                                <rect key="frame" x="16" y="740" width="350" height="55"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="e8i-bt-2Kb"/>
@@ -89,11 +89,11 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                        <edgeInsets key="layoutMargins" top="10" left="16" bottom="40" right="16"/>
+                                        <edgeInsets key="layoutMargins" top="16" left="16" bottom="40" right="16"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="top" secondItem="dXU-YB-fAK" secondAttribute="top" id="Orw-rM-FWf"/>
+                                    <constraint firstItem="UDS-GZ-HOf" firstAttribute="top" secondItem="dXU-YB-fAK" secondAttribute="top" constant="16" id="Orw-rM-FWf"/>
                                     <constraint firstItem="UDS-GZ-HOf" firstAttribute="leading" secondItem="iOo-pU-rLN" secondAttribute="leading" constant="16" id="chO-ZT-HST"/>
                                     <constraint firstItem="UDS-GZ-HOf" firstAttribute="width" secondItem="Q4V-0M-XtR" secondAttribute="width" constant="-32" id="mLD-Gz-sVK"/>
                                     <constraint firstItem="UDS-GZ-HOf" firstAttribute="bottom" secondItem="iOo-pU-rLN" secondAttribute="bottom" id="oe7-f4-flO"/>
@@ -140,9 +140,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sGp-La-V85">
-                                        <rect key="frame" x="16" y="0.0" width="382" height="304.5"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="452.5"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="W4x-A7-PaK">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W4x-A7-PaK">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="183.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -150,37 +150,50 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-PS-gvO">
-                                                <rect key="frame" x="0.0" y="199.5" width="382" height="105"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="IS4-PS-gvO">
+                                                <rect key="frame" x="0.0" y="199.5" width="382" height="253"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKm-BT-6Ch" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="16" width="350" height="55"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="r1O-1Y-zbh"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Saiba mais"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="replay:" destination="dcV-mp-ae5" eventType="touchUpInside" id="RoB-MU-mBJ"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ff-NS-txW" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="10" width="171" height="55"/>
+                                                        <rect key="frame" x="16" y="87" width="350" height="55"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="WBy-Yb-5VM"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Refazer o teste"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="back:" destination="dcV-mp-ae5" eventType="touchUpInside" id="IDM-hH-TEJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgk-PL-JKw" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="158" width="350" height="55"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="tMe-CR-iIc"/>
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Voltar"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="back:" destination="dcV-mp-ae5" eventType="touchUpInside" id="IDM-hH-TEJ"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKm-BT-6Ch" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
-                                                        <rect key="frame" x="203" y="10" width="171" height="55"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="r1O-1Y-zbh"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Repetir"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="replay:" destination="dcV-mp-ae5" eventType="touchUpInside" id="RoB-MU-mBJ"/>
+                                                            <action selector="moreInfo:" destination="dcV-mp-ae5" eventType="touchUpInside" id="JtH-dA-fqj"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <edgeInsets key="layoutMargins" top="10" left="16" bottom="40" right="8"/>
+                                                <edgeInsets key="layoutMargins" top="16" left="16" bottom="40" right="16"/>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -189,7 +202,7 @@
                                     <constraint firstItem="sGp-La-V85" firstAttribute="width" secondItem="gLp-Q7-tCi" secondAttribute="width" constant="-32" id="D3N-Ol-UXS"/>
                                     <constraint firstItem="sGp-La-V85" firstAttribute="trailing" secondItem="jO5-gH-je2" secondAttribute="trailing" constant="16" id="elr-aw-m5v"/>
                                     <constraint firstItem="sGp-La-V85" firstAttribute="leading" secondItem="jO5-gH-je2" secondAttribute="leading" constant="16" id="f2E-QH-uyj"/>
-                                    <constraint firstItem="sGp-La-V85" firstAttribute="top" secondItem="jO5-gH-je2" secondAttribute="top" id="wGa-NG-Wcd"/>
+                                    <constraint firstItem="sGp-La-V85" firstAttribute="top" secondItem="1rP-ol-s2c" secondAttribute="top" constant="16" id="wGa-NG-Wcd"/>
                                     <constraint firstItem="sGp-La-V85" firstAttribute="bottom" secondItem="jO5-gH-je2" secondAttribute="bottom" id="ydD-xJ-kxS"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="jO5-gH-je2"/>
@@ -207,6 +220,7 @@
                     </view>
                     <connections>
                         <outlet property="backBtt" destination="7ff-NS-txW" id="y7a-E2-9hb"/>
+                        <outlet property="infoBtt" destination="dgk-PL-JKw" id="N3Y-sM-3ut"/>
                         <outlet property="mainStackView" destination="sGp-La-V85" id="ns6-pf-6Pe"/>
                         <outlet property="replayBtt" destination="BKm-BT-6Ch" id="sI2-Lc-uWb"/>
                         <outlet property="textView" destination="W4x-A7-PaK" id="kci-67-ILm"/>

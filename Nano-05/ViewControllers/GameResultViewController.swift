@@ -13,6 +13,7 @@ class GameResultViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var backBtt: RedButton!
     @IBOutlet weak var replayBtt: RedButton!
+    @IBOutlet weak var infoBtt: RedButton!
     
     var answers: [Bool] = []
     
@@ -28,48 +29,58 @@ class GameResultViewController: UIViewController {
         mainStackView.layer.cornerRadius = 10
         
         textView.backgroundColor = .secBackgroundColor
-        
+        textView.adjustsFontForContentSizeCategory = true
         
         generateText()
         
         setupAccessibility()
-        
-//        removeGameFromStack()
     }
     
     @IBAction func back(_ sender: Any) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func replay(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "CardGame", bundle: nil)
+        let loadVC = storyboard.instantiateInitialViewController()!
+    
+        loadVC.modalPresentationStyle = .fullScreen
+
+        self.navigationController?.pushViewController(loadVC, animated: true)
         
+        dismissAndRemoveFromNavigationStack()
+    }
+    
+    @IBAction func moreInfo(_ sender: Any) {
+        
+        guard let nextPost = postById(201) else { return }
+        let vc = PostViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.setPost(nextPost)
+        self.navigationController?.pushViewController(vc, animated: true)
+
+        dismissAndRemoveFromNavigationStack()
     }
 }
 
 extension GameResultViewController {
     
-    private func removeGameFromStack(){
-        var viewControllers = navigationController?.viewControllers
-
-        guard let index = viewControllers?.firstIndex(of: self) else { return }
-        
-        viewControllers?.remove(at: index)
-
-        navigationController?.setViewControllers(viewControllers!, animated: true)
-    }
-    
     private func generateText(){
         let correctly = answers.filter{ $0 == true}
         
-        let string = "\n\n Acertou \(correctly.count) de \(answers.count)"
-    
+        let stringScore = "Acertou \(correctly.count) de \(answers.count)."
+        
+        var string = ""
+        
         if correctly.count == answers.count {
-            textView.text = "Parece que esta entendendo do assunto. Parabens!" + string
+            string = "\n\nBoa! Deu para ver que você anda bem informado. Não esqueça de se proteger antes de se divertir!"
         } else if correctly.count / 3 < answers.count {
-            textView.text = "Você nao foi muito bem. Melhor estudar um pouco." + string
+            string = "\n\nVocê não foi muito bem... Que tal conferir os conteúdos que preparamos para você?"
         } else {
-            textView.text = "Parece que ainda esta com algumas duvidas sobre o assunto." + string
+            string = "\n\nQuase lá! Faltou pouco para gabaritar, mas conte com a gente para se manter informado."
         }
+        
+        textView.addBoldText(fullString: stringScore + string, boldPartOfString: [stringScore], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .title2))
     }
     
     private func setupAccessibility(){

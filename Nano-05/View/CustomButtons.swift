@@ -100,3 +100,14 @@ class PurpleButton: MyButton {
     }
     
 }
+
+class TurqButton: MyButton {
+    
+    override func setup() {
+        super.setup()
+        self.backgroundColor = .secundaryColor
+        self.setTitleColor(.black, for: .normal)
+        
+    }
+    
+}
