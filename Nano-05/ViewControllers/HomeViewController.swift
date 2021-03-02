@@ -76,12 +76,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
         
         let legend = lineChartView.legend
         legend.form = .line
+        legend.font = .boldSystemFont(ofSize: 10)
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .top
         legend.drawInside = false
         
         let xAxis = lineChartView.xAxis
-        xAxis.labelFont = .systemFont(ofSize: 11)
+        xAxis.labelFont = .boldSystemFont(ofSize: 11)
         xAxis.labelPosition = .bottom
         xAxis.drawAxisLineEnabled = false
         
@@ -169,7 +170,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
         hivPositiveSet.drawCircleHoleEnabled = false
         
         let data : LineChartData = [deathSet, hivPositiveSet]
-        data.setValueTextColor(.black)
+        data.setValueTextColor(UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1))
         data.setValueFont(.systemFont(ofSize: 9))
         
         lineChartView.data = data
