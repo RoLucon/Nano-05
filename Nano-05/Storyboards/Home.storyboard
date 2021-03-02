@@ -109,16 +109,9 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sO-dN-Qc6" customClass="LineChartView" customModule="Charts">
                                                                         <rect key="frame" x="10" y="10" width="362" height="220"/>
                                                                         <color key="backgroundColor" name="BackgroundColor"/>
-                                                                        <accessibility key="accessibilityConfiguration" hint="Gráfico de linha que compara número de mortes e de pessoas soropositivas nos últimos 19 anos" label="000">
-                                                                            <accessibilityTraits key="traits" none="YES"/>
-                                                                            <bool key="isElement" value="NO"/>
-                                                                        </accessibility>
                                                                     </view>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <accessibility key="accessibilityConfiguration" label="Gráfico de linha">
-                                                                    <bool key="isElement" value="NO"/>
-                                                                </accessibility>
                                                                 <constraints>
                                                                     <constraint firstItem="9sO-dN-Qc6" firstAttribute="top" secondItem="cQU-BO-Ln2" secondAttribute="top" constant="10" id="EgP-0a-XSe"/>
                                                                     <constraint firstAttribute="height" constant="240" id="dcm-rd-aMl"/>

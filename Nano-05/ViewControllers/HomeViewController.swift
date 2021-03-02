@@ -32,16 +32,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
     
     // requisição API
     var deaths = [Double]()
-    var infected = [Double]()
+    var hivPositive = [Double]()
     var years = [Int]()
-    
-    var lineChart = WhoLineChart()
-        
+            
     private let deathURL = "https://ghoapi.azureedge.net/api/HIV_0000000006?$filter=SpatialDim%20eq%20%27BRA%27"
     private let infectedURL = "https://ghoapi.azureedge.net/api/HIV_0000000001?$filter=SpatialDim%20eq%20%27BRA%27"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        apiRequest()
 
         // Do any additional setup after loading the view.
         saibaMaisButton.layer.cornerRadius = 10
@@ -65,18 +64,37 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         
-        lineChartView.delegate = self
-        lineChartView.chartDescription.enabled = false
-        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
-        // atualiza e customiza o gráfico
-        apiRequest()
-        styleChart()
-        msApiRequest()
         
-
+        // MARK: CONFIG GRÁFICO
+        lineChartView.delegate = self
+        lineChartView.chartDescription.enabled = false
+        lineChartView.setScaleEnabled(true)
+        lineChartView.pinchZoomEnabled = true
+        
+        let legend = lineChartView.legend
+        legend.form = .line
+        legend.horizontalAlignment = .right
+        legend.verticalAlignment = .top
+        legend.drawInside = false
+        
+        let xAxis = lineChartView.xAxis
+        xAxis.labelFont = .systemFont(ofSize: 11)
+        xAxis.labelPosition = .bottom
+        xAxis.drawAxisLineEnabled = false
+        
+        let leftAxis = lineChartView.leftAxis
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.granularityEnabled = true
+        
+        let rightAxis = lineChartView.rightAxis
+        rightAxis.enabled = false
+                
+        lineChartView.animate(xAxisDuration: 2.5)
+        
+        msApiRequest()
     }
     
     //MARK: ViewDidLayoutSubviews
@@ -108,15 +126,53 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
         
         // faz a requisição, pega o número de infectados e passa tudo para o gráfico
         requestWhoData(url: infectedURL) {(whoInfectedData) in
-            self.infected = getInfectedValue(whoData: whoInfectedData)
-            self.infectedNumber.text = "\(Int(self.infected.last!))"
+            self.hivPositive = getInfectedValue(whoData: whoInfectedData)
             
-            // cria a instância do gráfico
-            self.lineChart = WhoLineChart(years: self.years, deaths: self.deaths, infected: self.infected, deathColor: .red, infectedColor: .blue)
-            
-            // atualiza a view do gráfico com os dados
-            self.lineChartView.data = self.lineChart.data
+            self.setChartData(x1: self.generateDataEntry(data: self.deaths, years: self.years), x2: self.generateDataEntry(data: self.hivPositive, years: self.years), label1: "Número de mortes", label2: "Número de soropositivos")
+            self.infectedNumber.text = "\(Int(self.hivPositive.last!))"
         }
+    }
+    
+    // x years, y morte e infectado
+    func generateDataEntry(data: [Double], years: [Int]) -> [ChartDataEntry] {
+        let entry = (0..<years.count).map { (i) ->
+            ChartDataEntry in
+            return ChartDataEntry(x: Double(years[i]), y: data[i])
+        }
+        
+        return entry
+    }
+    
+    func setChartData(x1: [ChartDataEntry], x2: [ChartDataEntry], label1: String, label2: String) {
+    
+        let deathSet = LineChartDataSet(entries: x1, label: label1)
+        deathSet.axisDependency = .left
+        deathSet.setColor(.red)
+        deathSet.setCircleColor(.white)
+        deathSet.lineWidth = 2
+        deathSet.circleRadius = 3
+        deathSet.fillAlpha = 65/255
+        deathSet.fillColor = .red
+        deathSet.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        deathSet.drawCircleHoleEnabled = false
+        
+        let hivPositiveSet = LineChartDataSet(entries: x2, label: label2)
+        hivPositiveSet.axisDependency = .left
+        hivPositiveSet.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))
+        hivPositiveSet.setCircleColor(.white)
+        hivPositiveSet.lineWidth = 2
+        hivPositiveSet.circleRadius = 3
+        hivPositiveSet.fillAlpha = 65/255
+        hivPositiveSet.fillColor = UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)
+        hivPositiveSet.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+
+        hivPositiveSet.drawCircleHoleEnabled = false
+        
+        let data : LineChartData = [deathSet, hivPositiveSet]
+        data.setValueTextColor(.black)
+        data.setValueFont(.systemFont(ofSize: 9))
+        
+        lineChartView.data = data
     }
     
     func msApiRequest() {
@@ -128,23 +184,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
             self.treatmentsNumber.text = treatment
         }
     }
-    
-    func styleChart() {
-        // retira a label da direita do eixo y
-        lineChartView.rightAxis.enabled = false
-        
-        // anos embaixo ao invés de em cima
-        lineChartView.xAxis.labelPosition = .bottom
-        
-        // tamanho e cor das labels eixo x
-        let xAxis = lineChartView.xAxis
-        xAxis.labelFont = .boldSystemFont(ofSize: 10)
-        
-        // eixo y
-        lineChartView.leftAxis.labelFont = .boldSystemFont(ofSize: 10)
-//        lineChartView.isAccessibilityElement = true
-//        lineChartView.accessibilityLabel = "Gráfico comparativo de número de Mortes e Pessoas soropositivas nos últimos 19 anos"
-    }
+
     
     @IBAction func openHivDetailView(_ sender: Any) {
         let loadVC = PostViewController()
@@ -207,6 +247,5 @@ extension HomeViewController: UITableViewDataSource {
             loadVC.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(loadVC, animated: true)
         }
-
     }
 }
