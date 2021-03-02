@@ -7,7 +7,38 @@
             "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
         }
     ],
-    "modal": "fullscreen"
+    "modal": "fullscreen",
+    "redirect": [
+        {
+            "title": "Fazer teste",
+            "hint": "Inicia o jogo de questões alternativas sobre o contagio do HIV.",
+            "storyboard": "CardGame"
+            
+        },
+        {
+            "title": "Saber mais",
+            "hint": "Mais informações sobre formas de contagio",
+            "postId": 201
+        }
+    ]
+},
+{
+    "id": 201,
+    "title": "Formas de Contágio",
+    "info":[
+        {
+            "title": "Situaçoes de risco de infecção",
+            "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
+        }
+    ],
+    "modal": "fullscreen",
+    "redirect": [
+        {
+            "title": "Fazer teste",
+            "hint": "Inicia o jogo de questões alternativas sobre o contagio do HIV.",
+            "storyboard": "CardGame"
+        }
+    ]
 },
 {
     "id": 21,
@@ -80,6 +111,7 @@
     ],
     "modal": "fullscreen",
     "link": "http://www.aids.gov.br/pt-br/acesso_a_informacao/servicos-de-saude/prep",
+    "linkTitle": "Mais informações",
     "linkHint": "Link para site do ministerio da saude"
 },
 {
