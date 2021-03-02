@@ -21,7 +21,7 @@
         <!--introOne-->
         <scene sceneID="5kD-DP-jwX">
             <objects>
-                <viewController storyboardIdentifier="introOne" title="introOne" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Nem-Ry-J06" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introOne" title="introOne" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Nem-Ry-J06" customClass="ViewController" customModule="Nano_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="32Z-gI-x6I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M58-1U-f0e">
                                 <rect key="frame" x="20" y="614" width="374" height="295"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-6i-vAx">
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="&quot;Next&quot;" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-6i-vAx">
                                         <rect key="frame" x="294" y="190" width="60" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Had-48-feL"/>
@@ -47,7 +47,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="8uu-1U-qK6" kind="show" id="b7F-dc-fBd"/>
+                                            <action selector="nextView:" destination="Nem-Ry-J06" eventType="touchUpInside" id="VUN-Nd-maB"/>
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Sma-Vf-ygR">
@@ -102,6 +102,9 @@
                                 <state key="normal" title="Pular">
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="finish:" destination="Nem-Ry-J06" eventType="touchUpInside" id="16g-Xw-8yt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zUh-1Q-WbB"/>
@@ -122,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNk-8l-uED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-110.14492753623189" y="729.91071428571422"/>
+            <point key="canvasLocation" x="-110" y="730"/>
         </scene>
         <!--Home-->
         <scene sceneID="t7i-4b-GEr">
@@ -161,7 +164,7 @@
         <!--introTwo-->
         <scene sceneID="wkb-66-0f4">
             <objects>
-                <viewController storyboardIdentifier="introTwo" title="introTwo" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="8uu-1U-qK6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introTwo" title="introTwo" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="8uu-1U-qK6" customClass="ViewController" customModule="Nano_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O28-gZ-JCB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,7 +182,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Nem-Ry-J06" kind="show" id="66j-qV-lY2"/>
+                                            <action selector="previusView:" destination="8uu-1U-qK6" eventType="touchUpInside" id="c9u-AU-7QX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLN-7v-3kv">
@@ -193,7 +196,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="pmR-0t-3k8" kind="show" id="Bnd-5z-0S9"/>
+                                            <action selector="nextView:" destination="8uu-1U-qK6" eventType="touchUpInside" id="89I-ah-Fdb"/>
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="cpA-Mo-oJa">
@@ -253,6 +256,9 @@
                                 <state key="normal" title="Pular">
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="finish:" destination="8uu-1U-qK6" eventType="touchUpInside" id="pXV-iA-ouc"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tachinha" translatesAutoresizingMaskIntoConstraints="NO" id="ykF-Z3-tG8">
                                 <rect key="frame" x="44" y="166" width="326" height="356"/>
@@ -285,7 +291,7 @@
         <!--introThree-->
         <scene sceneID="aBo-Qn-MlC">
             <objects>
-                <viewController storyboardIdentifier="introThree" title="introThree" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="pmR-0t-3k8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introThree" title="introThree" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="pmR-0t-3k8" customClass="ViewController" customModule="Nano_05" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Vt-jl-6LD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -315,7 +321,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="8uu-1U-qK6" kind="show" id="m64-qn-tfO"/>
+                                            <action selector="previusView:" destination="pmR-0t-3k8" eventType="touchUpInside" id="zyh-os-vLj"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkO-DD-HOD">
@@ -329,7 +335,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xBz-3s-ctm" kind="show" id="EHA-nd-yOj"/>
+                                            <action selector="finish:" destination="pmR-0t-3k8" eventType="touchUpInside" id="s7S-ik-opN"/>
                                         </connections>
                                     </button>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="taw-db-ebq">
@@ -387,6 +393,9 @@
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="finish:" destination="pmR-0t-3k8" eventType="touchUpInside" id="MH8-f5-Izi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6ci-Ra-dMR"/>
@@ -409,9 +418,6 @@
             <point key="canvasLocation" x="1285.5072463768117" y="729.91071428571422"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="b7F-dc-fBd"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="4320" height="4320"/>
         <image name="pessoas-unidas" width="1283" height="1400"/>

@@ -30,6 +30,13 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         }
         
         self.delegate = self
+        
+        for i in orderedViewControllers {
+            if let vc = i as? ViewController {
+                vc.pageViewController = self
+            }
+        }
+        
 //        configurePageControl()
 
         // Do any additional setup after loading the view.
@@ -67,6 +74,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         
         return orderedViewControllers[previousIndex]
         
+        guard let vc = orderedViewControllers[previousIndex] as? ViewController else { return orderedViewControllers[previousIndex] }
+            vc.pageViewController = self
+        
+        return vc
+        
     }
         
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -85,7 +97,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
             return nil
         }
         
+        guard let vc = orderedViewControllers[nextIndex] as? ViewController else { return orderedViewControllers[nextIndex] }
+            vc.pageViewController = self
+        
         return orderedViewControllers[nextIndex]
+        
+        return vc
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
@@ -103,4 +120,22 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
     }
     */
 
+}
+
+extension UIPageViewController {
+    func goToNextPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        if let currentViewController = viewControllers?[0] {
+            if let nextPage = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) {
+                setViewControllers([nextPage], direction: .forward, animated: animated, completion: completion)
+            }
+        }
+    }
+
+    func goToPreviousPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        if let currentViewController = viewControllers?[0] {
+            if let previousPage = dataSource?.pageViewController(self, viewControllerBefore: currentViewController){
+                setViewControllers([previousPage], direction: .reverse, animated: true, completion: completion)
+            }
+        }
+    }
 }
