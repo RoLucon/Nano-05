@@ -19,4 +19,5 @@ struct ListItens: Decodable {
     var title: String
     var idRef: Int
     var titleHint: String?
+    var link: String?
 }

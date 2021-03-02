@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TabViewController: UIViewController, UITableViewDelegate {
     
@@ -109,6 +110,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
         ])
         
         
+        // MARK: Fontes e Créditos "Links Externos"
         if currentTab.listTitle != nil {
             listTitleLabel.text = currentTab.listTitle
             listTitleLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: .preferredFont(forTextStyle: .headline), maximumPointSize: 21)
@@ -143,6 +145,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
             tableView.deselectRow(at: row, animated: true)
         }
     }
+    
 }
 
 // MARK: - TableViewDataSource
@@ -174,19 +177,32 @@ extension TabViewController: UITableViewDataSource {
         let value = tabId + "\(indexPath.row)"
         let loadVC = PostViewController()
         
-        guard let post = postById(Int(value)!) else {
-            fatalError("Impossivel redirecionar. Post não encontrado.")
-        }
-        
-        loadVC.setPost(post)
-        
-        if post.modal == "sheet" {
-            loadVC.modalPresentationStyle = .popover
-            present(loadVC, animated: true)
+        if tabId != "5" {
+            guard let post = postById(Int(value)!) else {
+                fatalError("Impossivel redirecionar. Post não encontrado.")
+            }
             
+            loadVC.setPost(post)
+            
+            if post.modal == "sheet" {
+                loadVC.modalPresentationStyle = .popover
+                present(loadVC, animated: true)
+            } else {
+                loadVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(loadVC, animated: true)
+            }
+            
+        // se for a parte de fontes e créditos
         } else {
-            loadVC.modalPresentationStyle = .fullScreen
-            self.navigationController?.pushViewController(loadVC, animated: true)
+            guard let tabPost = tabById(5) else {
+                fatalError("Impossível redirecionar. Post não encontrado")
+            }
+            
+            guard let link = tabPost.listItens[indexPath.row].link else { return }
+            
+            let vc = SFSafariViewController(url: URL(string: link)!)
+            
+            self.present(vc, animated: true)
         }
     }
 }
