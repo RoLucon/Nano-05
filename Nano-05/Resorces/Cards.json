@@ -47,5 +47,54 @@
         "text": "Beijo no rosto ou na boca",
         "answer": "NÃO PEGA: O vírus não fica nos fluidos orais, apenas os anticorpos. Por isso, o exame é feito usando fluidos da boca, mas beijos em geral não transmitem HIV.",
         "answerValue": false
+    },
+    {
+        "id": 8,
+        "imageName": "objetos-pessoais",
+        "text": "Compartilhamento de objetos pessoais (sabonete, toalha, lençóis, talheres, copos etc.)",
+        "answer": "NÃO PEGA: Apenas objetos perfurantes não esterilizados, que colocam em contato com o sangue contaminado, podem transmitir HIV.",
+        "answerValue": false
+    },
+    {
+        "id": 9,
+        "imageName": "abraco",
+        "text": "Aperto de mão e/ou abraço",
+        "answer": "NÃO PEGA: A transmissão do HIV não se dá por qualquer contato físico, mas apenas por contato direto com fluidos genitais e sangue contaminado. Pode abraçar à vontade!",
+        "answerValue": false
+    },
+    {
+        "id": 10,
+        "imageName": "frutas-c-camisinha",
+        "text": "Sexo (seja oral, vaginal ou anal) com proteção.)",
+        "answer": "NÃO PEGA: Relações sexuais com o uso correto da camisinha não transmite HIV. A camisinha é o único método eficaz contra ISTs!",
+        "answerValue": false
+    },
+    {
+        "id": 11,
+        "imageName": "privada",
+        "text": "Compartilhamento de assento (privada, ônibus etc.)",
+        "answer": "NÃO PEGA: Não existe contato com fluidos genitais ou sangue contaminado nessas situações, portanto assentos públicos não transmitem HIV.",
+        "answerValue": false
+    },
+    {
+        "id": 12,
+        "imageName": "pato",
+        "text": "Estar na mesma piscina que uma pessoa soropositivo",
+        "answer": "NÃO PEGA: O vírus HIV não é transmitido através da água, apenas em contato direto com fluidos genitais ou sangue contaminado.",
+        "answerValue": false
+    },
+    {
+        "id": 13,
+        "imageName": "bolsa-sangue",
+        "text": "Doação de sangue",
+        "answer": "NÃO PEGA: A doação de sangue não configura contato com sangue contaminado, portanto não transmite o vírus HIV.",
+        "answerValue": false
+    },
+    {
+        "id": 14,
+        "imageName": "bebe",
+        "text": "De mãe para filho (durante a gravidez, no parto e na amamentação)",
+        "answer": "PEGA: Se a gestante soropositivo não realizar de maneira estrita os tratamentos recomendados, é possível transmitir o vírus para o filho.",
+        "answerValue": true
     }
 ]

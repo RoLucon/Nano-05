@@ -19,6 +19,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var showAnswersBtt: UIButton!
     @IBOutlet weak var nextQuestionBtt: UIButton!
     
+    private let imageView = UIImageView()
+    
     private var answerOpen = false
     
     private let cards: [Card] = card
@@ -44,6 +46,19 @@ class GameViewController: UIViewController {
         mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 10
         
+        mainView.addSubview(imageView)
+        
+        imageView.frame.size = mainView.frame.size
+        
+//        imageView.translatesAutoresizingMaskIntoConstraints = true
+////
+//        NSLayoutConstraint.activate([
+//            imageView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 0),
+//            imageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: 0),
+//            imageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 0),
+//            imageView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 0),
+//        ])
+        
         textView.backgroundColor = .secBackgroundColor
         
         textView.adjustsFontForContentSizeCategory = true
@@ -55,39 +70,18 @@ class GameViewController: UIViewController {
  
         leftButton.addTarget(self, action: #selector(leftButtonClick), for: .touchUpInside)
         
-        showAnswersBtt.addTarget(self, action: #selector(nextQuestion), for: .touchUpInside)
+        showAnswersBtt.addTarget(self, action: #selector(showAnswer), for: .touchUpInside)
         
         nextQuestionBtt.addTarget(self, action: #selector(nextQuestion), for: .touchUpInside)
         
         nextQuestionBtt.isHidden = true
         
         setupAccessibility()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-       addCard()
-    }
-    
-    private func addCard() {
-//        let viewCard = UIView()
-//        viewCard.frame = CGRect(x: 0, y: 0, width: mainView.frame.width - 32, height: mainView.frame.height - 32)
-//        viewCard.center = (mainView.superview?.convert(mainView.center, to: nil))!
-//        viewCard.backgroundColor = .blue
-//        viewCard.clipsToBounds = true
-//        viewCard.layer.cornerRadius = 10
-//        viewCard.addGestureRecognizer(gesture)
-//        view.addSubview(viewCard)
-//
-//        print(viewCard.center)
-//        print(mainView.center)
-//
-//        currentCard = viewCard
-        textView.addBoldText(fullString: cards[currentQuestion].text, boldPartOfString: [cards[currentQuestion].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
         
-        updateAccessibility()
+        changeCard()
     }
     
-    private func showAnswer() {
+    private func flipCard() {
         
         if !answerOpen {
             answerOpen = !answerOpen
@@ -117,6 +111,11 @@ class GameViewController: UIViewController {
     }
     
     private func changeCard() {
+        
+        let image = UIImage(named: cards[currentQuestion].imageName)
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        
         textView.addBoldText(fullString: cards[currentQuestion].text, boldPartOfString: [cards[currentQuestion].text], baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
         updateAccessibility()
     }
@@ -132,7 +131,13 @@ class GameViewController: UIViewController {
         dismissAndRemoveFromNavigationStack()
     }
     
-    private func feedback(_ flag: Bool) {
+    private func feedback(_ flag: Bool?) {
+        
+        guard let flag = flag else {
+            isAnswer.append(false)
+            return
+        }
+        
         if card[currentQuestion].answerValue == flag {
             isAnswer.append(true)
             feedbackGenerator(.success)
@@ -145,22 +150,29 @@ class GameViewController: UIViewController {
     //MARK: - Actions
     
     @objc func nextQuestion() {
+        
         if currentQuestion + 1 < cards.count {
             currentQuestion += 1
         } else {
             concludeGame()
         }
-        showAnswer()
+        flipCard()
     }
     
     @objc func rightButtonClick(_ sender: UIButton?) {
         feedback(true)
-        showAnswer()
+        flipCard()
     }
     
     @objc func leftButtonClick(_ sender: UIButton?) {
         feedback(false)
-        showAnswer()
+        flipCard()
+    }
+    
+    @objc func showAnswer(){
+        print("NIL 1")
+        feedback(nil)
+        flipCard()
     }
     
     //Desativado
