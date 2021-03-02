@@ -71,5 +71,25 @@
                 "titleHint": "Clique para saber mais sobre a relação do HIV e a Tuberculose."
             }
         ]
+    },
+    {
+        "id": 5 ,
+        "title": "Fontes e créditos",
+        "text": "Aplicativo desenvolvido por Beatriz Sato, Nadja Batista e Rogério Lucon.\n\nDados e informações extraídos da OMS (Organização Mundial da Saúde) e Ministério da Saúde.",
+        "listItens": [
+            {
+                "title": "Repositório no GitHub",
+                "idRef": 10
+            },
+            {
+                "title": "GHO OData API",
+                "idRef": 11
+            },
+            {
+                "title": "Ministério da Saúde",
+                "idRef": 12
+            }
+        ],
+        "listTitle": "Links externos"
     }
 ]

@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-class HomeViewController: UIViewController, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelegate {
 
     @IBOutlet weak var saibaMaisButton: UIButton!
     
@@ -65,6 +65,9 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         
+        lineChartView.delegate = self
+        lineChartView.chartDescription.enabled = false
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
@@ -72,6 +75,7 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         apiRequest()
         styleChart()
         msApiRequest()
+        
 
     }
     
@@ -138,8 +142,8 @@ class HomeViewController: UIViewController, UITableViewDelegate {
         
         // eixo y
         lineChartView.leftAxis.labelFont = .boldSystemFont(ofSize: 10)
-        lineChartView.isAccessibilityElement = true
-        lineChartView.accessibilityLabel = "Gráfico comparativo de número de Mortes e Pessoas soropositivas nos últimos 19 anos"
+//        lineChartView.isAccessibilityElement = true
+//        lineChartView.accessibilityLabel = "Gráfico comparativo de número de Mortes e Pessoas soropositivas nos últimos 19 anos"
     }
     
     @IBAction func openHivDetailView(_ sender: Any) {
@@ -185,16 +189,24 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let value = homeTabId + "\(indexPath.row)"
+        
+        if value == "11" {
+            let loadVC = TabViewController()
+            loadVC.tabId = "5"
+            loadVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(loadVC, animated: true)
+        } else {
+            let loadVC = PostViewController()
 
-        let loadVC = PostViewController()
+            guard let post = postById(Int(value)!) else {
+                fatalError("Impossível redirecionar. Post não encontrado")
+            }
 
-        guard let post = postById(Int(value)!) else {
-            fatalError("Impossível redirecionar. Post não encontrado")
+            loadVC.setPost(post)
+
+            loadVC.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(loadVC, animated: true)
         }
 
-        loadVC.setPost(post)
-
-        loadVC.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(loadVC, animated: true)
     }
 }

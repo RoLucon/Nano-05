@@ -110,14 +110,14 @@
                                                                         <rect key="frame" x="10" y="10" width="362" height="220"/>
                                                                         <color key="backgroundColor" name="BackgroundColor"/>
                                                                         <accessibility key="accessibilityConfiguration" hint="Gráfico de linha que compara número de mortes e de pessoas soropositivas nos últimos 19 anos" label="000">
-                                                                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                                                                            <bool key="isElement" value="YES"/>
+                                                                            <accessibilityTraits key="traits" none="YES"/>
+                                                                            <bool key="isElement" value="NO"/>
                                                                         </accessibility>
                                                                     </view>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <accessibility key="accessibilityConfiguration" label="Gráfico de linha">
-                                                                    <bool key="isElement" value="YES"/>
+                                                                    <bool key="isElement" value="NO"/>
                                                                 </accessibility>
                                                                 <constraints>
                                                                     <constraint firstItem="9sO-dN-Qc6" firstAttribute="top" secondItem="cQU-BO-Ln2" secondAttribute="top" constant="10" id="EgP-0a-XSe"/>
@@ -147,7 +147,7 @@
                                                                                     </label>
                                                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="14.000.000" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31Z-Ce-cUy">
                                                                                         <rect key="frame" x="0.0" y="25" width="183" height="45"/>
-                                                                                        <accessibility key="accessibilityConfiguration" hint="Número de pessoas em tratamento" label="Número de pessoas em tratamento">
+                                                                                        <accessibility key="accessibilityConfiguration" label="Número de pessoas em tratamento">
                                                                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                                                         </accessibility>
                                                                                         <constraints>

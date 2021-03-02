@@ -38,20 +38,30 @@ func postById(_ id: Int) -> Post? {
     return filter.first
 }
 
-// método que faz a requisição da api da OMS
+func tabById(_ id: Int) -> Tab? {
+    let filter = tab.filter { $0.id == id }
+    
+    return filter.first
+}
+
+// MARK: API OMS e Ministério da saúde
 func requestWhoData(url: String, completion: @escaping ([WhoData]) -> ()) {
     var whoData: [WhoData] = []
     
-    guard let url = URL(string: url) else { return }
+    guard let url = URL(string: url) else { fatalError("invalid URL") }
     
-    URLSession.shared.dataTask(with: url) { (data, _, _) in
-        let jsonWhoData = try! JSONDecoder().decode(Values.self, from: data!)
+    URLSession.shared.dataTask(with: url) { data, response, error in
         
-        whoData = jsonWhoData.value
-        
-        DispatchQueue.main.async {
-            completion(whoData)
+        if let jsonWhoData = data {
+            if let decodedResponse = try? JSONDecoder().decode(Values.self, from: jsonWhoData) {
+                whoData = decodedResponse.value
+                
+                DispatchQueue.main.async {
+                    completion(whoData)
+                }
+            }
         }
+
 
     }.resume()
 }

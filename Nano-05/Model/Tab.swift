@@ -12,6 +12,7 @@ struct Tab: Identifiable, Decodable {
     var title: String
     var text: String
     var listItens: [ListItens]
+    var listTitle: String?
 }
 
 struct ListItens: Decodable {

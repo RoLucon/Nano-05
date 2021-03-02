@@ -19,6 +19,8 @@ class TabViewController: UIViewController, UITableViewDelegate {
     
     private let textView = UITextView()
     
+    private let listTitleLabel = UILabel()
+    
     private var tableViewHeight: NSLayoutConstraint?
     
     override func viewDidLoad() {
@@ -85,6 +87,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
         let line = UIView(frame: frame)
         self.tableView.tableHeaderView = line
         line.backgroundColor = self.tableView.separatorColor
+
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -101,9 +104,25 @@ class TabViewController: UIViewController, UITableViewDelegate {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 32),
+            tableView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 40),
             tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32),
         ])
+        
+        
+        if currentTab.listTitle != nil {
+            listTitleLabel.text = currentTab.listTitle
+            listTitleLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: .preferredFont(forTextStyle: .headline), maximumPointSize: 21)
+            
+            scrollView.addSubview(listTitleLabel)
+            
+            listTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([listTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                                         listTitleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+                                        listTitleLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -8),
+                                        
+            ])
+        }
     }
     
     //MARK: ViewDidLayoutSubviews

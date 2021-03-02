@@ -29,32 +29,20 @@ class WhoLineChart {
         setDeathDataSet(color: deathColor)
         setInfectedDataSet(color: infectedColor)
         
-        setChartData()
+        // pega os conjuntos de dados das linhas e coloca no gráfico
+
+        data = [deathDataSet, infectedDataSet]
     }
-    
-    // pega os conjuntos de dados das linhas e coloca no gráfico
-    func setChartData() {
-        var dataSets = [ChartDataSetProtocol]()
-        
-        dataSets.append(deathDataSet)
-        dataSets.append(infectedDataSet)
-        
-        // junta os dados
-        data = LineChartData(dataSets: dataSets)
-        data.isAccessibilityElement = true
-    }
-    
+
     // customização da linha de morte do gráfico
     func setDeathDataSet(color: NSUIColor) {
         deathDataSet = LineChartDataSet(entries: dataDeath, label: "Mortes")
-        
         
         deathDataSet.setColor(color)
         deathDataSet.drawCirclesEnabled = false
         
         // seta o tamanho da fonte dos valores da linha
         deathDataSet.valueFont = .systemFont(ofSize: 10)
-        deathDataSet.isAccessibilityElement = true
         
         deathDataSet.lineWidth = 3
     }
@@ -65,7 +53,8 @@ class WhoLineChart {
         
         infectedDataSet.drawCirclesEnabled = false
         infectedDataSet.setColor(color)
-        
+//        infectedDataSet.formLineWidth = 1
+//        infectedDataSet.formSize = 15
         
         infectedDataSet.lineWidth = 3
     }
