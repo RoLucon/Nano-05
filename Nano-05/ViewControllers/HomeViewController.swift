@@ -68,7 +68,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
         
         
-        // MARK: CONFIG GRÁFICO
+        // MARK: Configuração gráfico
         lineChartView.delegate = self
         lineChartView.chartDescription.enabled = false
         lineChartView.setScaleEnabled(true)
@@ -147,7 +147,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
     
         let deathSet = LineChartDataSet(entries: x1, label: label1)
         deathSet.axisDependency = .left
-        deathSet.setColor(.red)
+        deathSet.setColor(UIColor(named: "AccentColor")!)
         deathSet.setCircleColor(.white)
         deathSet.lineWidth = 2
         deathSet.circleRadius = 3
@@ -158,7 +158,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
         
         let hivPositiveSet = LineChartDataSet(entries: x2, label: label2)
         hivPositiveSet.axisDependency = .left
-        hivPositiveSet.setColor(UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1))
+        hivPositiveSet.setColor(UIColor(named: "PrimaryColor123")!)
         hivPositiveSet.setCircleColor(.white)
         hivPositiveSet.lineWidth = 2
         hivPositiveSet.circleRadius = 3
