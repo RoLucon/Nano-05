@@ -150,6 +150,10 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         titleLabel.text = title
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     //MARK: - UPDATE
     private func update() {
         guard let post = self.post else { return }
