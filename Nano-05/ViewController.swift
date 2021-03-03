@@ -30,8 +30,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func finish(_ sender: Any) {
-        print("go to home!!!")
-        UserDefaults.standard.set(false, forKey: "firstAccess")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        vc?.modalPresentationStyle = .fullScreen
+        present(vc!, animated: true, completion: {
+            UserDefaults.standard.set(false, forKey: "firstAccess")
+        })
     }
 }
 

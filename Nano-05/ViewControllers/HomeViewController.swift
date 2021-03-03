@@ -40,6 +40,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         apiRequest()
 
         // Do any additional setup after loading the view.
@@ -112,6 +113,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
         if let row = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: row, animated: true)
         }
@@ -159,7 +161,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
         
         let hivPositiveSet = LineChartDataSet(entries: x2, label: label2)
         hivPositiveSet.axisDependency = .left
-        hivPositiveSet.setColor(UIColor(named: "PrimaryColor123")!)
+        hivPositiveSet.setColor(UIColor(named: "SecundaryColor")!)
         hivPositiveSet.setCircleColor(.white)
         hivPositiveSet.lineWidth = 2
         hivPositiveSet.circleRadius = 3
