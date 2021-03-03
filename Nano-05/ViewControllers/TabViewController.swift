@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TabViewController: UIViewController, UITableViewDelegate {
     
@@ -18,6 +19,8 @@ class TabViewController: UIViewController, UITableViewDelegate {
     private let tableView = UITableView()
     
     private let textView = UITextView()
+    
+    private let listTitleLabel = UILabel()
     
     private var tableViewHeight: NSLayoutConstraint?
     
@@ -85,6 +88,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
         let line = UIView(frame: frame)
         self.tableView.tableHeaderView = line
         line.backgroundColor = self.tableView.separatorColor
+
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -101,9 +105,26 @@ class TabViewController: UIViewController, UITableViewDelegate {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 32),
+            tableView.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 40),
             tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -32),
         ])
+        
+        
+        // MARK: Fontes e Créditos "Links Externos"
+        if currentTab.listTitle != nil {
+            listTitleLabel.text = currentTab.listTitle
+            listTitleLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: .preferredFont(forTextStyle: .headline), maximumPointSize: 21)
+            
+            scrollView.addSubview(listTitleLabel)
+            
+            listTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([listTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                                         listTitleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+                                        listTitleLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -8),
+                                        
+            ])
+        }
     }
     
     //MARK: ViewDidLayoutSubviews
@@ -124,6 +145,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
             tableView.deselectRow(at: row, animated: true)
         }
     }
+    
 }
 
 // MARK: - TableViewDataSource
@@ -155,19 +177,32 @@ extension TabViewController: UITableViewDataSource {
         let value = tabId + "\(indexPath.row)"
         let loadVC = PostViewController()
         
-        guard let post = postById(Int(value)!) else {
-            fatalError("Impossivel redirecionar. Post não encontrado.")
-        }
-        
-        loadVC.setPost(post)
-        
-        if post.modal == "sheet" {
-            loadVC.modalPresentationStyle = .popover
-            present(loadVC, animated: true)
+        if tabId != "5" {
+            guard let post = postById(Int(value)!) else {
+                fatalError("Impossivel redirecionar. Post não encontrado.")
+            }
             
+            loadVC.setPost(post)
+            
+            if post.modal == "sheet" {
+                loadVC.modalPresentationStyle = .popover
+                present(loadVC, animated: true)
+            } else {
+                loadVC.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(loadVC, animated: true)
+            }
+            
+        // se for a parte de fontes e créditos
         } else {
-            loadVC.modalPresentationStyle = .fullScreen
-            self.navigationController?.pushViewController(loadVC, animated: true)
+            guard let tabPost = tabById(5) else {
+                fatalError("Impossível redirecionar. Post não encontrado")
+            }
+            
+            guard let link = tabPost.listItens[indexPath.row].link else { return }
+            
+            let vc = SFSafariViewController(url: URL(string: link)!)
+            
+            self.present(vc, animated: true)
         }
     }
 }

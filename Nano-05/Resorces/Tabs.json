@@ -1,12 +1,16 @@
 [
     {
         "id": 1,
-        "title": "Tab Title",
+        "title": "Home",
         "text": "Texto da Tab",
         "listItens": [
             {
-                "title": "List Item Title",
-                "idRef": 1
+                "title": "Outras ISTs",
+                "idRef": 10
+            },
+            {
+                "title": "Fontes",
+                "idRef": 11
             }
         ]
     },
@@ -67,5 +71,28 @@
                 "titleHint": "Clique para saber mais sobre a relação do HIV e a Tuberculose."
             }
         ]
+    },
+    {
+        "id": 5 ,
+        "title": "Fontes e créditos",
+        "text": "Aplicativo desenvolvido por Beatriz Sato, Nadja Batista e Rogério Lucon.\n\nDados e informações extraídos da OMS (Organização Mundial da Saúde) e Ministério da Saúde.",
+        "listItens": [
+            {
+                "title": "Repositório no GitHub",
+                "idRef": 50,
+                "link": "https://github.com/RoLucon/Nano-05"
+            },
+            {
+                "title": "GHO OData API",
+                "idRef": 51,
+                "link": "https://www.who.int/data/gho/data/indicators"
+            },
+            {
+                "title": "Ministério da Saúde",
+                "idRef": 52,
+                "link": "http://www.aids.gov.br/pt-br/publico-geral/o-que-e-hiv"
+            }
+        ],
+        "listTitle": "Links externos"
     }
 ]
