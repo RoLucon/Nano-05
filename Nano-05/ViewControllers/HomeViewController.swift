@@ -21,6 +21,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
     @IBOutlet weak var whoInfectedDataView: UIView!
     @IBOutlet weak var treatmentsNumber: UITextView!
     @IBOutlet weak var infectedNumber: UITextView!
+    @IBOutlet weak var whoStackView: UIStackView!
     
     // view das fontes
     @IBOutlet weak var tableView: UITableView!
@@ -41,13 +42,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, ChartViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        traitCollectionDidChange(UITraitCollection())
+        
         apiRequest()
 
         // Do any additional setup after loading the view.
         saibaMaisButton.layer.cornerRadius = 10
         outsideChartView.layer.cornerRadius = 10
-        whoTreatmentDataView.layer.cornerRadius = 10
-        whoInfectedDataView.layer.cornerRadius = 10
+//        whoTreatmentDataView.layer.cornerRadius = 10
+//        whoInfectedDataView.layer.cornerRadius = 10
         
         // Configuração do TabItem pra receber o JSON
         let auxTab: [Tab] = tab.filter { $0.id == 1}
@@ -251,4 +254,15 @@ extension HomeViewController: UITableViewDataSource {
             self.navigationController?.pushViewController(loadVC, animated: true)
         }
     }
+}
+
+extension HomeViewController {
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        
+        let isLarge = traitCollection.preferredContentSizeCategory.isAccessibilityCategory
+        
+        whoStackView.axis = isLarge ? .vertical : .horizontal
+    }
+    
 }
