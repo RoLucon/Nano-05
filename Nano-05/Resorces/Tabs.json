@@ -18,6 +18,7 @@
         "id": 2,
         "title": "Prevenção",
         "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
+        "imageName": "frutas-c-camisinha",
         "listItens": [
             {
                 "title": "Formas de Contágio",
@@ -37,6 +38,7 @@
         "id": 3,
         "title": "Testes",
         "text": "Conhecer o quanto antes a sorologia positiva para o HIV aumenta muito a expectativa de vida de uma pessoa que vive com o vírus. Quem se testa com regularidade, busca tratamento no tempo certo e segue as recomendações da equipe de saúde ganha muito em qualidade de vida.\n\nAlém disso, as mães que vivem com HIV têm 99% de chance de terem filhos sem o HIV se seguirem o tratamento recomendado durante o pré-natal, parto e pós-parto.",
+        "imageName": "teste-ampolinha",
         "listItens": [
             {
                 "title": "Como Funciona?",
@@ -64,6 +66,7 @@
         "id": 4,
         "title": "Cuidados",
         "text": "A qualquer indício ou suspeita de infecção pelo vírus HIV, é necessário buscar aconselhamento médico. Quanto antes ocorrer o diagnóstico e começar o tratamento antirretroviral, maiores as chances de conseguir levar uma vida saudável, com maior expectativa de vida, sem desenvolver a AIDS, e com menores chances até de transmitir o vírus sexualmente.",
+        "imageName": "pilulas",
         "listItens": [
             {
                 "title": "HIV e Tuberculose",
@@ -76,6 +79,7 @@
         "id": 5 ,
         "title": "Fontes e créditos",
         "text": "Aplicativo desenvolvido por Beatriz Sato, Nadja Batista e Rogério Lucon.\n\nDados e informações extraídos da OMS (Organização Mundial da Saúde) e Ministério da Saúde.",
+        "imageName": "logo",
         "listItens": [
             {
                 "title": "Repositório no GitHub",
