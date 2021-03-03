@@ -45,18 +45,17 @@
                                                         <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-7X-p0A">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="HIV é o vírus causador da AIDS, uma doença sexualmente transmissível sem cura, que afeta o sistema imunológico." textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIf-7X-p0A">
                                                         <rect key="frame" x="16" y="99.5" width="382" height="104"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <accessibility key="accessibilityConfiguration" hint="introduction text to HIV" label="Introduction to HIV">
                                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                         </accessibility>
-                                                        <string key="text">HIV é o vírus causador da AIDS, uma doença sexualmente transmissível sem cura, que afeta o sistema imunológico e já causou milhões de mortes</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1U-19-3gQ" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1U-19-3gQ" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="219.5" width="382" height="45"/>
                                                         <color key="backgroundColor" name="AccentColor"/>
                                                         <accessibility key="accessibilityConfiguration" hint="Abre texto maior sobre HIV" label="Saiba mais"/>
