@@ -11,6 +11,8 @@ struct Post: Identifiable, Decodable {
     var id: Int
     var title: String
     
+    var imageName: String?
+    
     var info: [Info]
     
     var modal: String
