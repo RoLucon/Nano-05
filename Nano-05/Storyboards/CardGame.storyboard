@@ -163,7 +163,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Saiba mais"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="replay:" destination="dcV-mp-ae5" eventType="touchUpInside" id="RoB-MU-mBJ"/>
+                                                            <action selector="moreInfo:" destination="dcV-mp-ae5" eventType="touchUpInside" id="MWu-PV-n23"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ff-NS-txW" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
@@ -176,7 +176,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Refazer o teste"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="back:" destination="dcV-mp-ae5" eventType="touchUpInside" id="IDM-hH-TEJ"/>
+                                                            <action selector="replay:" destination="dcV-mp-ae5" eventType="touchUpInside" id="hff-mC-fFC"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgk-PL-JKw" customClass="RedButton" customModule="Nano_05" customModuleProvider="target">
@@ -189,7 +189,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Voltar"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="moreInfo:" destination="dcV-mp-ae5" eventType="touchUpInside" id="JtH-dA-fqj"/>
+                                                            <action selector="back:" destination="dcV-mp-ae5" eventType="touchUpInside" id="iok-4K-yJO"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -219,7 +219,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backBtt" destination="7ff-NS-txW" id="y7a-E2-9hb"/>
+                        <outlet property="backBtt" destination="7ff-NS-txW" id="xNi-tB-oop"/>
                         <outlet property="infoBtt" destination="dgk-PL-JKw" id="N3Y-sM-3ut"/>
                         <outlet property="mainStackView" destination="sGp-La-V85" id="ns6-pf-6Pe"/>
                         <outlet property="replayBtt" destination="BKm-BT-6Ch" id="sI2-Lc-uWb"/>
