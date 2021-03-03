@@ -76,8 +76,8 @@ class TabViewController: UIViewController, UITableViewDelegate {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                                imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-                                imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+                imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
                 imageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
                 imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32),
                 imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
