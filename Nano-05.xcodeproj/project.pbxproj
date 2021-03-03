@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		8511981025EC008F00C0EE81 /* WhoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511980F25EC008F00C0EE81 /* WhoData.swift */; };
 		85133E1025ED6A5100F62066 /* TreatmentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85133E0F25ED6A5100F62066 /* TreatmentData.swift */; };
 		852D9A5F25ED91F300E884E0 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852D9A5A25ED91E600E884E0 /* Charts.framework */; };
 		852D9A6025ED91F300E884E0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 852D9A5A25ED91E600E884E0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85E0CD8625E96BFC00ED6D59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0CD8525E96BFC00ED6D59 /* HomeViewController.swift */; };
+
+		19F30C0825E96E5B00D57CAA /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F30C0725E96E5B00D57CAA /* Intro.storyboard */; };
+		19F30C0F25E9767200D57CAA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F30C0E25E9767200D57CAA /* PageViewController.swift */; };
+
 		89256B4825DEE0FC00E567F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89256B4725DEE0FC00E567F0 /* AppDelegate.swift */; };
 		89256B4A25DEE0FC00E567F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89256B4925DEE0FC00E567F0 /* SceneDelegate.swift */; };
 		89256B4C25DEE0FC00E567F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89256B4B25DEE0FC00E567F0 /* ViewController.swift */; };
@@ -28,9 +33,18 @@
 		89282A8525E07AA500FE2029 /* Posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 89282A8425E07AA500FE2029 /* Posts.json */; };
 		89282A8825E0803D00FE2029 /* Tabs.json in Resources */ = {isa = PBXBuildFile; fileRef = 89282A8725E0803D00FE2029 /* Tabs.json */; };
 		89282A8C25E0807300FE2029 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89282A8B25E0807300FE2029 /* Tab.swift */; };
+		89579ECC25E97EAB00A0EF31 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89579ECB25E97EAB00A0EF31 /* UITextView.swift */; };
+		89579ED625ED68FF00A0EF31 /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89579ED525ED68FF00A0EF31 /* GameResultViewController.swift */; };
 		89908C8625E5869E00B8BEFD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8525E5869E00B8BEFD /* PostViewController.swift */; };
 		89908C8A25E587A700B8BEFD /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8925E587A700B8BEFD /* UIViewController.swift */; };
 		89908C8F25E6C3FC00B8BEFD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908C8E25E6C3FC00B8BEFD /* UIColor.swift */; };
+		89908CB525E83D4800B8BEFD /* CardGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89908CB425E83D4800B8BEFD /* CardGame.storyboard */; };
+		89908CB825E83E4D00B8BEFD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908CB725E83E4C00B8BEFD /* GameViewController.swift */; };
+		89908CBC25E83F1E00B8BEFD /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89908CBB25E83F1E00B8BEFD /* CardView.swift */; };
+		89908CC025E83F5600B8BEFD /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89908CBF25E83F5600B8BEFD /* CardView.xib */; };
+		89B09E8725E969ED00F498AF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B09E8625E969ED00F498AF /* Card.swift */; };
+		89B09E8A25E96E2100F498AF /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B09E8925E96E2100F498AF /* CustomButtons.swift */; };
+		89B09E8D25E9763A00F498AF /* Cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 89B09E8C25E9763A00F498AF /* Cards.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +79,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+
 		8511980F25EC008F00C0EE81 /* WhoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoData.swift; sourceTree = "<group>"; };
 		85133E0F25ED6A5100F62066 /* TreatmentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentData.swift; sourceTree = "<group>"; };
 		852D9A5425ED91E600E884E0 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Nano-05/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		85E0CD8525E96BFC00ED6D59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		19F30C0725E96E5B00D57CAA /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		19F30C0E25E9767200D57CAA /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		89256B4425DEE0FC00E567F0 /* Nano-05.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nano-05.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89256B4725DEE0FC00E567F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89256B4925DEE0FC00E567F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +104,18 @@
 		89282A8425E07AA500FE2029 /* Posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Posts.json; sourceTree = "<group>"; };
 		89282A8725E0803D00FE2029 /* Tabs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tabs.json; sourceTree = "<group>"; };
 		89282A8B25E0807300FE2029 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		89579ECB25E97EAB00A0EF31 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		89579ED525ED68FF00A0EF31 /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		89908C8525E5869E00B8BEFD /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		89908C8925E587A700B8BEFD /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		89908C8E25E6C3FC00B8BEFD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		89908CB425E83D4800B8BEFD /* CardGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardGame.storyboard; sourceTree = "<group>"; };
+		89908CB725E83E4C00B8BEFD /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		89908CBB25E83F1E00B8BEFD /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		89908CBF25E83F5600B8BEFD /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		89B09E8625E969ED00F498AF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		89B09E8925E96E2100F498AF /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		89B09E8C25E9763A00F498AF /* Cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Cards.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +167,7 @@
 		89256B4625DEE0FC00E567F0 /* Nano-05 */ = {
 			isa = PBXGroup;
 			children = (
+				89908CBA25E83E7200B8BEFD /* View */,
 				89908C8825E5879000B8BEFD /* Extensions */,
 				89282A8325E07A7B00FE2029 /* Resorces */,
 				89282A7E25E079C400FE2029 /* ViewControllers */,
@@ -164,6 +191,9 @@
 				89256B6025DEEB1D00E567F0 /* Prevention.storyboard */,
 				89256B6325DEEB3900E567F0 /* Tests.storyboard */,
 				89256B6625DEEB5C00E567F0 /* Care.storyboard */,
+				19F30C0725E96E5B00D57CAA /* Intro.storyboard */,
+				19F30C0E25E9767200D57CAA /* PageViewController.swift */,
+				89908CB425E83D4800B8BEFD /* CardGame.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -176,6 +206,7 @@
 				89282A8B25E0807300FE2029 /* Tab.swift */,
 				8511980F25EC008F00C0EE81 /* WhoData.swift */,
 				85133E0F25ED6A5100F62066 /* TreatmentData.swift */,
+				89B09E8625E969ED00F498AF /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +217,8 @@
 				89282A7F25E07A1C00FE2029 /* TabViewController.swift */,
 				89908C8525E5869E00B8BEFD /* PostViewController.swift */,
 				85E0CD8525E96BFC00ED6D59 /* HomeViewController.swift */,
+				89908CB725E83E4C00B8BEFD /* GameViewController.swift */,
+				89579ED525ED68FF00A0EF31 /* GameResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +228,7 @@
 			children = (
 				89282A8425E07AA500FE2029 /* Posts.json */,
 				89282A8725E0803D00FE2029 /* Tabs.json */,
+				89B09E8C25E9763A00F498AF /* Cards.json */,
 			);
 			path = Resorces;
 			sourceTree = "<group>";
@@ -204,8 +238,19 @@
 			children = (
 				89908C8925E587A700B8BEFD /* UIViewController.swift */,
 				89908C8E25E6C3FC00B8BEFD /* UIColor.swift */,
+				89579ECB25E97EAB00A0EF31 /* UITextView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		89908CBA25E83E7200B8BEFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89908CBB25E83F1E00B8BEFD /* CardView.swift */,
+				89908CBF25E83F5600B8BEFD /* CardView.xib */,
+				89B09E8925E96E2100F498AF /* CustomButtons.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,15 +334,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89908CB525E83D4800B8BEFD /* CardGame.storyboard in Resources */,
 				89256B6725DEEB5C00E567F0 /* Care.storyboard in Resources */,
 				89256B5425DEE0FC00E567F0 /* LaunchScreen.storyboard in Resources */,
 				89256B5125DEE0FC00E567F0 /* Assets.xcassets in Resources */,
 				89282A8525E07AA500FE2029 /* Posts.json in Resources */,
 				89256B4F25DEE0FC00E567F0 /* Main.storyboard in Resources */,
 				89256B5E25DEEAE900E567F0 /* Home.storyboard in Resources */,
+				89908CC025E83F5600B8BEFD /* CardView.xib in Resources */,
 				89282A8825E0803D00FE2029 /* Tabs.json in Resources */,
 				89256B6425DEEB3900E567F0 /* Tests.storyboard in Resources */,
 				89256B6125DEEB1D00E567F0 /* Prevention.storyboard in Resources */,
+				19F30C0825E96E5B00D57CAA /* Intro.storyboard in Resources */,
+				89B09E8D25E9763A00F498AF /* Cards.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,17 +358,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				89908C8625E5869E00B8BEFD /* PostViewController.swift in Sources */,
+				89579ED625ED68FF00A0EF31 /* GameResultViewController.swift in Sources */,
 				89282A8C25E0807300FE2029 /* Tab.swift in Sources */,
+				19F30C0F25E9767200D57CAA /* PageViewController.swift in Sources */,
+				89B09E8A25E96E2100F498AF /* CustomButtons.swift in Sources */,
 				89908C8A25E587A700B8BEFD /* UIViewController.swift in Sources */,
 				89282A8025E07A1C00FE2029 /* TabViewController.swift in Sources */,
 				8511981025EC008F00C0EE81 /* WhoData.swift in Sources */,
+				89B09E8725E969ED00F498AF /* Card.swift in Sources */,
 				89256B4C25DEE0FC00E567F0 /* ViewController.swift in Sources */,
+				89579ECC25E97EAB00A0EF31 /* UITextView.swift in Sources */,
 				89282A7B25E05B2700FE2029 /* Data.swift in Sources */,
 				89282A7725E05A8800FE2029 /* Post.swift in Sources */,
 				85E0CD8625E96BFC00ED6D59 /* HomeViewController.swift in Sources */,
 				89256B4825DEE0FC00E567F0 /* AppDelegate.swift in Sources */,
 				85133E1025ED6A5100F62066 /* TreatmentData.swift in Sources */,
 				89256B4A25DEE0FC00E567F0 /* SceneDelegate.swift in Sources */,
+				89908CB825E83E4D00B8BEFD /* GameViewController.swift in Sources */,
+				89908CBC25E83F1E00B8BEFD /* CardView.swift in Sources */,
 				89908C8F25E6C3FC00B8BEFD /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ import Foundation
 
 let post: [Post] = load("Posts.json")
 let tab: [Tab] = load("Tabs.json")
+let card: [Card] = load("Cards.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
