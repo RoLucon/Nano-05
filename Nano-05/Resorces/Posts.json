@@ -145,7 +145,6 @@
 {
     "id": 32,
     "title": "Quando fazer?",
-    "imageName": "localidade",
     "info":[
         {
             "title": "",
@@ -173,6 +172,7 @@
 {
     "id": 33,
     "title": "Onde fazer?",
+    "imageName": "localidade",
     "info":[
         {
             "title": "",
