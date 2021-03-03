@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func finish(_ sender: Any) {
         print("go to home!!!")
+        UserDefaults.standard.set(false, forKey: "firstAccess")
     }
 }
 
