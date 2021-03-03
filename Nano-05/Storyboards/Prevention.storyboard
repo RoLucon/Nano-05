@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="Dmg-zm-tua"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Prevençao" image="house" catalog="system" id="U4V-FY-3MY"/>
+                    <tabBarItem key="tabBarItem" title="Prevenção" image="iconPrevencao" id="U4V-FY-3MY"/>
                     <navigationItem key="navigationItem" title="Prevenção" id="HNl-YF-rC3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
@@ -51,7 +51,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="iconPrevencao" width="25.5" height="25.5"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

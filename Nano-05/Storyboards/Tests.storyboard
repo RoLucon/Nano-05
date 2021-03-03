@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="obu-J2-J0Z"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Testes" image="pills.fill" catalog="system" id="dqx-qZ-n1f"/>
+                    <tabBarItem key="tabBarItem" title="Testes" image="iconTestes" id="dqx-qZ-n1f"/>
                     <navigationItem key="navigationItem" id="BpA-q0-X3X"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
@@ -50,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pills.fill" catalog="system" width="128" height="106"/>
+        <image name="iconTestes" width="25.5" height="25.5"/>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

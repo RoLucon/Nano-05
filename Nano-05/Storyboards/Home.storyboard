@@ -281,7 +281,7 @@
                             <constraint firstItem="Kws-AK-FS5" firstAttribute="bottom" secondItem="1d3-cX-Nqn" secondAttribute="bottom" id="yKr-gQ-Aqy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Inicio" image="house.fill" catalog="system" id="jgD-Dr-XkT" userLabel="Home"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Inicio" image="iconHome" id="jgD-Dr-XkT" userLabel="Home"/>
                     <navigationItem key="navigationItem" id="RKA-1a-TzB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -319,7 +319,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="iconHome" width="25.5" height="25"/>
         <namedColor name="AccentColor">
             <color red="0.94599997997283936" green="0.16500000655651093" blue="0.30500000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
