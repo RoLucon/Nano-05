@@ -68,8 +68,12 @@
     "title": "Formas de Contágio",
     "info":[
         {
-            "title": "Situaçoes de risco de infecção",
-            "text": "A única forma de prevenção eficaz contra qualquer IST e o próprio HIV é o uso de camisinha durante as relações sexuais. Tanto as camisinhas masculinas quanto as femininas são distribuídas nos postos de saúde.\n\nNo caso específico do HIV, há agora um novo método preventivo: a Profilaxia Pré Exposição, indicada para os grupos que tem maior risco de contrair o vírus.\n\nEm caso de risco de infecção, há outras medidas que podem ser tomadas para minimizar o risco, como a profilaxia pós exposição.",
+            "title": "Situações de risco de infecção",
+            "text": "Sexo vaginal sem camisinha\nSexo anal sem camisinha\nSexo oral sem camisinha\nUso de seringa por mais de uma pessoa\nTransfusão de sangue contaminado\nDa mãe infectada para seu filho durante amamentação\nInstrumentos que furam ou cortam não esterilizados",
+        },
+        {
+            "title": "Situações SEM risco de infecção",
+            "text": "Sexo desde que se use corretamente a camisinha\nMasturbação a dois\nBeijo no rosto ou na boca\nSuor e lágrima\nPicada de inseto\nAperto de mão ou abraço\nSabonete/toalha/lençóis\nTalhares e copos\nAssento de ônibus\nPiscina\nBanheiro\nDoação de sangue\nPelo ar",
         }
     ],
     "modal": "fullscreen",
