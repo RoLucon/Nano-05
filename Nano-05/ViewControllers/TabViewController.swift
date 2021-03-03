@@ -173,6 +173,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
         if let row = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: row, animated: true)
         }
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 }

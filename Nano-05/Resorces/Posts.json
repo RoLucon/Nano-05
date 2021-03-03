@@ -1,6 +1,7 @@
 [{
     "id": 12,
     "title": "HIV e AIDS",
+    "imageName": "pessoa-hiv",
     "info":[
         {
             "title": "HIV: vírus da imunodeficiência humana",
@@ -16,6 +17,7 @@
     {
     "id": 10,
     "title": "Outras ISTs",
+    "imageName": "frutas-s-camisinha",
     "info":[
         {
             "title": "Infecções Sexualmente Transmissíveis (ISTs)",
@@ -139,6 +141,7 @@
 {
     "id": 32,
     "title": "Quando fazer?",
+    "imageName": "localidade",
     "info":[
         {
             "title": "",
