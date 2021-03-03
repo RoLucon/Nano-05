@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8511981025EC008F00C0EE81 /* WhoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511980F25EC008F00C0EE81 /* WhoData.swift */; };
-		8511981225EC00AF00C0EE81 /* WhoLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8511981125EC00AF00C0EE81 /* WhoLineChart.swift */; };
 		85133E1025ED6A5100F62066 /* TreatmentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85133E0F25ED6A5100F62066 /* TreatmentData.swift */; };
 		852D9A5F25ED91F300E884E0 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852D9A5A25ED91E600E884E0 /* Charts.framework */; };
 		852D9A6025ED91F300E884E0 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 852D9A5A25ED91E600E884E0 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -67,7 +66,6 @@
 
 /* Begin PBXFileReference section */
 		8511980F25EC008F00C0EE81 /* WhoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoData.swift; sourceTree = "<group>"; };
-		8511981125EC00AF00C0EE81 /* WhoLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoLineChart.swift; sourceTree = "<group>"; };
 		85133E0F25ED6A5100F62066 /* TreatmentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentData.swift; sourceTree = "<group>"; };
 		852D9A5425ED91E600E884E0 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Nano-05/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		85E0CD8525E96BFC00ED6D59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				89282A7A25E05B2700FE2029 /* Data.swift */,
 				89282A8B25E0807300FE2029 /* Tab.swift */,
 				8511980F25EC008F00C0EE81 /* WhoData.swift */,
-				8511981125EC00AF00C0EE81 /* WhoLineChart.swift */,
 				85133E0F25ED6A5100F62066 /* TreatmentData.swift */,
 			);
 			path = Model;
@@ -322,7 +319,6 @@
 				85E0CD8625E96BFC00ED6D59 /* HomeViewController.swift in Sources */,
 				89256B4825DEE0FC00E567F0 /* AppDelegate.swift in Sources */,
 				85133E1025ED6A5100F62066 /* TreatmentData.swift in Sources */,
-				8511981225EC00AF00C0EE81 /* WhoLineChart.swift in Sources */,
 				89256B4A25DEE0FC00E567F0 /* SceneDelegate.swift in Sources */,
 				89908C8F25E6C3FC00B8BEFD /* UIColor.swift in Sources */,
 			);
