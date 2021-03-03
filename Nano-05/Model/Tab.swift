@@ -11,6 +11,7 @@ struct Tab: Identifiable, Decodable {
     var id: Int
     var title: String
     var text: String
+    var imageName:String?
     var listItens: [ListItens]
     var listTitle: String?
 }

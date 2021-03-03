@@ -20,6 +20,8 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     private var textView = UITextView()
     
+    private let imageView = UIImageView()
+    
     private let button = RedButton()
     
     private var actions: [Action] = []
@@ -50,7 +52,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                 headerView.topAnchor.constraint(equalTo: safeGuide.topAnchor),
                 headerView.heightAnchor.constraint(equalToConstant: 55)
             ])
-    
+            
             titleLabel.textAlignment = .center
             titleLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: .preferredFont(forTextStyle: .headline), maximumPointSize: 21)
             
@@ -65,7 +67,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                 titleLabel.topAnchor.constraint(equalTo: headerView.topAnchor),
                 titleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
             ])
-        
+            
             let cancelBtt = UIButton()
             
             cancelBtt.setTitle("OK", for: .normal)
@@ -110,6 +112,32 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             scrollView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor)
         ])
         
+        var top = scrollView.topAnchor
+        
+        //MARK: - ImageView
+        
+        if let imageName = post?.imageName {
+            imageView.clipsToBounds = true;
+            imageView.layer.cornerRadius = 10;
+            
+            imageView.image = UIImage(named: imageName)
+            imageView.contentMode = .scaleAspectFit
+            
+            scrollView.addSubview(imageView)
+            
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+                imageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+                imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32),
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+            ])
+            top = imageView.bottomAnchor
+            print("Image\(imageName)")
+        }
+        
         //MARK: - StackView
         stackView.axis = .vertical
         stackView.clipsToBounds = true;
@@ -126,9 +154,9 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-                        stackView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 16),
-                        stackView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -16),
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+            stackView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -16),
+            stackView.topAnchor.constraint(equalTo: top, constant: 16),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -40)
         ])
         
@@ -148,6 +176,10 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         update()
         
         titleLabel.text = title
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     //MARK: - UPDATE
@@ -185,25 +217,25 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     private func addButtonsIfNeed(_ post: Post){
         if post.link != nil {
-        
-        button.setTitle(post.linkTitle, for: .normal)
-        button.addTarget(self, action: #selector(moreInfos), for: .touchUpInside)
-        
-        button.accessibilityLabel = post.linkTitle
-        button.accessibilityHint = post.linkHint
-        
-        stackView.addArrangedSubview(button)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        button.removeConstraints(button.constraints)
-        
-        NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(greaterThanOrEqualToConstant: 55)
-        ])
-        button.sizeToFit()
+            
+            button.setTitle(post.linkTitle, for: .normal)
+            button.addTarget(self, action: #selector(moreInfos), for: .touchUpInside)
+            
+            button.accessibilityLabel = post.linkTitle
+            button.accessibilityHint = post.linkHint
+            
+            stackView.addArrangedSubview(button)
+            
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            button.removeConstraints(button.constraints)
+            
+            NSLayoutConstraint.activate([
+                button.heightAnchor.constraint(greaterThanOrEqualToConstant: 55)
+            ])
+            button.sizeToFit()
         }
-
+        
         guard let redirects = post.redirect else { return }
         
         for redirect in redirects {
@@ -240,7 +272,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             NSLayoutConstraint.activate([
                 button.heightAnchor.constraint(greaterThanOrEqualToConstant: 55)
             ])
-
+            
         }
     }
     
@@ -294,13 +326,13 @@ extension PostViewController {
 
 final class Action: NSObject {
     private let _action: () -> ()
-
-        init(action: @escaping () -> ()) {
-            _action = action
-            super.init()
-        }
-
-        @objc func action() {
-            _action()
-        }
+    
+    init(action: @escaping () -> ()) {
+        _action = action
+        super.init()
+    }
+    
+    @objc func action() {
+        _action()
+    }
 }

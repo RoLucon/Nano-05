@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="r8Z-Ls-ria"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cuidados" image="heart" catalog="system" id="kvY-6t-OpA"/>
+                    <tabBarItem key="tabBarItem" title="Cuidados" image="iconCuidados" id="kvY-6t-OpA"/>
                     <navigationItem key="navigationItem" id="Otf-2R-K6T"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
@@ -50,7 +50,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="iconCuidados" width="25.5" height="25.5"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

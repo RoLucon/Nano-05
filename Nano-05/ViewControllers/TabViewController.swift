@@ -24,6 +24,8 @@ class TabViewController: UIViewController, UITableViewDelegate {
     
     private var tableViewHeight: NSLayoutConstraint?
     
+    private let imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,13 +62,39 @@ class TabViewController: UIViewController, UITableViewDelegate {
             scrollView.bottomAnchor.constraint(equalTo: safeGuide.bottomAnchor)
         ])
         
+        var top = scrollView.topAnchor
+        
+        //MARK: - Image
+        if let imageName = currentTab.imageName {
+            imageView.clipsToBounds = true;
+            imageView.layer.cornerRadius = 10;
+            
+            imageView.image = UIImage(named: imageName)
+            imageView.contentMode = .scaleAspectFit
+            scrollView.addSubview(imageView)
+            
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+                imageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+                imageView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32),
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+            ])
+            top = imageView.bottomAnchor
+            print("Image\(imageName)")
+        }
+        
         //MARK: - Text View
         textView.backgroundColor = .secBackgroundColor
         textView.clipsToBounds = true;
         textView.layer.cornerRadius = 10;
         textView.isScrollEnabled = false
         textView.isEditable = false
-
+        
+        textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 32, right: 16)
+        
         scrollView.addSubview(textView)
         
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,34 +102,34 @@ class TabViewController: UIViewController, UITableViewDelegate {
         NSLayoutConstraint.activate([
             textView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
             textView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
-            textView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+            textView.topAnchor.constraint(equalTo: top, constant: 16),
             textView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32)
         ])
         
         textView.text = currentTab.text
         
         //MARK: - List / TableView
-
-//        tableView.layer.cornerRadius = 10;
+        
+        //        tableView.layer.cornerRadius = 10;
         let px = 1 / UIScreen.main.scale
         let frame = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: px)
         let line = UIView(frame: frame)
         self.tableView.tableHeaderView = line
         line.backgroundColor = self.tableView.separatorColor
-
+        
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
         
         tableView.rowHeight = UITableView.automaticDimension
-
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell")
-
+        
         scrollView.addSubview(tableView)
-
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
@@ -119,10 +147,11 @@ class TabViewController: UIViewController, UITableViewDelegate {
             
             listTitleLabel.translatesAutoresizingMaskIntoConstraints = false
             
-            NSLayoutConstraint.activate([listTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-                                         listTitleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
-                                        listTitleLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -8),
-                                        
+            NSLayoutConstraint.activate([
+                listTitleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                listTitleLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
+                listTitleLabel.bottomAnchor.constraint(equalTo: tableView.topAnchor, constant: -8),
+                
             ])
         }
     }
@@ -144,6 +173,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
         if let row = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: row, animated: true)
         }
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 }
@@ -169,7 +199,7 @@ extension TabViewController: UITableViewDataSource {
         }
         cell.accessibilityValue = "Botão \(indexPath.row) de \(currentTab.listItens.count)"
         cell.accessoryType =  UITableViewCell.AccessoryType.disclosureIndicator
-
+        
         return cell
     }
     
@@ -192,7 +222,7 @@ extension TabViewController: UITableViewDataSource {
                 self.navigationController?.pushViewController(loadVC, animated: true)
             }
             
-        // se for a parte de fontes e créditos
+            // se for a parte de fontes e créditos
         } else {
             guard let tabPost = tabById(5) else {
                 fatalError("Impossível redirecionar. Post não encontrado")
