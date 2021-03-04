@@ -53,7 +53,7 @@
     "modal": "fullscreen",
     "redirect": [
         {
-            "title": "Fazer teste",
+            "title": "Testar conhecimento",
             "hint": "Inicia o jogo de questões alternativas sobre o contagio do HIV.",
             "storyboard": "CardGame"
             
@@ -81,7 +81,7 @@
     "modal": "fullscreen",
     "redirect": [
         {
-            "title": "Fazer teste",
+            "title": "Testar conhecimento",
             "hint": "Inicia o jogo de questões alternativas sobre o contagio do HIV.",
             "storyboard": "CardGame"
         }

@@ -139,7 +139,7 @@
                                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="14.000.000" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31Z-Ce-cUy">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="-" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31Z-Ce-cUy">
                                                                                 <rect key="frame" x="0.0" y="23" width="183" height="45"/>
                                                                                 <accessibility key="accessibilityConfiguration" label="Número de pessoas em tratamento">
                                                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -175,7 +175,7 @@
                                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="14.000.000" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8I-4m-1vX">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="-" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8I-4m-1vX">
                                                                                 <rect key="frame" x="0.0" y="23" width="183" height="45"/>
                                                                                 <accessibility key="accessibilityConfiguration" label="Número de pessoas soropositivas">
                                                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
