@@ -58,7 +58,7 @@ func requestWhoData(url: String, completion: @escaping ([WhoData]) -> ()) {
                 whoData = decodedResponse.value
                 
                 DispatchQueue.main.async {
-                    completion(whoData)
+                    completion(sortWhoData(whoData: whoData))
                 }
             }
         }
@@ -94,7 +94,7 @@ func getDeathsValue(whoData: [WhoData]) -> [Double] {
         
         deaths.append(whoData[index].NumericValue)
     }
-    
+        
     return deaths
 }
 
@@ -123,4 +123,12 @@ func getYearsValue(whoData: [WhoData]) -> [Int] {
     }
     
     return years
+}
+
+func sortWhoData(whoData: [WhoData]) -> [WhoData]{
+    let sortedData = whoData.sorted {
+        $0.TimeDim < $1.TimeDim
+    }
+    
+    return sortedData
 }
