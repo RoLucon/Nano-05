@@ -27,17 +27,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oaq-KT-kM7">
                                                 <rect key="frame" x="0.0" y="8" width="414" height="282.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ttn-Rf-wO7">
-                                                        <rect key="frame" x="16" y="16" width="114.5" height="37"/>
-                                                        <color key="backgroundColor" name="PrimaryColor123"/>
-                                                        <accessibility key="accessibilityConfiguration" hint="Logotipo do app" label="Logotipo">
-                                                            <accessibilityTraits key="traits" image="YES"/>
-                                                            <bool key="isElement" value="YES"/>
-                                                        </accessibility>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="114.5" id="pag-CM-FCf"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIV e AIDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-aB-zkb">
                                                         <rect key="frame" x="16" y="69" width="86" height="20.5"/>
                                                         <accessibility key="accessibilityConfiguration" hint="Page Title" label="HIV e aids"/>
@@ -73,6 +62,16 @@
                                                             <action selector="openHivDetailView:" destination="Qux-SJ-Re4" eventType="touchUpInside" id="O5u-cC-ALa"/>
                                                         </connections>
                                                     </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nano5-logo-horizontal-whitebg-1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ttn-Rf-wO7">
+                                                        <rect key="frame" x="141" y="16" width="130.5" height="37"/>
+                                                        <accessibility key="accessibilityConfiguration" hint="Logotipo do app" label="Logotipo">
+                                                            <accessibilityTraits key="traits" image="YES"/>
+                                                            <bool key="isElement" value="YES"/>
+                                                        </accessibility>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="130.5" id="pag-CM-FCf"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -88,7 +87,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="lIf-7X-p0A" secondAttribute="trailing" constant="16" id="ipk-P2-rcg"/>
                                                     <constraint firstItem="z2S-aB-zkb" firstAttribute="leading" secondItem="Oaq-KT-kM7" secondAttribute="leading" constant="16" id="vTw-me-is7"/>
                                                     <constraint firstItem="z2S-aB-zkb" firstAttribute="top" secondItem="Oaq-KT-kM7" secondAttribute="top" constant="69" id="vfX-IS-HL3"/>
-                                                    <constraint firstItem="Ttn-Rf-wO7" firstAttribute="leading" secondItem="z2S-aB-zkb" secondAttribute="leading" id="xz9-PI-tLY"/>
+                                                    <constraint firstItem="Ttn-Rf-wO7" firstAttribute="leading" secondItem="z2S-aB-zkb" secondAttribute="leading" constant="125" id="xz9-PI-tLY"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GIE-eh-EmF">
@@ -301,6 +300,7 @@
     </scenes>
     <resources>
         <image name="iconHome" width="25.5" height="25"/>
+        <image name="nano5-logo-horizontal-whitebg-1" width="11600" height="3200"/>
         <namedColor name="AccentColor">
             <color red="0.94599997997283936" green="0.16500000655651093" blue="0.30500000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -309,9 +309,6 @@
         </namedColor>
         <namedColor name="PrimaryColor">
             <color red="0.19099999964237213" green="0.090000003576278687" blue="0.44600000977516174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="PrimaryColor123">
-            <color red="0.39500001072883606" green="0.8970000147819519" blue="0.8399999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecBackgroundColor">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
