@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var save : Bool = UserDefaults.standard.bool(forKey: "firstAccess")
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,11 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var vc: UIViewController?
         var storyboard: UIStoryboard
             
-//        UserDefaults.standard.set(true, forKey: "firstAccess")
+        UserDefaults.standard.set(true, forKey: "firstAccess")
         
-        let save = UserDefaults.standard.bool(forKey: "firstAccess")
-        
-        if !save {
+        if save {
             storyboard = UIStoryboard(name: "Main", bundle: nil)
         } else {
             storyboard = UIStoryboard(name: "Intro", bundle: nil)
