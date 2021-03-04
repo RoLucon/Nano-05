@@ -59,7 +59,7 @@
                                         <color key="pageIndicatorTintColor" systemColor="systemGray3Color"/>
                                         <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[nome do app] traz conteúdos informativos acerca da AIDS e do HIV de maneira simples e direta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tI-dv-ZKV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informe HIV traz conteúdos informativos acerca da AIDS e do HIV de maneira simples e direta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tI-dv-ZKV">
                                         <rect key="frame" x="24" y="40" width="326" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="Xoc-5d-fFf"/>
