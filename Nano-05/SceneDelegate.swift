@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var vc: UIViewController?
         var storyboard: UIStoryboard
             
-        UserDefaults.standard.set(true, forKey: "firstAccess")
+//        UserDefaults.standard.set(true, forKey: "firstAccess")
         
         if save {
             storyboard = UIStoryboard(name: "Main", bundle: nil)
