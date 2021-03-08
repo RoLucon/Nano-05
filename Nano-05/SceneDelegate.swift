@@ -29,6 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         vc = storyboard.instantiateInitialViewController()
         
+        vc?.overrideUserInterfaceStyle = .light
+        
         window?.rootViewController = vc!
         window?.makeKeyAndVisible()
         
