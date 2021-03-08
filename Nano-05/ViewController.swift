@@ -32,9 +32,10 @@ class ViewController: UIViewController {
     @IBAction func finish(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
+        vc?.overrideUserInterfaceStyle = .light
         vc?.modalPresentationStyle = .fullScreen
         present(vc!, animated: true, completion: {
-            UserDefaults.standard.set(false, forKey: "firstAccess")
+            UserDefaults.standard.set(true, forKey: "firstAccess")
         })
     }
 }
