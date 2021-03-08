@@ -175,6 +175,8 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         update()
         
+        addButtonsIfNeed(post)
+        
         titleLabel.text = title
     }
     
@@ -209,13 +211,13 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         }
         
         textView.attributedText = addBoldText(fullString: text, boldPartOfString: title, baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
-        
-        addButtonsIfNeed(post)
     }
     
     //MARK: - ADD Buttons
     
-    private func addButtonsIfNeed(_ post: Post){
+    private func addButtonsIfNeed(_ post: Post?){
+        guard let post = self.post else { return }
+        
         if post.link != nil {
             
             button.setTitle(post.linkTitle, for: .normal)
