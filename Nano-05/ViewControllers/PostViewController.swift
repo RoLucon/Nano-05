@@ -209,10 +209,9 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             text += info.text
             text += "\n\n"
         }
-        
-        let substring1 = text.dropLast(2)         // "01234567"
-        let substring2 = substring1.dropLast()
-        text = String(substring2.dropLast())
+        //Remove os ultimas quebras de linha
+        let substring1 = text.dropLast(2)
+        text = String(substring1)
         
         textView.attributedText = addBoldText(fullString: text, boldPartOfString: title, baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
     }
