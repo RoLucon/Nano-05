@@ -93,7 +93,7 @@ class TabViewController: UIViewController, UITableViewDelegate {
         textView.isScrollEnabled = false
         textView.isEditable = false
         
-        textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 32, right: 16)
+        textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         
         scrollView.addSubview(textView)
         

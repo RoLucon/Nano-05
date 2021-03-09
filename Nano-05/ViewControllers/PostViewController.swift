@@ -147,7 +147,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         stackView.alignment = .fill
         
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 40, right: 16)
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         stackView.isLayoutMarginsRelativeArrangement = true
         scrollView.addSubview(stackView)
         
@@ -157,7 +157,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             stackView.leadingAnchor.constraint(equalTo: safeGuide.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: safeGuide.trailingAnchor, constant: -16),
             stackView.topAnchor.constraint(equalTo: top, constant: 16),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -40)
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16)
         ])
         
         //MARK: - TextView
@@ -209,6 +209,10 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             text += info.text
             text += "\n\n"
         }
+        
+        let substring1 = text.dropLast(2)         // "01234567"
+        let substring2 = substring1.dropLast()
+        text = String(substring2.dropLast())
         
         textView.attributedText = addBoldText(fullString: text, boldPartOfString: title, baseFont: .preferredFont(forTextStyle: .body), boldFont: .preferredFont(forTextStyle: .headline))
     }
