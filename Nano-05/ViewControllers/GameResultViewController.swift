@@ -64,7 +64,9 @@ class GameResultViewController: UIViewController {
 }
 
 extension GameResultViewController {
-    
+    // Ate 8 Negativo
+    // 9 a 12 Neutro
+    // 13 a 14 Positivo
     private func generateText(){
         let correctly = answers.filter{ $0 == true}
         
@@ -72,9 +74,9 @@ extension GameResultViewController {
         
         var string = ""
         
-        if correctly.count == answers.count {
+        if correctly.count >= 13 {
             string = "\n\nBoa! Deu para ver que você anda bem informado. Não esqueça de se proteger antes de se divertir!"
-        } else if correctly.count / 3 < answers.count {
+        } else if correctly.count < 9 {
             string = "\n\nVocê não foi muito bem... Que tal conferir os conteúdos que preparamos para você?"
         } else {
             string = "\n\nQuase lá! Faltou pouco para gabaritar, mas conte com a gente para se manter informado."
